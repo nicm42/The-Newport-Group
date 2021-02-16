@@ -1,0 +1,12 @@
+node_modules/
+.cache/
+src/config.js
+dist/
+images/
+cypress/fixtures
+cypress/plugins
+cypress/support
+Figma/
+.eslintrc.json
+.postcssrc
+.prettierrc
