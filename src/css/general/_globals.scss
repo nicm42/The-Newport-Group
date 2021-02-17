@@ -1,8 +1,10 @@
+@use 'variables';
+
 body {
   font-family: 'Montserrat', sans-serif;
-  color: var(--font-colour);
+  color: var(--primary-colour);
 }
 
 a {
-  color: var(--link-colour);
+  color: var(--secondary-colour);
 }
