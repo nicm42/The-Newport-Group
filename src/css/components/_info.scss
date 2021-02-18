@@ -1,0 +1,63 @@
+@use '../general/variables';
+@use '../general/mixins';
+
+.info {
+  margin-top: 1em;
+  padding: 1em;
+
+  @include mixins.breakpoint-up(medium) {
+    padding: 2em;
+  }
+
+  ul {
+    padding-left: 0.5em;
+
+    @include mixins.breakpoint-up(medium) {
+      display: flex;
+      justify-content: space-between;
+      padding-left: 0;
+      list-style-type: none;
+    }
+  }
+
+  li {
+    margin-bottom: 0.5em;
+    margin-left: 0.5em;
+
+    &::marker {
+      color: var(--secondary-colour);
+    }
+  }
+
+  &__text {
+    position: relative;
+
+    &::after {
+      @include mixins.breakpoint-up(large) {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: calc(100% - 50ch);
+        background: var(--alternate-colour);
+        background-image: url(../imgs/building.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transform: scaleX(-1);
+        opacity: 0.5;
+      }
+    }
+  }
+
+  p {
+    margin-top: 1em;
+    max-width: 50ch;
+
+    &:first-of-type {
+      margin-top: 2em;
+    }
+  }
+}
