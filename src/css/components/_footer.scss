@@ -1,6 +1,7 @@
 @use '../general/mixins';
 
 .footer {
+  padding-top: calc(5vw + 1em);
   background-color: var(--secondary-colour);
   color: var(--alternate-colour);
 
