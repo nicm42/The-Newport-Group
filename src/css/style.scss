@@ -1,7 +1,10 @@
 @use 'general/reset';
 @use 'general/globals';
 
+@use 'utilities/container';
+
 @use 'components/header';
 @use 'components/info';
 @use 'components/parallax';
 @use 'components/card';
+@use 'components/footer';

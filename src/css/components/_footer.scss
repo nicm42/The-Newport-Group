@@ -1,0 +1,55 @@
+@use '../general/mixins';
+
+.footer {
+  background-color: var(--secondary-colour);
+  color: var(--alternate-colour);
+
+  @include mixins.breakpoint-up(large) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__owner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2em;
+
+    @include mixins.breakpoint-up(medium) {
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+  }
+
+  &__photo {
+    width: 80%;
+    max-width: 10em;
+
+    @include mixins.breakpoint-up(medium) {
+      padding-right: 1em;
+    }
+  }
+
+  &__contactmap {
+    @include mixins.breakpoint-up(large) {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  &__contact {
+    p {
+      white-space: nowrap;
+    }
+  }
+
+  &__map {
+    width: 80%;
+    max-width: 20em;
+
+    @include mixins.breakpoint-up(large) {
+      padding-left: 1em;
+    }
+  }
+}

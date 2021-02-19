@@ -15,11 +15,11 @@
 
   <header>
     <h1>The Newport Group</h1>
-    <i class="las la-sun"></i>
-    <i class="las la-moon"></i>
+    <i class="las la-sun" title="Light mode"></i>
+    <i class="las la-moon" title="Dark mode"></i>
   </header>
 
-  <section class="info">
+  <section class="info container">
     <ul>
       <li>Real Estate</li>
       <li>Buildings</li>
@@ -38,7 +38,7 @@
 
   <div class="parallax"></div>
 
-  <section class="cards">
+  <section class="cards container">
     <div class="cards__card cards__house">
       <div class="cards__image"></div>
       <div class="cards__text">
@@ -58,20 +58,26 @@
     </div>
   </section>
 
-  <footer>
-    <img src="#" alt="Owner: Caleb Nichol">
-    <p>Owner: Caleb Nichol</p>
+  <footer class="footer container">
+    <div class="footer__owner">
+      <p>Owner: Caleb Nichol</p>
+      <img src="./imgs/caleb.jpg" alt="Owner: Caleb Nichol" class="footer__photo">
+    </div>
 
-    <div class="contact">
-      <p>The Newport Group<br/>
-      Newport Beach<br />
-      The O.C.<br />
-      C.A.<br />
-      92660</p>
-      
-      <p><i class="las la-phone"></i> contact@thenewportgroup.com</p>
-      
-      <p><i class="las la-envelope"></i> 555-123-4567</p>
+    <div class="footer__contactmap">
+      <div class="footer__contact">
+        <p>The Newport Group<br/>
+        Newport Beach<br />
+        The O.C.<br />
+        C.A.<br />
+        92660</p>
+        
+        <p><i class="las la-phone"></i> contact@thenewportgroup.com</p>
+        
+        <p><i class="las la-envelope"></i> 555-123-4567</p>
+      </div>
+
+      <img src="./imgs/map.png" alt="Map of Newport Beach" class="footer__map">
     </div>
   </footer>
   
