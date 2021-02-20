@@ -2,20 +2,29 @@
 @use '../general/mixins';
 
 .info {
+  overflow-x: hidden;
   margin-top: 1em;
 
   @include mixins.breakpoint-up(medium) {
     padding: 2em;
   }
 
-  ul {
+  &__list {
     padding-left: 0.5em;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: transform 250ms ease-in-out, opacity 250ms ease-in-out;
 
     @include mixins.breakpoint-up(medium) {
       display: flex;
       justify-content: space-between;
       padding-left: 0;
       list-style-type: none;
+    }
+
+    &.slide {
+      transform: translateY(0);
+      opacity: 1;
     }
   }
 
@@ -30,6 +39,14 @@
 
   &__text {
     position: relative;
+    transform: translateX(50%);
+    opacity: 0;
+    transition: transform 250ms ease-in-out, opacity 250ms ease-in-out;
+
+    &.slide {
+      transform: translateX(0);
+      opacity: 1;
+    }
 
     &::after {
       @include mixins.breakpoint-up(large) {

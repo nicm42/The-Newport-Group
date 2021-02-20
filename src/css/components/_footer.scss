@@ -1,6 +1,7 @@
 @use '../general/mixins';
 
 .footer {
+  overflow-x: hidden;
   padding-top: calc(5vw + 1em);
   background-color: var(--secondary-colour);
   color: var(--alternate-colour);
@@ -17,7 +18,7 @@
     padding-bottom: 2em;
     transform: translateX(-50%);
     opacity: 0;
-    transition: transform 500ms ease-in-out, opacity 250ms ease-in-out;
+    transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
 
     @include mixins.breakpoint-up(medium) {
       flex-direction: row-reverse;
@@ -43,7 +44,7 @@
   &__contactmap {
     transform: translateX(50%);
     opacity: 0;
-    transition: transform 500ms ease-in-out, opacity 250ms ease-in-out;
+    transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
 
     @include mixins.breakpoint-up(large) {
       display: flex;

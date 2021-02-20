@@ -31,7 +31,7 @@
     box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.25);
     transform: translateY(-50%);
     opacity: 0;
-    transition: transform 500ms ease-in-out, opacity 250ms ease-in-out;
+    transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
 
     &.slide {
       transform: translateY(0);
