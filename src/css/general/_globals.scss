@@ -8,4 +8,9 @@ body {
 a {
   color: var(--secondary-colour);
   text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
 }
