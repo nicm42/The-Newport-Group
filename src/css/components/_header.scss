@@ -29,6 +29,12 @@ header {
     color: var(--alternate-colour);
     font-size: 1.5rem;
     cursor: pointer;
+    transition: color 250ms ease-in-out;
+
+    &:hover,
+    &:focus {
+      color: var(--primary-colour);
+    }
   }
 
   .la-sun {
