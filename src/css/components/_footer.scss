@@ -15,11 +15,19 @@
     flex-direction: column;
     align-items: center;
     padding-bottom: 2em;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: transform 500ms ease-in-out, opacity 250ms ease-in-out;
 
     @include mixins.breakpoint-up(medium) {
       flex-direction: row-reverse;
       justify-content: flex-end;
       align-items: flex-start;
+    }
+
+    &.slide {
+      transform: translateX(0);
+      opacity: 1;
     }
   }
 
@@ -33,9 +41,18 @@
   }
 
   &__contactmap {
+    transform: translateX(50%);
+    opacity: 0;
+    transition: transform 500ms ease-in-out, opacity 250ms ease-in-out;
+
     @include mixins.breakpoint-up(large) {
       display: flex;
       justify-content: flex-end;
+    }
+
+    &.slide {
+      transform: translateX(0);
+      opacity: 1;
     }
   }
 

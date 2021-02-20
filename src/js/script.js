@@ -1,8 +1,9 @@
 const cards = document.querySelectorAll('.cards__card');
+const owner = document.querySelector('.footer__owner');
+const map = document.querySelector('.footer__contactmap');
 
 const observerOptions = {
   threshold: 0.5,
-  //rootMargin: '75%',
 };
 
 const slideIn = new IntersectionObserver(function (entries) {
@@ -19,3 +20,6 @@ const slideIn = new IntersectionObserver(function (entries) {
 cards.forEach((card) => {
   slideIn.observe(card);
 });
+
+slideIn.observe(owner);
+slideIn.observe(map);
