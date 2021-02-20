@@ -29,30 +29,18 @@
     height: 20em;
     border-radius: 0.25em;
     box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.25);
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: transform 500ms ease-in-out, opacity 250ms ease-in-out;
+
+    &.slide {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 
   &__image {
     height: 50%;
-    background-position: center;
-    background-size: cover;
-  }
-
-  &__house {
-    .cards__image {
-      background-image: url(../imgs/beige-house.jpg);
-    }
-  }
-
-  &__building {
-    .cards__image {
-      background-image: url(../imgs/construction.jpg);
-    }
-  }
-
-  &__office {
-    .cards__image {
-      background-image: url(../imgs/office.jpg);
-    }
   }
 
   &__text {
