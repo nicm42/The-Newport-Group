@@ -31,15 +31,56 @@
   li {
     margin-bottom: 0.5em;
     margin-left: 0.5em;
+    font-size: 1.25rem;
 
     @include mixins.breakpoint-up(medium) {
+      position: relative;
+      display: grid;
+      place-content: center;
+      padding: 0.25em 0.5em;
+      border-top: 1px solid variables.$parallax-colour;
+      border-bottom: 1px solid variables.$parallax-colour;
+      text-align: center;
+      cursor: pointer;
+
+      &::before,
+      &::after {
+        position: absolute;
+        content: '';
+        width: 1px;
+        height: 0;
+        background-color: variables.$parallax-colour;
+        transition: height 250ms ease-in-out;
+      }
+
+      &::before {
+        top: 0;
+        left: 0;
+      }
+
+      &::after {
+        bottom: 0;
+        right: 0;
+      }
+
+      &:hover::before,
+      &:focus::before,
+      &:hover::after,
+      &:focus::after {
+        height: 100%;
+      }
+
       &:first-of-type {
         margin-left: 0;
       }
     }
 
     &::marker {
-      color: variables.$secondary-colour;
+      color: variables.$parallax-colour;
+    }
+
+    a {
+      color: variables.$primary-colour;
     }
   }
 
