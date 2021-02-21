@@ -2,7 +2,6 @@
 @use '../general/mixins';
 
 .info {
-  overflow-x: hidden;
   margin-top: 1em;
 
   @include mixins.breakpoint-up(medium) {
@@ -13,7 +12,8 @@
     padding-left: 0.5em;
     transform: translateY(-50%);
     opacity: 0;
-    transition: transform 250ms ease-in-out, opacity 250ms ease-in-out;
+    transition: transform variables.$transition-time variables.$easing,
+      opacity variables.$transition-time variables.$easing;
 
     @include mixins.breakpoint-up(medium) {
       display: flex;
@@ -50,7 +50,7 @@
         width: 1px;
         height: 0;
         background-color: variables.$parallax-colour;
-        transition: height 250ms ease-in-out;
+        transition: height variables.$transition-time variables.$easing;
       }
 
       &::before {

@@ -32,7 +32,8 @@
     box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.25);
     transform: translateY(-50%);
     opacity: 0;
-    transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
+    transition: transform variables.$transition-time variables.$easing,
+      opacity variables.$transition-time variables.$easing;
 
     &.slide {
       transform: translateY(0);
@@ -96,7 +97,8 @@
       top: -10%;
       opacity: 0.25;
       transform: rotate(35deg);
-      transition: left 500ms ease-in-out, opacity 100ms ease-in-out 500ms;
+      transition: left variables.$transition-time variables.$easing,
+        opacity 100ms variables.$easing variables.$transition-time;
     }
 
     &:hover::after,

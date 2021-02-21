@@ -9,10 +9,3 @@ $breakpoints-up: (
     @content;
   }
 }
-
-@mixin adjust-colour($property, $colour, $amount) {
-  $property: adjust-color(
-    $color: $colour,
-    $lightness: $amount,
-  );
-}

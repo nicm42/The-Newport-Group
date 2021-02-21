@@ -19,7 +19,8 @@
     padding-bottom: 2em;
     transform: translateX(-50%);
     opacity: 0;
-    transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
+    transition: transform variables.$transition-time variables.$easing,
+      opacity variables.$transition-time variables.$easing;
 
     @include mixins.breakpoint-up(medium) {
       flex-direction: row-reverse;
@@ -45,7 +46,8 @@
   &__contactmap {
     transform: translateX(50%);
     opacity: 0;
-    transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
+    transition: transform variables.$transition-time variables.$easing,
+      opacity variables.$transition-time variables.$easing;
 
     @include mixins.breakpoint-up(large) {
       display: flex;
