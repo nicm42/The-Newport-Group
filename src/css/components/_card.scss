@@ -38,6 +38,32 @@
       transform: translateY(0);
       opacity: 1;
     }
+
+    //If they're below each other, but have space offset them a bit
+    @include mixins.breakpoint-up(medium) {
+      &:nth-of-type(2).slide {
+        transform: translateY(0) translateX(2em);
+      }
+
+      &:last-of-type.slide {
+        transform: translateY(0) translateX(4em);
+      }
+    }
+
+    //If they're next to each other, then also make them diagonal
+    @include mixins.breakpoint-up(large) {
+      &:first-of-type.slide {
+        transform: translateY(2em) translateX(0);
+      }
+
+      &:nth-of-type(2).slide {
+        transform: translateY(1em) translateX(0);
+      }
+
+      &:last-of-type.slide {
+        transform: translateY(0) translateX(0);
+      }
+    }
   }
 
   &__image {
