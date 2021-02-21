@@ -32,6 +32,12 @@
     margin-bottom: 0.5em;
     margin-left: 0.5em;
 
+    @include mixins.breakpoint-up(medium) {
+      &:first-of-type {
+        margin-left: 0;
+      }
+    }
+
     &::marker {
       color: variables.$secondary-colour;
     }
