@@ -26,6 +26,7 @@ header {
       height: 3px;
       border-radius: 2px;
       background-color: variables.$alternate-colour;
+      transition: background-color 100ms variables.$easing 150ms;
 
       &::before,
       &::after {
@@ -52,6 +53,7 @@ header {
     .cross {
       &.menu {
         background-color: transparent;
+        transition: none;
       }
 
       &.menu::before {
