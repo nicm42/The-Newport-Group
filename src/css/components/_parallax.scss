@@ -1,7 +1,9 @@
+@use '../general/variables';
+
 .parallax {
   height: 100vh;
   padding-top: 1em;
-  background-color: #ff9862;
+  background-color: variables.$parallax-colour;
   background-image: url(../imgs/parallax.jpg);
   background-position: center;
   background-size: cover;
