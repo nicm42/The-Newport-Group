@@ -11,6 +11,66 @@ header {
   background-repeat: no-repeat;
   background-attachment: fixed;
 
+  nav {
+    .menu {
+      position: relative;
+      margin-left: 1em;
+      width: 30px;
+      height: 3px;
+      border-radius: 2px;
+      background-color: variables.$alternate-colour;
+      cursor: pointer;
+      transition: transform variables.$transition-time variables.$easing;
+
+      &::before,
+      &::after {
+        position: absolute;
+        content: '';
+        width: 30px;
+        height: 3px;
+        left: 0;
+        border-radius: 2px;
+        background-color: variables.$alternate-colour;
+      }
+
+      &::before {
+        top: -6px;
+      }
+
+      &::after {
+        bottom: -6px;
+      }
+    }
+
+    .cross {
+      &.menu {
+        background-color: transparent;
+      }
+
+      &.menu::before {
+        top: 0;
+        transform: rotate(-45deg);
+        background-color: variables.$alternate-colour;
+      }
+
+      &.menu::after {
+        bottom: 0;
+        transform: rotate(45deg);
+        background-color: variables.$alternate-colour;
+      }
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    li {
+      a {
+        color: variables.$primary-colour;
+      }
+    }
+  }
+
   h1 {
     display: grid;
     place-content: center;
