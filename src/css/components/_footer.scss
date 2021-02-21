@@ -1,10 +1,11 @@
+@use '../general/variables';
 @use '../general/mixins';
 
 .footer {
   overflow-x: hidden;
   padding-top: calc(5vw + 1em);
-  background-color: var(--secondary-colour);
-  color: var(--alternate-colour);
+  background-color: variables.$secondary-colour;
+  color: variables.$alternate-colour;
 
   @include mixins.breakpoint-up(large) {
     display: flex;

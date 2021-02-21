@@ -33,7 +33,7 @@
     margin-left: 0.5em;
 
     &::marker {
-      color: var(--secondary-colour);
+      color: variables.$secondary-colour;
     }
   }
 
@@ -57,7 +57,7 @@
         bottom: 0;
         height: 100%;
         width: calc(100% - 50ch);
-        background: var(--alternate-colour);
+        background: variables.$alternate-colour;
         background-image: url(../imgs/building.jpg);
         background-position: center;
         background-size: cover;

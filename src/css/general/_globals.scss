@@ -2,11 +2,11 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  color: var(--primary-colour);
+  color: variables.$primary-colour;
 }
 
 a {
-  color: var(--secondary-colour);
+  color: variables.$secondary-colour;
   text-decoration: none;
 
   &:hover,

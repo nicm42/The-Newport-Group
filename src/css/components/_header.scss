@@ -4,7 +4,7 @@
 header {
   height: 100vh;
   padding-top: 1em;
-  background-color: var(--secondary-colour);
+  background-color: variables.$secondary-colour;
   background-image: url(../imgs/header.jpg);
   background-position: center;
   background-size: cover;
@@ -15,7 +15,7 @@ header {
     display: grid;
     place-content: center;
     font-size: 1.5rem;
-    color: var(--alternate-colour);
+    color: variables.$alternate-colour;
 
     @include mixins.breakpoint-up(medium) {
       font-size: 2rem;
@@ -26,14 +26,14 @@ header {
     position: absolute;
     top: 0.5em;
     right: 0.5em;
-    color: var(--alternate-colour);
+    color: variables.$alternate-colour;
     font-size: 1.5rem;
     cursor: pointer;
     transition: color 250ms ease-in-out;
 
     &:hover,
     &:focus {
-      color: var(--primary-colour);
+      color: variables.$primary-colour;
     }
   }
 
