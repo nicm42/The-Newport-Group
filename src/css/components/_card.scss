@@ -1,3 +1,4 @@
+@use '../general/variables';
 @use '../general/mixins';
 
 .cards {
@@ -8,7 +9,7 @@
   flex-direction: column;
   align-items: center;
   gap: 2em;
-  background-color: var(--alternate-colour);
+  background-color: variables.$alternate-colour;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0% 100%);
 
   @include mixins.breakpoint-up(large) {
@@ -54,15 +55,15 @@
     border: none;
     padding: 0.5em 1em;
     border-radius: 0.25em;
-    background-color: var(--secondary-colour);
-    color: var(--alternate-colour);
+    background-color: variables.$secondary-colour;
+    color: variables.$alternate-colour;
     box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.25);
     cursor: pointer;
 
     &::after {
       position: absolute;
       content: '';
-      background-color: var(--alternate-colour);
+      background-color: variables.$alternate-colour;
       height: 125%;
       width: 1em;
       left: -20%;
@@ -76,6 +77,14 @@
     &:focus::after {
       left: 110%;
       opacity: 0;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: adjust-color(
+        $color: variables.$secondary-colour,
+        $lightness: 10%
+      );
     }
 
     &:active {
