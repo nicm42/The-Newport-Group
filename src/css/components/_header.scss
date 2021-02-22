@@ -37,12 +37,13 @@ $menu-height: 30px;
 
   nav {
     .menu-toggle {
+      position: relative;
       display: grid;
       place-content: center;
       width: $menu-width;
       height: $menu-height;
-      //margin-left: 1em;
       cursor: pointer;
+      z-index: 2;
     }
     .menu {
       position: relative;
