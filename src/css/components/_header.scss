@@ -12,18 +12,23 @@ header {
   background-attachment: fixed;
 
   nav {
+    $bar-width: 30px;
+    $bar-height: 3px;
+    $menu-width: $bar-width + 10;
+    $menu-height: 30px;
+
     .menu-toggle {
       display: grid;
       place-content: center;
-      width: 40px;
-      height: 30px;
+      width: $menu-width;
+      height: $menu-height;
       margin-left: 1em;
       cursor: pointer;
     }
     .menu {
       position: relative;
-      width: 30px;
-      height: 3px;
+      width: $bar-width;
+      height: $bar-height;
       border-radius: 2px;
       background-color: variables.$alternate-colour;
       transition: background-color 100ms variables.$easing 150ms;
@@ -32,20 +37,20 @@ header {
       &::after {
         position: absolute;
         content: '';
-        width: 30px;
-        height: 3px;
+        width: $bar-width;
+        height: $bar-height;
         left: 0;
         border-radius: 2px;
         background-color: variables.$alternate-colour;
       }
 
       &::before {
-        top: -6px;
+        top: $bar-height * -2;
         transition: transform 250ms variables.$easing;
       }
 
       &::after {
-        bottom: -6px;
+        bottom: $bar-height * -2;
         transition: transform 250ms variables.$easing;
       }
     }
