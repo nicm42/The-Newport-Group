@@ -1,9 +1,18 @@
 @use '../general/variables';
 @use '../general/mixins';
 
-header {
+$bar-width: 30px;
+$bar-height: 3px;
+$menu-width: $bar-width + 10;
+$menu-height: 30px;
+
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: $menu-height auto;
+  gap: 0.5em;
   height: 100vh;
-  padding-top: 1em;
+  padding: 1em;
   background-color: variables.$secondary-colour;
   background-image: url(../imgs/header.jpg);
   background-position: center;
@@ -11,18 +20,27 @@ header {
   background-repeat: no-repeat;
   background-attachment: fixed;
 
-  nav {
-    $bar-width: 30px;
-    $bar-height: 3px;
-    $menu-width: $bar-width + 10;
-    $menu-height: 30px;
+  &__title {
+    grid-row: 2;
+    grid-column: 1 / -1;
 
+    @include mixins.breakpoint-up(medium) {
+      grid-row: 1;
+      grid-column: 2;
+    }
+  }
+
+  &__lightdark {
+    grid-column: 3;
+  }
+
+  nav {
     .menu-toggle {
       display: grid;
       place-content: center;
       width: $menu-width;
       height: $menu-height;
-      margin-left: 1em;
+      //margin-left: 1em;
       cursor: pointer;
     }
     .menu {
@@ -76,6 +94,7 @@ header {
 
     ul {
       list-style-type: none;
+      display: none;
     }
 
     li {
@@ -90,6 +109,7 @@ header {
     place-content: center;
     font-size: 1.5rem;
     color: variables.$alternate-colour;
+    line-height: 1;
 
     @include mixins.breakpoint-up(medium) {
       font-size: 2rem;
@@ -97,9 +117,6 @@ header {
   }
 
   .las {
-    position: absolute;
-    top: 0.5em;
-    right: 0.5em;
     color: variables.$alternate-colour;
     font-size: 1.5rem;
     cursor: pointer;
