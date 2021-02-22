@@ -32,6 +32,7 @@ $menu-height: 30px;
 
   &__lightdark {
     grid-column: 3;
+    z-index: 2;
   }
 
   nav {
@@ -49,6 +50,7 @@ $menu-height: 30px;
       height: $bar-height;
       border-radius: 2px;
       background-color: variables.$alternate-colour;
+      z-index: 2;
       transition: background-color 100ms variables.$easing 150ms;
 
       &::before,
@@ -92,14 +94,36 @@ $menu-height: 30px;
       }
     }
 
-    ul {
+    .menu-links {
+      position: absolute;
+      top: 5vw;
+      left: 5vw;
+      right: 5vw;
+      margin: 0 auto;
+      border-radius: variables.$border-radius;
+      background-color: variables.$secondary-colour;
+      opacity: 0;
+      visibility: hidden;
       list-style-type: none;
-      display: none;
+      transition: opacity variables.$transition-time variables.$easing,
+        visibility 0ms variables.$easing variables.$transition-time;
+
+      &.show {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0ms;
+      }
+      //As explained at https://greywyvern.com/?post=337
+      //the visibility delay on menu-links means it'll fade out before it's hidden
+      //and the delay on show means it'll become visible before it's faded in
     }
 
     li {
+      padding: 1em;
+      font-size: 1.25rem;
+
       a {
-        color: variables.$primary-colour;
+        color: variables.$alternate-colour;
       }
     }
   }
