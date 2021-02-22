@@ -28,7 +28,7 @@
     width: 15em;
     max-width: calc(100% - 2em);
     height: 20em;
-    border-radius: 0.25em;
+    border-radius: variables.$border-radius;
     box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.25);
     transform: translateY(-50%);
     opacity: 0;
