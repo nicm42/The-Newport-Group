@@ -10,3 +10,9 @@ $easing: ease-in-out;
 
 //Sizing
 $border-radius: 0.25em;
+
+@media (prefers-color-scheme: dark) {
+  $primary-color: white;
+  $alternate-color: black;
+  $secondary-color: #90daf1;
+}
