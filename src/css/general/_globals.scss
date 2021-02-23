@@ -1,9 +1,14 @@
 @use 'variables';
+@use '../general/mixins';
 
 body {
   font-family: 'Montserrat', sans-serif;
   color: variables.$primary-colour;
   overflow-x: hidden;
+
+  @include mixins.breakpoint-up(large) {
+    margin-top: 3em; //1em = height of text in nav, 1em = padding top, 1em = padding bottom TODO need better way of doing this
+  }
 }
 
 a {
