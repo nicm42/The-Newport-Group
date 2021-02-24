@@ -28,7 +28,7 @@
     max-width: calc(100% - 2em);
     height: 20em;
     border-radius: var(--border-radius);
-    box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.25);
+    box-shadow: var(--box-shadow);
     transform: translateY(-50%);
     opacity: 0;
     transition: transform var(--transition-time) var(--easing),
@@ -83,13 +83,13 @@
     border-radius: var(--border-radius);
     background-color: var(--secondary-colour);
     color: var(--alternate-colour);
-    box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.25);
+    box-shadow: var(--box-shadow);
     cursor: pointer;
 
     &::after {
       position: absolute;
       content: '';
-      background-color: var(--alternate-colour);
+      background-color: var(--highlight);
       height: 125%;
       width: 1em;
       left: -20%;
