@@ -2,7 +2,7 @@
 @use '../general/mixins';
 
 .info {
-  margin-top: 1em;
+  background-color: variables.$alternate-colour;
 
   @include mixins.breakpoint-up(medium) {
     padding: 2em;

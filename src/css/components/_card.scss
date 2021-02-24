@@ -2,8 +2,8 @@
 @use '../general/mixins';
 
 .cards {
-  margin-top: 2em;
   margin-bottom: -5vw;
+  padding-top: 2em;
   padding-bottom: calc(5vw + 1em);
   display: flex;
   flex-direction: column;
