@@ -105,6 +105,7 @@ $menu-height: 30px;
       left: 5vw;
       right: 5vw;
       margin: 0 auto;
+      padding: 0;
       border-radius: variables.$border-radius;
       background-color: variables.$secondary-colour;
       opacity: 0;
@@ -139,6 +140,10 @@ $menu-height: 30px;
     li {
       padding: 1em;
       font-size: 1.25rem;
+
+      &.active {
+        background-color: variables.$parallax-colour;
+      }
 
       a {
         color: variables.$alternate-colour;
