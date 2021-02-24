@@ -1,4 +1,4 @@
-@use '../general/mixins';
+@use '../general' as g;
 
 $bar-width: 30px;
 $bar-height: 3px;
@@ -23,7 +23,7 @@ $menu-height: 30px;
     grid-row: 2;
     grid-column: 1 / -1;
 
-    @include mixins.breakpoint-up(medium) {
+    @include g.breakpoint-up(medium) {
       grid-row: 1;
       grid-column: 2;
     }
@@ -44,7 +44,7 @@ $menu-height: 30px;
       cursor: pointer;
       z-index: 2;
 
-      @include mixins.breakpoint-up(large) {
+      @include g.breakpoint-up(large) {
         display: none;
       }
     }
@@ -122,7 +122,7 @@ $menu-height: 30px;
       //the visibility delay on menu-links means it'll fade out before it's hidden
       //and the delay on show means it'll become visible before it's faded in
 
-      @include mixins.breakpoint-up(large) {
+      @include g.breakpoint-up(large) {
         position: fixed;
         display: flex;
         justify-content: space-around;
@@ -148,7 +148,7 @@ $menu-height: 30px;
         color: var(--alternate-colour);
       }
 
-      @include mixins.breakpoint-up(large) {
+      @include g.breakpoint-up(large) {
         font-size: 1em;
         line-height: 1;
       }
@@ -163,7 +163,7 @@ $menu-height: 30px;
     text-align: center;
     line-height: 1;
 
-    @include mixins.breakpoint-up(medium) {
+    @include g.breakpoint-up(medium) {
       font-size: 2rem;
     }
   }

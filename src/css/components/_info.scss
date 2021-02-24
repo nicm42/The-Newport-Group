@@ -1,9 +1,9 @@
-@use '../general/mixins';
+@use '../general' as g;
 
 .info {
   background-color: var(--alternate-colour);
 
-  @include mixins.breakpoint-up(medium) {
+  @include g.breakpoint-up(medium) {
     padding: 2em;
   }
 
@@ -14,7 +14,7 @@
     transition: transform var(--transition-time) var(--easing),
       opacity var(--transition-time) var(--easing);
 
-    @include mixins.breakpoint-up(medium) {
+    @include g.breakpoint-up(medium) {
       display: flex;
       justify-content: space-between;
       padding-left: 0;
@@ -32,7 +32,7 @@
     margin-left: 0.5em;
     font-size: 1.25rem;
 
-    @include mixins.breakpoint-up(medium) {
+    @include g.breakpoint-up(medium) {
       position: relative;
       display: grid;
       place-content: center;
@@ -96,7 +96,7 @@
     }
 
     &::after {
-      @include mixins.breakpoint-up(large) {
+      @include g.breakpoint-up(large) {
         position: absolute;
         content: '';
         top: 0;

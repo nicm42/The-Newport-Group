@@ -1,5 +1,4 @@
-@use '../general/variables';
-@use '../general/mixins';
+@use '../general' as g;
 
 .cards {
   margin-bottom: -5vw;
@@ -12,7 +11,7 @@
   background-color: var(--alternate-colour);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0% 100%);
 
-  @include mixins.breakpoint-up(large) {
+  @include g.breakpoint-up(large) {
     flex-direction: row;
     justify-content: space-around;
     gap: 0;
@@ -41,7 +40,7 @@
     }
 
     //If they're below each other, but have space offset them a bit
-    @include mixins.breakpoint-up(medium) {
+    @include g.breakpoint-up(medium) {
       &:nth-of-type(2).slide {
         transform: translateY(0) translateX(2em);
       }
@@ -52,7 +51,7 @@
     }
 
     //If they're next to each other, then also make them diagonal
-    @include mixins.breakpoint-up(large) {
+    @include g.breakpoint-up(large) {
       &:first-of-type.slide {
         transform: translateY(2em) translateX(0);
       }
@@ -110,7 +109,7 @@
     &:hover,
     &:focus {
       background-color: adjust-color(
-        $color: variables.$secondary-colour,
+        $color: g.$secondary-colour,
         $lightness: 10%
       );
     }

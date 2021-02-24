@@ -1,4 +1,4 @@
-@use '../general/mixins';
+@use '../general' as g;
 
 body {
   background-color: var(--secondary-colour);
@@ -6,7 +6,7 @@ body {
   color: var(--primary-colour);
   overflow-x: hidden;
 
-  @include mixins.breakpoint-up(large) {
+  @include g.breakpoint-up(large) {
     margin-top: 3em; //1em = height of text in nav, 1em = padding top, 1em = padding bottom TODO need better way of doing this
   }
 }
