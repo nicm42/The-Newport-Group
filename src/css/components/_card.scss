@@ -9,7 +9,7 @@
   flex-direction: column;
   align-items: center;
   gap: 2em;
-  background-color: variables.$alternate-colour;
+  background-color: var(--alternate-colour);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0% 100%);
 
   @include mixins.breakpoint-up(large) {
@@ -28,12 +28,12 @@
     width: 15em;
     max-width: calc(100% - 2em);
     height: 20em;
-    border-radius: variables.$border-radius;
+    border-radius: var(--border-radius);
     box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.25);
     transform: translateY(-50%);
     opacity: 0;
-    transition: transform variables.$transition-time variables.$easing,
-      opacity variables.$transition-time variables.$easing;
+    transition: transform var(--transition-time) var(--easing),
+      opacity var(--transition-time) var(--easing);
 
     &.slide {
       transform: translateY(0);
@@ -81,24 +81,24 @@
     position: relative;
     border: none;
     padding: 0.5em 1em;
-    border-radius: 0.25em;
-    background-color: variables.$secondary-colour;
-    color: variables.$alternate-colour;
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-colour);
+    color: var(--alternate-colour);
     box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.25);
     cursor: pointer;
 
     &::after {
       position: absolute;
       content: '';
-      background-color: variables.$alternate-colour;
+      background-color: var(--alternate-colour);
       height: 125%;
       width: 1em;
       left: -20%;
       top: -10%;
       opacity: 0.25;
       transform: rotate(35deg);
-      transition: left variables.$transition-time variables.$easing,
-        opacity 100ms variables.$easing variables.$transition-time;
+      transition: left var(--transition-time) var(--easing),
+        opacity 100ms var(--easing) var(--transition-time);
     }
 
     &:hover::after,

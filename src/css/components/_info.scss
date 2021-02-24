@@ -1,8 +1,7 @@
-@use '../general/variables';
 @use '../general/mixins';
 
 .info {
-  background-color: variables.$alternate-colour;
+  background-color: var(--alternate-colour);
 
   @include mixins.breakpoint-up(medium) {
     padding: 2em;
@@ -12,8 +11,8 @@
     padding-left: 0.5em;
     transform: translateY(-50%);
     opacity: 0;
-    transition: transform variables.$transition-time variables.$easing,
-      opacity variables.$transition-time variables.$easing;
+    transition: transform var(--transition-time) var(--easing),
+      opacity var(--transition-time) var(--easing);
 
     @include mixins.breakpoint-up(medium) {
       display: flex;
@@ -38,8 +37,8 @@
       display: grid;
       place-content: center;
       padding: 0.25em 0.5em;
-      border-top: 1px solid variables.$parallax-colour;
-      border-bottom: 1px solid variables.$parallax-colour;
+      border-top: 1px solid var(--parallax-colour);
+      border-bottom: 1px solid var(--parallax-colour);
       text-align: center;
       cursor: pointer;
 
@@ -49,8 +48,8 @@
         content: '';
         width: 1px;
         height: 0;
-        background-color: variables.$parallax-colour;
-        transition: height variables.$transition-time variables.$easing;
+        background-color: var(--parallax-colour);
+        transition: height var(--transition-time) var(--easing);
       }
 
       &::before {
@@ -76,11 +75,11 @@
     }
 
     &::marker {
-      color: variables.$parallax-colour;
+      color: var(--parallax-colour);
     }
 
     a {
-      color: variables.$primary-colour;
+      color: var(--primary-colour);
     }
   }
 
@@ -88,7 +87,8 @@
     position: relative;
     transform: translateX(50%);
     opacity: 0;
-    transition: transform 250ms ease-in-out, opacity 250ms ease-in-out;
+    transition: transform var(--transition-short) var(--easing),
+      opacity var(--transition-short) var(--easing);
 
     &.slide {
       transform: translateX(0);
@@ -104,7 +104,7 @@
         bottom: 0;
         height: 100%;
         width: calc(100% - 50ch);
-        background: variables.$alternate-colour;
+        background: var(--alternate-colour);
         background-image: url(../imgs/building.jpg);
         background-position: center;
         background-size: cover;

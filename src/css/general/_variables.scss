@@ -6,13 +6,33 @@ $parallax-colour: #ff9862;
 
 //Transitions
 $transition-time: 500ms;
+$transition-short: $transition-time / 2;
 $easing: ease-in-out;
 
 //Sizing
 $border-radius: 0.25em;
 
+:root {
+  --primary-colour: #{$primary-colour};
+  --alternate-colour: #{$alternate-colour};
+  --secondary-colour: #{$secondary-colour};
+  --parallax-colour: #{$parallax-colour};
+
+  --transition-time: #{$transition-time};
+  --transition-short: #{$transition-short};
+  --easing: #{$easing};
+
+  --border-radius: #{$border-radius};
+}
+
 @media (prefers-color-scheme: dark) {
   $primary-color: white;
   $alternate-color: black;
   $secondary-color: #90daf1;
+
+  :root {
+    --primary-colour: #{$primary-colour};
+    --alternate-colour: #{$alternate-colour};
+    --secondary-colour: #{$secondary-colour};
+  }
 }

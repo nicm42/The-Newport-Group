@@ -1,11 +1,10 @@
-@use '../general/variables';
 @use '../general/mixins';
 
 .footer {
   overflow-x: hidden;
   padding-top: calc(5vw + 1em);
-  background-color: variables.$secondary-colour;
-  color: variables.$alternate-colour;
+  background-color: var(--secondary-colour);
+  color: var(--alternate-colour);
 
   @include mixins.breakpoint-up(large) {
     display: flex;
@@ -19,8 +18,8 @@
     padding-bottom: 2em;
     transform: translateX(-50%);
     opacity: 0;
-    transition: transform variables.$transition-time variables.$easing,
-      opacity variables.$transition-time variables.$easing;
+    transition: transform var(--transition-time) var(--easing),
+      opacity var(--transition-time) var(--easing);
 
     @include mixins.breakpoint-up(medium) {
       flex-direction: row-reverse;
@@ -46,8 +45,8 @@
   &__contactmap {
     transform: translateX(50%);
     opacity: 0;
-    transition: transform variables.$transition-time variables.$easing,
-      opacity variables.$transition-time variables.$easing;
+    transition: transform var(--transition-time) var(--easing),
+      opacity var(--transition-time) var(--easing);
 
     @include mixins.breakpoint-up(large) {
       display: flex;

@@ -1,10 +1,9 @@
-@use 'variables';
 @use '../general/mixins';
 
 body {
-  background-color: variables.$secondary-colour;
+  background-color: var(--secondary-colour);
   font-family: 'Montserrat', sans-serif;
-  color: variables.$primary-colour;
+  color: var(--primary-colour);
   overflow-x: hidden;
 
   @include mixins.breakpoint-up(large) {
@@ -13,7 +12,7 @@ body {
 }
 
 a {
-  color: variables.$secondary-colour;
+  color: var(--secondary-colour);
   text-decoration: none;
 
   &:hover,
