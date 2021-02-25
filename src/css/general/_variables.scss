@@ -1,10 +1,10 @@
 //Colours
-$dark-colour: black;
-$light-colour: white;
+$text-colour: black;
+$background-colour: white;
 $secondary-colour: #196abb;
 $alternate-secondary-colour: #90daf1;
 $parallax-colour: #ff9862;
-$highlight: $light-colour;
+$highlight: $background-colour;
 
 $box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.25);
 $alternate-box-shadow: 0.25em 0.25em 0.25em rgba(255, 255, 255, 0.25);
@@ -18,8 +18,8 @@ $easing: ease-in-out;
 $border-radius: 0.25em;
 
 :root {
-  --primary-colour: #{$light-colour};
-  --alternate-colour: #{$dark-colour};
+  --primary-colour: #{$text-colour};
+  --alternate-colour: #{$background-colour};
   --secondary-colour: #{$secondary-colour};
   --parallax-colour: #{$parallax-colour};
   --box-shadow: #{$box-shadow};
@@ -34,16 +34,16 @@ $border-radius: 0.25em;
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary-colour: #{$dark-colour};
-    --alternate-colour: #{$light-colour};
+    --primary-colour: #{$background-colour};
+    --alternate-colour: #{$text-colour};
     --secondary-colour: #{$alternate-secondary-colour};
     --box-shadow: #{alternate-box-shadow};
   }
 }
 
 .dark {
-  --primary-colour: #{$dark-colour};
-  --alternate-colour: #{$light-colour};
+  --primary-colour: #{$background-colour};
+  --alternate-colour: #{$text-colour};
   --secondary-colour: #{$alternate-secondary-colour};
   --box-shadow: #{alternate-box-shadow};
 }
