@@ -16,20 +16,11 @@
     flex-direction: column;
     align-items: center;
     padding-bottom: 2em;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: transform var(--transition-time) var(--easing),
-      opacity var(--transition-time) var(--easing);
 
     @include g.breakpoint-up(medium) {
       flex-direction: row-reverse;
       justify-content: flex-end;
       align-items: flex-start;
-    }
-
-    &.slide {
-      transform: translateX(0);
-      opacity: 1;
     }
   }
 
@@ -43,19 +34,9 @@
   }
 
   &__contactmap {
-    transform: translateX(50%);
-    opacity: 0;
-    transition: transform var(--transition-time) var(--easing),
-      opacity var(--transition-time) var(--easing);
-
     @include g.breakpoint-up(large) {
       display: flex;
       justify-content: flex-end;
-    }
-
-    &.slide {
-      transform: translateX(0);
-      opacity: 1;
     }
   }
 

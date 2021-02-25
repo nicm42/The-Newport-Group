@@ -26,7 +26,4 @@ export default function observer() {
   cards.forEach((card) => {
     slideIn.observe(card);
   });
-
-  slideIn.observe(owner);
-  slideIn.observe(map);
 }
