@@ -1,3 +1,9 @@
+@use '../general' as g;
+
 .container {
   padding: 1em;
+
+  @include g.breakpoint-up(large) {
+    padding: 2em;
+  }
 }
