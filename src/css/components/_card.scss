@@ -27,8 +27,9 @@
     width: 15em;
     max-width: calc(100% - 2em);
     height: 20em;
+    border: 1px solid var(--secondary-colour);
     border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
+    //box-shadow: var(--box-shadow);
     transform: translateY(-50%);
     opacity: 0;
     transition: transform var(--transition-time) var(--easing),
@@ -80,16 +81,18 @@
     position: relative;
     border: none;
     padding: 0.5em 1em;
+    border: 2px solid var(--parallax-colour);
     border-radius: var(--border-radius);
-    background-color: var(--secondary-colour);
-    color: var(--alternate-colour);
+    background-color: var(--alternate-colour);
+    color: var(--primary-colour);
     box-shadow: var(--box-shadow);
     cursor: pointer;
+    overflow: hidden;
 
     &::after {
       position: absolute;
       content: '';
-      background-color: var(--highlight);
+      background-color: white;
       height: 125%;
       width: 1em;
       left: -20%;
@@ -108,10 +111,7 @@
 
     &:hover,
     &:focus {
-      background-color: adjust-color(
-        $color: g.$secondary-colour,
-        $lightness: 10%
-      );
+      background-color: var(--parallax-colour);
     }
 
     &:active {

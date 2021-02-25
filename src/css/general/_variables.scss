@@ -1,13 +1,12 @@
 //Colours
-$text-colour: black;
+$text-colour: #333333;
 $background-colour: white;
 $secondary-colour: #196abb;
 $alternate-secondary-colour: #90daf1;
 $parallax-colour: #ff9862;
-$highlight: $background-colour;
 
 $box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.25);
-$alternate-box-shadow: 0.25em 0.25em 0.25em rgba(255, 255, 255, 0.25);
+$dark-box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.75);
 
 //Transitions
 $transition-time: 500ms;
@@ -23,7 +22,6 @@ $border-radius: 0.25em;
   --secondary-colour: #{$secondary-colour};
   --parallax-colour: #{$parallax-colour};
   --box-shadow: #{$box-shadow};
-  --highlight: #{$highlight};
 
   --transition-time: #{$transition-time};
   --transition-short: #{$transition-short};
@@ -37,7 +35,7 @@ $border-radius: 0.25em;
     --primary-colour: #{$background-colour};
     --alternate-colour: #{$text-colour};
     --secondary-colour: #{$alternate-secondary-colour};
-    --box-shadow: #{alternate-box-shadow};
+    --box-shadow: #{$dark-box-shadow};
   }
 }
 
@@ -45,5 +43,5 @@ $border-radius: 0.25em;
   --primary-colour: #{$background-colour};
   --alternate-colour: #{$text-colour};
   --secondary-colour: #{$alternate-secondary-colour};
-  --box-shadow: #{alternate-box-shadow};
+  --box-shadow: #{$dark-box-shadow};
 }
