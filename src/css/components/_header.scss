@@ -32,6 +32,7 @@ $menu-height: 30px;
   &__lightdark {
     grid-column: 3;
     z-index: 2;
+    cursor: pointer;
   }
 
   nav {
@@ -171,7 +172,6 @@ $menu-height: 30px;
   .las {
     color: var(--alternate-colour);
     font-size: 1.5rem;
-    cursor: pointer;
     transition: color 250ms ease-in-out;
 
     &:hover,
