@@ -2,8 +2,6 @@ export default function observer() {
   const info = document.querySelector('.info__text');
   const list = document.querySelector('.info__list');
   const cards = document.querySelectorAll('.cards__card');
-  const owner = document.querySelector('.footer__owner');
-  const map = document.querySelector('.footer__contactmap');
 
   const observerOptions = {
     threshold: 0.5,
