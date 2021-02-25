@@ -3,10 +3,6 @@
 .info {
   background-color: var(--alternate-colour);
 
-  @include g.breakpoint-up(medium) {
-    padding: 2em;
-  }
-
   &__list {
     padding-left: 0.5em;
     transform: translateY(-50%);
@@ -103,7 +99,7 @@
         right: 0;
         bottom: 0;
         height: 100%;
-        width: calc(100% - 50ch);
+        width: calc(95% - 50ch);
         background: var(--alternate-colour);
         background-image: url(../imgs/building.jpg);
         background-position: center;
