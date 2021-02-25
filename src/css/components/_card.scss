@@ -26,10 +26,7 @@
   &__card {
     width: 15em;
     max-width: calc(100% - 2em);
-    height: 20em;
-    border: 1px solid var(--secondary-colour);
-    border-radius: var(--border-radius);
-    //box-shadow: var(--box-shadow);
+    height: calc(100% - 2em);
     transform: translateY(-50%);
     opacity: 0;
     transition: transform var(--transition-time) var(--easing),
@@ -68,11 +65,15 @@
   }
 
   &__image {
-    height: 50%;
+    width: calc(100% - 0.5em);
+    height: 75%;
+    margin: 0.25em;
   }
 
   &__text {
-    height: 50%;
+    position: relative;
+    top: -0.75em;
+    height: 25%;
     display: grid;
     place-content: center;
   }
@@ -81,7 +82,7 @@
     position: relative;
     border: none;
     padding: 0.5em 1em;
-    border: 2px solid var(--parallax-colour);
+    border: 2px solid var(--secondary-colour);
     border-radius: var(--border-radius);
     background-color: var(--alternate-colour);
     color: var(--primary-colour);
@@ -111,12 +112,8 @@
 
     &:hover,
     &:focus {
-      background-color: var(--parallax-colour);
-    }
-
-    &:active {
-      transform: translateX(0.25em) translateY(0.25em);
-      box-shadow: unset;
+      background-color: var(--secondary-colour);
+      color: var(--alternate-colour);
     }
   }
 }
