@@ -68,6 +68,7 @@
     width: calc(100% - 0.5em);
     height: 75%;
     margin: 0.25em;
+    border-radius: var(--border-radius);
   }
 
   &__text {
