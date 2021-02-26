@@ -33,6 +33,11 @@ $menu-height: 30px;
     grid-column: 3;
     z-index: 2;
     cursor: pointer;
+    @include g.breakpoint-up(large) {
+      position: absolute;
+      top: 0.75em;
+      right: 1em;
+    }
   }
 
   nav {
@@ -129,7 +134,7 @@ $menu-height: 30px;
         justify-content: space-around;
         top: 0;
         left: 0;
-        width: 100%;
+        width: calc(100% - 2em);
         border-radius: 0;
         visibility: visible;
         opacity: 1;
