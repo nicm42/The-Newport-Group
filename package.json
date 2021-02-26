@@ -18,22 +18,14 @@
   },
   "homepage": "https://github.com/nicm42/The-Newport-Group#readme",
   "devDependencies": {
-    "@babel/core": "^7.12.16",
-    "@parcel/optimizer-cssnano": "^2.0.0-nightly.599",
-    "@parcel/optimizer-htmlnano": "^2.0.0-nightly.599",
-    "@parcel/packager-css": "^2.0.0-nightly.599",
-    "@parcel/packager-html": "^2.0.0-nightly.599",
-    "@parcel/transformer-css": "^2.0.0-nightly.599",
-    "@parcel/transformer-html": "^2.0.0-nightly.599",
-    "@parcel/transformer-postcss": "^2.0.0-nightly.599",
-    "@parcel/transformer-posthtml": "^2.0.0-nightly.599",
-    "@parcel/transformer-sass": "^2.0.0-nightly.599",
-    "parcel": "^2.0.0-nightly.597",
-    "parcel-bundler": "^1.12.4"
+    "@babel/core": "^7.13.1",
+    "parcel-bundler": "^1.12.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "sass": "^1.32.8"
   },
   "dependencies": {
-    "autoprefixer": "^10.2.4",
-    "postcss": "^8.2.6",
+    "autoprefixer": "^9.0.0",
     "postcss-modules": "^4.0.0"
   }
 }

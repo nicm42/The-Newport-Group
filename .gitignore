@@ -11,4 +11,5 @@ Figma/
 .eslintrc.json
 .postcssrc
 .prettierrc
+package-lock.json
 todo
