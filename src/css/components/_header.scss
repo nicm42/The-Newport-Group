@@ -38,6 +38,11 @@ $menu-height: 30px;
       @include g.breakpoint-up(large) {
         display: none;
       }
+
+      &:focus,
+      &:hover {
+        border: 2px solid var(--alternate-colour);
+      }
     }
     .menu {
       position: relative;
