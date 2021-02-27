@@ -1,4 +1,6 @@
 import React from 'react';
+import caleb from '/imgs/caleb.jpg';
+import map from '/imgs/map.png';
 
 export default class Footer extends React.Component {
   render() {
@@ -7,7 +9,7 @@ export default class Footer extends React.Component {
         <div className="footer__owner">
           <p>Owner: Caleb Nichol</p>
           <img
-            src="../imgs/caleb.jpg"
+            src={caleb}
             alt="Owner: Caleb Nichol"
             className="footer__photo"
             loading="lazy"
@@ -38,7 +40,7 @@ export default class Footer extends React.Component {
           </div>
 
           <img
-            src="./imgs/map.png"
+            src={map}
             alt="Map of Newport Beach"
             className="footer__map"
             loading="lazy"
