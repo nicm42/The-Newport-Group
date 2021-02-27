@@ -1,7 +1,7 @@
 @use '../general' as g;
 
 body {
-  margin-top: 3em; //1em = height of text in nav, 1em = padding top, 1em = padding bottom TODO need better way of doing this
+  margin-top: 3em; //1em = height of text in nav, 1em = padding top, 1em = padding bottom TODO need better way of doing this - maybe using JS?
   background-color: var(--secondary-colour);
   font-family: 'Montserrat', sans-serif;
   color: var(--primary-colour);

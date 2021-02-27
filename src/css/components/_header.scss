@@ -16,7 +16,7 @@ $menu-height: 30px;
   background-attachment: fixed;
 
   &__lightdark {
-    position: fixed;
+    position: absolute;
     top: 0.5em;
     right: 1em;
     z-index: 2;
@@ -24,8 +24,16 @@ $menu-height: 30px;
   }
 
   nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 3em;
+    background-color: var(--secondary-colour);
+    z-index: 1;
+
     .menu-toggle {
-      position: fixed;
+      position: relative;
       top: 0.5em;
       left: 1em;
       display: grid;
