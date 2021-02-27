@@ -1,17 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import LightDark from './LightDark';
 
 export default function Nav() {
-  const toggleMenu = () => {
-    console.log('Toggling');
-  };
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => setIsOpen(!isOpen);
 
   return (
     <nav>
-      <div className="menu-toggle" onClick={toggleMenu}>
-        <span className="menu"></span>
+      <div className="menu-toggle" onClick={toggle}>
+        <span className={isOpen ? 'menu cross' : 'menu'}></span>
       </div>
-      <ul className="menu-links">
+      <ul className={isOpen ? 'menu-links show' : 'menu-links'}>
         <li className="menu-link">
           <a href="#">Home</a>
         </li>
