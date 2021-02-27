@@ -1,4 +1,5 @@
 import React from 'react';
+import LightDark from './LightDark';
 
 export default function Nav() {
   const toggleMenu = () => {
@@ -24,10 +25,7 @@ export default function Nav() {
           <a href="#">Rent an office</a>
         </li>
       </ul>
-      <div className="header__lightdark">
-        <i className="las la-sun" title="Light mode"></i>
-        <i className="las la-moon" title="Dark mode"></i>
-      </div>
+      <LightDark />
     </nav>
   );
 }
