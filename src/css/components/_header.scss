@@ -112,19 +112,16 @@ $menu-height: 30px;
       border-radius: var(--border-radius);
       background-color: var(--secondary-colour);
       opacity: 0;
-      visibility: hidden;
+      transform: scale(0);
+      transform-origin: top left;
       list-style-type: none;
       transition: opacity var(--transition-time) var(--easing),
-        visibility 0ms var(--easing) var(--transition-time);
+        transform var(--transition-time) var(--easing);
 
       &.show {
         opacity: 1;
-        visibility: visible;
-        transition-delay: 0ms;
+        transform: scale(1);
       }
-      //As explained at https://greywyvern.com/?post=337
-      //the visibility delay on menu-links means it'll fade out before it's hidden
-      //and the delay on show means it'll become visible before it's faded in
 
       @include g.breakpoint-up(large) {
         position: fixed;
