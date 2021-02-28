@@ -1,0 +1,142 @@
+@use '../general' as g;
+
+$bar-width: 30px;
+$bar-height: 3px;
+$menu-width: $bar-width + 10;
+$menu-height: 30px;
+
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 3em;
+  background-color: var(--secondary-colour);
+  z-index: 1;
+
+  .menu-toggle {
+    position: relative;
+    top: 0.5em;
+    left: 1em;
+    display: grid;
+    place-content: center;
+    width: $menu-width;
+    height: $menu-height;
+    cursor: pointer;
+    z-index: 2;
+
+    @include g.breakpoint-up(large) {
+      display: none;
+    }
+
+    &:focus,
+    &:hover {
+      border: 2px solid var(--alternate-colour);
+    }
+  }
+  .menu {
+    position: relative;
+    width: $bar-width;
+    height: $bar-height;
+    border-radius: 2px;
+    background-color: var(--alternate-colour);
+    z-index: 2;
+    transition: background-color 100ms var(--easing) 150ms;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      width: $bar-width;
+      height: $bar-height;
+      left: 0;
+      border-radius: 2px;
+      background-color: var(--alternate-colour);
+    }
+
+    &::before {
+      top: $bar-height * -2;
+      transition: transform var(--transition-short) var(--easing);
+    }
+
+    &::after {
+      bottom: $bar-height * -2;
+      transition: transform var(--transition-short) var(--easing);
+    }
+  }
+
+  .cross {
+    &.menu {
+      background-color: transparent;
+      transition: none;
+    }
+
+    &.menu::before {
+      top: 0;
+      transform: rotate(-45deg);
+      background-color: var(--alternate-colour);
+    }
+
+    &.menu::after {
+      bottom: 0;
+      transform: rotate(45deg);
+      background-color: var(--alternate-colour);
+    }
+  }
+
+  .menu-links {
+    position: absolute;
+    top: 5vw;
+    left: 5vw;
+    right: 5vw;
+    margin: 0 auto;
+    padding: 0;
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-colour);
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: top left;
+    list-style-type: none;
+    transition: opacity var(--transition-time) var(--easing),
+      transform var(--transition-time) var(--easing);
+
+    &.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    @include g.breakpoint-up(large) {
+      position: fixed;
+      display: flex;
+      justify-content: space-around;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding-right: 2em;
+      border-radius: 0;
+      transform: scale(1);
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+
+  li {
+    padding: 1em;
+    font-size: 1.25rem;
+    color: var(--alternate-colour);
+
+    &.active {
+      background-color: var(--parallax-colour);
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+
+    @include g.breakpoint-up(large) {
+      font-size: 1em;
+      line-height: 1;
+    }
+  }
+}
