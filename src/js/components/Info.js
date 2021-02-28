@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import onScreen from '../onScreen';
 
 export default function Info() {
+  const textRef = useRef();
+  const listRef = useRef();
+  const textIsOnScreen = onScreen(textRef);
+  const listIsOnScreen = onScreen(listRef);
+
   return (
     <section className="info container">
-      <ul className="info__list">
+      <ul
+        ref={listRef}
+        className={listIsOnScreen ? 'info__list slide' : 'info__list'}
+      >
         <li>
           <a href="#">Real Estate</a>
         </li>
@@ -14,7 +23,10 @@ export default function Info() {
           <a href="#">Homes and Offices</a>
         </li>
       </ul>
-      <div className="info__text">
+      <div
+        ref={textRef}
+        className={textIsOnScreen ? 'info__text slide' : 'info__text'}
+      >
         <p>
           The Newport Group is the foremost Real Estate Agency in the O.C.
           Looking to <a href="#">buy or sell a luxury home</a> in Newport Beach?
