@@ -11,7 +11,7 @@ export default function Nav() {
         <span className={isOpen ? 'menu cross' : 'menu'}></span>
       </div>
       <ul className={isOpen ? 'menu-links show' : 'menu-links'}>
-        <li className="menu-link">
+        <li className="menu-link active">
           <a href="#">Home</a>
         </li>
         <li className="menu-link">

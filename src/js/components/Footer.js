@@ -4,7 +4,7 @@ import map from '/imgs/map.png';
 
 export default function Footer() {
   return (
-    <>
+    <footer className="footer container">
       <div className="footer__owner">
         <p>Owner: Caleb Nichol</p>
         <img
@@ -45,6 +45,6 @@ export default function Footer() {
           loading="lazy"
         />
       </div>
-    </>
+    </footer>
   );
 }
