@@ -1,13 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useLayoutEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import LightDark from './LightDark';
 
 export default function Nav() {
+  //Set the nav to open or closed on mobile
+  //(won't do anything on desktop as menu-toggle is hidden)
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
+  //Find height of nav and set the margin-top on body to be that
+  const targetRef = useRef();
+  useLayoutEffect(() => {
+    document.body.style.marginTop = targetRef.current.offsetHeight + 'px';
+  });
+
   return (
-    <nav>
+    <nav ref={targetRef}>
       <div className="menu-toggle" onClick={toggle}>
         <span className={isOpen ? 'menu cross' : 'menu'}></span>
       </div>
