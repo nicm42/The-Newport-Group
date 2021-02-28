@@ -2,6 +2,7 @@ node_modules/
 .cache/
 .parcel-cache/
 src/config.js
+
 dist/
 images/
 cypress/fixtures
@@ -13,5 +14,4 @@ Figma/
 .prettierrc
 package-lock.json
 todo
-
-src/index (copy).html
+src/_old

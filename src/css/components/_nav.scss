@@ -120,23 +120,26 @@ nav {
     }
   }
 
-  li {
+  a {
+    display: block;
     padding: 1em;
     font-size: 1.25rem;
     color: var(--alternate-colour);
 
-    &.active {
-      background-color: var(--parallax-colour);
-    }
-
     &:hover,
-    &:focus {
+    &:focus,
+    &:active {
       text-decoration: underline;
+      text-decoration-color: var(--alternate-colour);
     }
 
     @include g.breakpoint-up(large) {
       font-size: 1em;
       line-height: 1;
     }
+  }
+
+  .active {
+    background-color: var(--parallax-colour);
   }
 }

@@ -23,10 +23,10 @@ function App() {
     <Router>
       <Header />
       <Switch>
-        <Route path="/" exact component={Main} />
-        <Route path="/houses" exact component={Houses} />
-        <Route path="/buildings" exact component={Buildings} />
-        <Route path="/offices" exact component={Offices} />
+        <Route exact path="/" component={Main} />
+        <Route path="/houses" component={Houses} />
+        <Route path="/buildings" component={Buildings} />
+        <Route path="/offices" component={Offices} />
       </Switch>
       <Footer />
     </Router>
