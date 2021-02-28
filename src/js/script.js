@@ -8,6 +8,9 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
+import Houses from './components/Houses';
+import Buildings from './components/Buildings';
+import Offices from './components/Offices';
 
 //observer();
 //activeNav();
@@ -17,11 +20,16 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <>
+    <Router>
       <Header />
-      <Main />
+      <Switch>
+        <Route path="/" exact component={Main} />
+        <Route path="/houses" exact component={Houses} />
+        <Route path="/buildings" exact component={Buildings} />
+        <Route path="/offices" exact component={Offices} />
+      </Switch>
       <Footer />
-    </>
+    </Router>
   );
 }
 
