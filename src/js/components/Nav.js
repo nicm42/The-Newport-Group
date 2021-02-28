@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import LightDark from './LightDark';
 
 export default function Nav() {
@@ -11,18 +12,18 @@ export default function Nav() {
         <span className={isOpen ? 'menu cross' : 'menu'}></span>
       </div>
       <ul className={isOpen ? 'menu-links show' : 'menu-links'}>
-        <li className="menu-link active">
-          <a href="#">Home</a>
-        </li>
-        <li className="menu-link">
-          <a href="#">Buy or sell a house</a>
-        </li>
-        <li className="menu-link">
-          <a href="#">Build a house</a>
-        </li>
-        <li className="menu-link">
-          <a href="#">Rent an office</a>
-        </li>
+        <Link to="/">
+          <li className="menu-link active">Home</li>
+        </Link>
+        <Link to="/houses">
+          <li className="menu-link">Buy or sell a house</li>
+        </Link>
+        <Link to="/buildings">
+          <li className="menu-link">Build a house</li>
+        </Link>
+        <Link to="/offices">
+          <li className="menu-link">Rent an office</li>
+        </Link>
       </ul>
       <LightDark />
     </nav>

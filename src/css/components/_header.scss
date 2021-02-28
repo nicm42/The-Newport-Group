@@ -141,13 +141,15 @@ $menu-height: 30px;
     li {
       padding: 1em;
       font-size: 1.25rem;
+      color: var(--alternate-colour);
 
       &.active {
         background-color: var(--parallax-colour);
       }
 
-      a {
-        color: var(--alternate-colour);
+      &:hover,
+      &:focus {
+        text-decoration: underline;
       }
 
       @include g.breakpoint-up(large) {
