@@ -13,22 +13,22 @@ export default function Nav() {
       </div>
       <ul className={isOpen ? 'menu-links show' : 'menu-links'}>
         <li>
-          <NavLink exact to="/" activeClassName="active">
+          <NavLink exact to="/" activeClassName="active" onClick={toggle}>
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink to="/houses" activeClassName="active">
+          <NavLink to="/houses" activeClassName="active" onClick={toggle}>
             Buy or sell a house
           </NavLink>
         </li>
         <li>
-          <NavLink to="/buildings" activeClassName="active">
+          <NavLink to="/buildings" activeClassName="active" onClick={toggle}>
             Build a house
           </NavLink>
         </li>
         <li>
-          <NavLink to="/offices" activeClassName="active">
+          <NavLink to="/offices" activeClassName="active" onClick={toggle}>
             Rent an office
           </NavLink>
         </li>
