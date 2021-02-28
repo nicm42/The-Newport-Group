@@ -6,11 +6,11 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 //import activeNav from './activeNav.js';
 
 import Header from './components/Header';
-import Main from './components/Main';
-import Footer from './components/Footer';
+import Home from './components/Home';
 import Houses from './components/Houses';
 import Buildings from './components/Buildings';
 import Offices from './components/Offices';
+import Footer from './components/Footer';
 
 //observer();
 //activeNav();
@@ -23,7 +23,7 @@ function App() {
     <Router>
       <Header />
       <Switch>
-        <Route exact path="/" component={Main} />
+        <Route exact path="/" component={Home} />
         <Route path="/houses" component={Houses} />
         <Route path="/buildings" component={Buildings} />
         <Route path="/offices" component={Offices} />
