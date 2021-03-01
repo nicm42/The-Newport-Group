@@ -6,47 +6,34 @@ import construction from '/imgs/construction.jpg';
 import office from '/imgs/office.jpg';
 
 export default function Cards() {
-  const card1Ref = useRef();
-  const card2Ref = useRef();
-  const card3Ref = useRef();
-  const card1IsOnScreen = onScreen(card1Ref);
-  const card2IsOnScreen = onScreen(card2Ref);
-  const card3IsOnScreen = onScreen(card3Ref);
+  const cardRef = useRef();
+  const cardIsOnScreen = onScreen(cardRef);
+
+  const cards = [
+    { image: mansion, text: 'Buy or sell a house' },
+    { image: construction, text: 'Build a house' },
+    { image: office, text: 'Rent offices' },
+  ];
 
   return (
     <section className="cards container">
-      <div
-        ref={card1Ref}
-        className={card1IsOnScreen ? 'cards__card slide' : 'cards__card'}
-      >
-        <img src={mansion} alt="" className="cards__image" loading="lazy" />
-        <div className="cards__text">
-          <button className="cards__button">Buy or sell a house</button>
+      {cards.map((card, index) => (
+        <div
+          key={index}
+          ref={cardRef}
+          className={cardIsOnScreen ? 'cards__card slide' : 'cards__card'}
+        >
+          <img
+            src={card.image}
+            alt=""
+            className="cards__image"
+            loading="lazy"
+          />
+          <div className="cards__text">
+            <button className="cards__button">{card.text}</button>
+          </div>
         </div>
-      </div>
-      <div
-        ref={card2Ref}
-        className={card2IsOnScreen ? 'cards__card slide' : 'cards__card'}
-      >
-        <img
-          src={construction}
-          alt=""
-          className="cards__image"
-          loading="lazy"
-        />
-        <div className="cards__text">
-          <button className="cards__button">Build a house</button>
-        </div>
-      </div>
-      <div
-        ref={card3Ref}
-        className={card3IsOnScreen ? 'cards__card slide' : 'cards__card'}
-      >
-        <img src={office} alt="" className="cards__image" loading="lazy" />
-        <div className="cards__text">
-          <button className="cards__button">Rent offices</button>
-        </div>
-      </div>
+      ))}
     </section>
   );
 }
