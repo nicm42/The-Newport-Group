@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import onScreen from '../onScreen';
 
 import mansion from '/imgs/mansion.jpg';
@@ -10,9 +11,9 @@ export default function Cards() {
   const cardIsOnScreen = onScreen(cardRef);
 
   const cards = [
-    { image: mansion, text: 'Buy or sell a house' },
-    { image: construction, text: 'Build a house' },
-    { image: office, text: 'Rent offices' },
+    { image: mansion, text: 'Buy or sell a house', link: '/houses' },
+    { image: construction, text: 'Build a house', link: 'buildings' },
+    { image: office, text: 'Rent offices', link: 'offices' },
   ];
 
   return (
@@ -30,7 +31,9 @@ export default function Cards() {
             loading="lazy"
           />
           <div className="cards__text">
-            <button className="cards__button">{card.text}</button>
+            <Link to={card.link}>
+              <button className="cards__button">{card.text}</button>
+            </Link>
           </div>
         </div>
       ))}
