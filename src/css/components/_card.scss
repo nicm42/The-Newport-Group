@@ -39,27 +39,19 @@
 
     //If they're below each other, but have space offset them a bit
     @include g.breakpoint-up(medium) {
-      &:nth-of-type(2).slide {
-        transform: translateY(0) translateX(2em);
-      }
-
-      &:last-of-type.slide {
-        transform: translateY(0) translateX(4em);
+      @for $i from 1 through 3 {
+        &:nth-of-type(#{$i}) {
+          transform: translateY(0) translateX(($i - 1) * 2em);
+        }
       }
     }
 
     //If they're next to each other, then also make them diagonal
     @include g.breakpoint-up(large) {
-      &:first-of-type.slide {
-        transform: translateY(2em) translateX(0);
-      }
-
-      &:nth-of-type(2).slide {
-        transform: translateY(1em) translateX(0);
-      }
-
-      &:last-of-type.slide {
-        transform: translateY(0) translateX(0);
+      @for $i from 1 through 3 {
+        &:nth-last-of-type(#{$i}) {
+          transform: translateY(($i - 1) * 1em) translateX(0);
+        }
       }
     }
   }
