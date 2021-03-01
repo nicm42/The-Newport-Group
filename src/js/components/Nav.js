@@ -14,32 +14,31 @@ export default function Nav() {
     document.body.style.marginTop = targetRef.current.offsetHeight + 'px';
   });
 
+  const navigation = [
+    { link: '/', text: 'Home' },
+    { link: '/houses', text: 'Buy or sell a house' },
+    { link: '/buildings', text: 'Build a house' },
+    { link: '/offices', text: 'Rent an office' },
+  ];
+
   return (
     <nav ref={targetRef}>
       <div className="menu-toggle" onClick={toggle}>
         <span className={isOpen ? 'menu cross' : 'menu'}></span>
       </div>
       <ul className={isOpen ? 'menu-links show' : 'menu-links'}>
-        <li>
-          <NavLink exact to="/" activeClassName="active" onClick={toggle}>
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/houses" activeClassName="active" onClick={toggle}>
-            Buy or sell a house
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/buildings" activeClassName="active" onClick={toggle}>
-            Build a house
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/offices" activeClassName="active" onClick={toggle}>
-            Rent an office
-          </NavLink>
-        </li>
+        {navigation.map((nav, index) => (
+          <li key={index}>
+            <NavLink
+              exact
+              to={nav.link}
+              activeClassName="active"
+              onClick={toggle}
+            >
+              {nav.text}
+            </NavLink>
+          </li>
+        ))}
       </ul>
       <LightDark />
     </nav>
