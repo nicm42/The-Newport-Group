@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import onScreen from '../onScreen';
 
 export default function Info() {
@@ -7,21 +8,25 @@ export default function Info() {
   const textIsOnScreen = onScreen(textRef);
   const listIsOnScreen = onScreen(listRef);
 
+  const list = [
+    { link: '/houses', text: 'Real Estate' },
+    { link: '/buildings', text: 'Buildings' },
+    { link: '/offices', text: 'Homes and Offices' },
+  ];
+
   return (
     <section className="info container">
       <ul
         ref={listRef}
         className={listIsOnScreen ? 'info__list slide' : 'info__list'}
       >
-        <li>
-          <a href="#">Real Estate</a>
-        </li>
-        <li>
-          <a href="#">Buildings</a>
-        </li>
-        <li>
-          <a href="#">Homes and Offices</a>
-        </li>
+        {list.map((item, index) => (
+          <li key={index}>
+            <Link exact to={item.link}>
+              {item.text}
+            </Link>
+          </li>
+        ))}
       </ul>
       <div
         ref={textRef}
