@@ -1,5 +1,9 @@
 @use '../general' as g;
 
+html {
+  font-size: 100%;
+}
+
 body {
   background-color: var(--secondary-colour);
   font-family: 'Montserrat', sans-serif;
