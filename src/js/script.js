@@ -9,7 +9,7 @@ import Buildings from './pages/Buildings';
 import Offices from './pages/Offices';
 import Footer from './components/Footer';
 
-function App() {
+const App = () => {
   return (
     <Router>
       <Header />
@@ -22,6 +22,6 @@ function App() {
       <Footer />
     </Router>
   );
-}
+};
 
 render(<App />, document.querySelector('.app'));

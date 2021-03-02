@@ -3,7 +3,7 @@ import Info from '../components/Info';
 import Parallax from '../components/Parallax';
 import Cards from '../components/Cards';
 
-export default function Home() {
+const Home = () => {
   return (
     <main>
       <Info />
@@ -11,4 +11,6 @@ export default function Home() {
       <Cards />
     </main>
   );
-}
+};
+
+export default Home;

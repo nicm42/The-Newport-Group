@@ -1,9 +1,10 @@
 import React from 'react';
 
-export default function Offices() {
+const Offices = () => {
   return (
     <div>
       <h1>Offices</h1>
     </div>
   );
-}
+};
+export default Offices;
