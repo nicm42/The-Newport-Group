@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import onScreen from '../onScreen';
+import onScreen from '../utilities/onScreen';
 
 export default function Info() {
   const textRef = useRef();

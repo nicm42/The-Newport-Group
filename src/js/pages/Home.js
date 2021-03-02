@@ -1,7 +1,7 @@
 import React from 'react';
-import Info from './Info';
-import Parallax from './Parallax';
-import Cards from './Cards';
+import Info from '../components/Info';
+import Parallax from '../components/Parallax';
+import Cards from '../components/Cards';
 
 export default function Home() {
   return (

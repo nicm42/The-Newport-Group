@@ -3,10 +3,10 @@ import { render } from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Header from './components/Header';
-import Home from './components/Home';
-import Houses from './components/Houses';
-import Buildings from './components/Buildings';
-import Offices from './components/Offices';
+import Home from './pages/Home';
+import Houses from './pages/Houses';
+import Buildings from './pages/Buildings';
+import Offices from './pages/Offices';
 import Footer from './components/Footer';
 
 function App() {

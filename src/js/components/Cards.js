@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import onScreen from '../onScreen';
+import onScreen from '../utilities/onScreen';
 
 import mansion from '/imgs/mansion.jpg';
 import construction from '/imgs/construction.jpg';
