@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function LightDark() {
+const LightDark = () => {
   const [isDark, setIsDark] = useState(checkMode);
   let mode = localStorage.getItem('mode');
 
@@ -43,4 +43,6 @@ export default function LightDark() {
       ></i>
     </div>
   );
-}
+};
+
+export default LightDark;

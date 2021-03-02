@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import onScreen from '../utilities/onScreen';
 
-export default function Info() {
+const Info = () => {
   const textRef = useRef();
   const listRef = useRef();
   const textIsOnScreen = onScreen(textRef);
@@ -50,4 +50,6 @@ export default function Info() {
       </div>
     </section>
   );
-}
+};
+
+export default Info;

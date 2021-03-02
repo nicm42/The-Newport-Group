@@ -6,7 +6,7 @@ import mansion from '/imgs/mansion.jpg';
 import construction from '/imgs/construction.jpg';
 import office from '/imgs/office.jpg';
 
-export default function Cards() {
+const Cards = () => {
   const cardRef = useRef();
   const cardIsOnScreen = onScreen(cardRef);
 
@@ -39,4 +39,6 @@ export default function Cards() {
       ))}
     </section>
   );
-}
+};
+
+export default Cards;

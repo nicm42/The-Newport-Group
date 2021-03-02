@@ -1,5 +1,7 @@
 import React from 'react';
 
-export default function Parallax() {
+const Parallax = () => {
   return <div className="parallax"></div>;
-}
+};
+
+export default Parallax;

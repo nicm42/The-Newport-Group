@@ -2,7 +2,7 @@ import React from 'react';
 import caleb from '/imgs/caleb.jpg';
 import map from '/imgs/map.png';
 
-export default function Footer() {
+const Footer = () => {
   return (
     <footer className="footer container">
       <div className="footer__owner">
@@ -47,4 +47,6 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

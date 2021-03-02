@@ -2,7 +2,7 @@ import React, { useState, useRef, useLayoutEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import LightDark from './LightDark';
 
-export default function Nav() {
+const Nav = () => {
   //Set the nav to open or closed on mobile
   //(won't do anything on desktop as menu-toggle is hidden)
   const [isOpen, setIsOpen] = useState(false);
@@ -43,4 +43,6 @@ export default function Nav() {
       <LightDark />
     </nav>
   );
-}
+};
+
+export default Nav;
