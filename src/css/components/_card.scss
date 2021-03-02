@@ -33,14 +33,13 @@
       opacity var(--transition-time) var(--easing);
 
     &.slide {
-      transform: translateY(0);
       opacity: 1;
     }
 
     //If they're below each other, but have space offset them a bit
     @include g.breakpoint-up(medium) {
       @for $i from 1 through 3 {
-        &:nth-of-type(#{$i}) {
+        &:nth-of-type(#{$i}).slide {
           transform: translateY(0) translateX(($i - 1) * 2em);
         }
       }
@@ -49,7 +48,7 @@
     //If they're next to each other, then also make them diagonal
     @include g.breakpoint-up(large) {
       @for $i from 1 through 3 {
-        &:nth-last-of-type(#{$i}) {
+        &:nth-last-of-type(#{$i}).slide {
           transform: translateY(($i - 1) * 1em) translateX(0);
         }
       }
