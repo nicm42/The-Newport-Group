@@ -1,0 +1,44 @@
+@use '../general' as g;
+
+.pageIntro {
+  background-color: var(--alternate-colour);
+
+  &__imagetext {
+    @include g.breakpoint-up(large) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2em;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 0.5em;
+
+    @include g.breakpoint-up(large) {
+      margin-bottom: 1em;
+    }
+  }
+
+  &__image {
+    margin-bottom: 1em;
+
+    @include g.breakpoint-up(large) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__intro {
+    p {
+      margin-bottom: 1em;
+    }
+
+    h3 {
+      margin-bottom: 0.5em;
+    }
+
+    h3:last-of-type {
+      margin-top: 1.5em;
+    }
+  }
+}
