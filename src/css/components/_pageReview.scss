@@ -1,3 +1,41 @@
+@use '../general' as g;
+
 .pageReview {
   background-color: var(--alternate-colour);
+
+  &__intro {
+    margin-bottom: 1em;
+  }
+
+  &__imagequote {
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include g.breakpoint-up(large) {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+
+  &__image {
+    position: relative;
+    opacity: 0.5;
+
+    @include g.breakpoint-up(large) {
+      max-width: 50%;
+    }
+  }
+
+  &__quote {
+    width: 90%;
+    font-style: italic;
+    transform: translateY(-50%);
+    background-color: var(--overlay-colour);
+
+    @include g.breakpoint-up(large) {
+      transform: translateY(1em) translateX(-25%);
+    }
+  }
 }
