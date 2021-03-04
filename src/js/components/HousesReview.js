@@ -20,7 +20,7 @@ const HousesReview = () => {
     },
     {
       image: lounge,
-      alt: 'A living area with bijou kictchen',
+      alt: 'A living area with bijou kitchen',
       text:
         'Our house was on sale with another realtor for three months with no sale, even after reducing the asking price. Then we found The Newport Group and our house was sold within a week, and at $50,000 more than we’d hoped to sell it for.',
     },
@@ -36,6 +36,7 @@ const HousesReview = () => {
           <img
             src={review.image}
             alt={review.alt}
+            loading="lazy"
             className="pageReview__image"
           />
           <p className="pageReview__quote">{review.text}</p>
