@@ -15,6 +15,7 @@ const HousesVideos = () => {
     <section className="pageVideos container">
       {videos.map((item, index) => (
         <video
+          key={index}
           controls
           loop
           preload="metadata"
