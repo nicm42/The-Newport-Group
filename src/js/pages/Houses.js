@@ -3,7 +3,7 @@ import HousesIntro from '../components/HousesIntro';
 import HousesReview from '../components/HousesReview';
 import HousesVideos from '../components/HousesVideos';
 
-import '/css/header-height.css';
+//import '/css/header-height.css';
 
 const Houses = () => {
   return (

@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import onScreen from '../utilities/onScreen';
 
 import fireplace from '/imgs/fireplace.jpg';
 import kitchen from '/imgs/kitchen.jpg';
 import lounge from '/imgs/lounge.jpg';
 
 const HousesReview = () => {
+  const imageRef = useRef();
+  const quoteRef = useRef();
+  const imageIsOnScreen = onScreen(imageRef);
+  const quoteIsOnScreen = onScreen(quoteRef);
+
   const reviews = [
     {
       image: fireplace,
@@ -37,9 +43,19 @@ const HousesReview = () => {
             src={review.image}
             alt={review.alt}
             loading="lazy"
-            className="pageReview__image"
+            ref={imageRef}
+            className={
+              imageIsOnScreen ? 'pageReview__image slide' : 'pageReview__image'
+            }
           />
-          <p className="pageReview__quote">{review.text}</p>
+          <p
+            ref={quoteRef}
+            className={
+              quoteIsOnScreen ? 'pageReview__quote slide' : 'pageReview__quote'
+            }
+          >
+            {review.text}
+          </p>
         </div>
       ))}
     </section>

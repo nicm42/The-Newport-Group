@@ -27,7 +27,13 @@
 
   &__image {
     position: relative;
-    opacity: 0.5;
+    transform: translateX(-50%);
+    opacity: 0;
+
+    &.slide {
+      transform: translateX(0);
+      opacity: 0.5;
+    }
 
     @include g.breakpoint-up(large) {
       max-width: 50%;
@@ -40,8 +46,14 @@
     font-style: italic;
     font-size: 1.25rem;
     line-height: 1.4;
-    transform: translateY(-25%);
     background-color: var(--overlay-colour);
+    transform: translateY(-25%) translateX(50%);
+    opacity: 0;
+
+    &.slide {
+      transform: translateX(0) translateX(0);
+      opacity: 1;
+    }
 
     &::before,
     &::after {
@@ -60,7 +72,12 @@
 
     @include g.breakpoint-up(large) {
       width: 100%;
-      transform: translateY(1em) translateX(-25%);
+      transform: translateY(1em) translateX(50%);
+
+      &.slide {
+        transform: translateX(1em) translateX(-25%);
+        opacity: 1;
+      }
     }
   }
 }
