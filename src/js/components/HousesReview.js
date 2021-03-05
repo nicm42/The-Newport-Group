@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, createRef } from 'react';
 import onScreen from '../utilities/onScreen';
 
 import fireplace from '/imgs/fireplace.jpg';
@@ -6,11 +6,6 @@ import kitchen from '/imgs/kitchen.jpg';
 import lounge from '/imgs/lounge.jpg';
 
 const HousesReview = () => {
-  const imageRef = useRef();
-  const quoteRef = useRef();
-  const imageIsOnScreen = onScreen(imageRef);
-  const quoteIsOnScreen = onScreen(quoteRef);
-
   const reviews = [
     {
       image: fireplace,
@@ -32,6 +27,15 @@ const HousesReview = () => {
     },
   ];
 
+  const imageRefs = useRef([]);
+  imageRefs.current = reviews.map(
+    (review, i) => imageRefs.current[i] ?? createRef()
+  );
+  const quoteRefs = useRef([]);
+  quoteRefs.current = reviews.map(
+    (review, i) => quoteRefs.current[i] ?? createRef()
+  );
+
   return (
     <section className="pageReview container">
       <p className="pageReview__intro">
@@ -43,15 +47,19 @@ const HousesReview = () => {
             src={review.image}
             alt={review.alt}
             loading="lazy"
-            ref={imageRef}
+            ref={imageRefs.current[index]}
             className={
-              imageIsOnScreen ? 'pageReview__image slide' : 'pageReview__image'
+              onScreen(imageRefs.current[index])
+                ? 'pageReview__image slide'
+                : 'pageReview__image'
             }
           />
           <p
-            ref={quoteRef}
+            ref={quoteRefs.current[index]}
             className={
-              quoteIsOnScreen ? 'pageReview__quote slide' : 'pageReview__quote'
+              onScreen(quoteRefs.current[index])
+                ? 'pageReview__quote slide'
+                : 'pageReview__quote'
             }
           >
             {review.text}

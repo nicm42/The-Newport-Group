@@ -29,6 +29,8 @@
     position: relative;
     transform: translateX(-50%);
     opacity: 0;
+    transition: transform var(--transition-time) var(--easing),
+      opacity var(--transition-time) var(--easing);
 
     &.slide {
       transform: translateX(0);
@@ -49,6 +51,8 @@
     background-color: var(--overlay-colour);
     transform: translateY(-25%) translateX(50%);
     opacity: 0;
+    transition: transform var(--transition-time) var(--easing),
+      opacity var(--transition-time) var(--easing);
 
     &.slide {
       transform: translateX(0) translateX(0);
