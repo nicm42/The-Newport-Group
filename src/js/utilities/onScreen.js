@@ -4,7 +4,7 @@ const onScreen = (ref) => {
   const [isIntersecting, setIntersecting] = useState(false);
 
   const observerOptions = {
-    threshold: 0.5,
+    threshold: 0.33,
   };
 
   const observer = new IntersectionObserver(([entry]) => {

@@ -55,7 +55,7 @@
       opacity var(--transition-time) var(--easing);
 
     &.slide {
-      transform: translateX(0) translateX(0);
+      transform: translateY(-25%) translateX(0);
       opacity: 1;
     }
 
