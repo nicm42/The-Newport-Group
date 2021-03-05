@@ -2,13 +2,16 @@
 
 .header {
   height: 100vh;
-  padding: 0.5em 1em 1em 1em;
   background-color: var(--secondary-colour);
   background-image: url(../imgs/header.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+
+  &.short {
+    height: auto;
+  }
 
   &__lightdark {
     position: absolute;
@@ -18,17 +21,21 @@
     cursor: pointer;
   }
 
-  h1 {
-    display: grid;
-    place-content: center;
-    font-size: 1.5rem;
-    color: var(--alternate-colour);
-    text-align: center;
-    text-transform: uppercase;
-    line-height: 1;
+  &__title {
+    h1 {
+      display: grid;
+      place-content: center;
+      padding: 0.25em;
+      font-size: 1.5rem;
+      color: var(--alternate-colour);
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 1;
+      background-color: transparent;
 
-    @include g.breakpoint-up(medium) {
-      font-size: 2rem;
+      @include g.breakpoint-up(medium) {
+        font-size: 2rem;
+      }
     }
   }
 
