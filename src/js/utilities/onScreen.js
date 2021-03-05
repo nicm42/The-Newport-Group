@@ -10,7 +10,7 @@ const onScreen = (ref) => {
   const observer = new IntersectionObserver(([entry]) => {
     setIntersecting(entry.isIntersecting);
     if (entry.isIntersecting) {
-      console.log(entry);
+      //console.log(entry);
       observer.unobserve(ref.current);
     }
   }, observerOptions);

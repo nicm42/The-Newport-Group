@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, createRef } from 'react';
 import { Link } from 'react-router-dom';
 import onScreen from '../utilities/onScreen';
 
@@ -7,22 +7,28 @@ import construction from '/imgs/construction.jpg';
 import office from '/imgs/office.jpg';
 
 const Cards = () => {
-  const cardRef = useRef();
-  const cardIsOnScreen = onScreen(cardRef);
-
   const cards = [
     { image: mansion, text: 'Buy or sell a house', link: '/houses' },
     { image: construction, text: 'Build a house', link: 'buildings' },
     { image: office, text: 'Rent offices', link: 'offices' },
   ];
 
+  const cardRefs = useRef([]);
+  cardRefs.current = cards.map(
+    (review, i) => cardRefs.current[i] ?? createRef()
+  );
+
   return (
     <section className="cards container">
       {cards.map((card, index) => (
         <div
           key={index}
-          ref={cardRef}
-          className={cardIsOnScreen ? 'cards__card slide' : 'cards__card'}
+          ref={cardRefs.current[index]}
+          className={
+            onScreen(cardRefs.current[index])
+              ? 'cards__card slide'
+              : 'cards__card'
+          }
         >
           <img
             src={card.image}
