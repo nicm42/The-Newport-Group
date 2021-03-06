@@ -14,16 +14,17 @@ const HousesVideos = () => {
   return (
     <section className="pageVideos container">
       {videos.map((item, index) => (
-        <video
-          key={index}
-          controls
-          loop
-          preload="metadata"
-          poster={item.poster}
-          className="pageVideos__video"
-        >
-          <source src={item.video} type="video/mp4" />
-        </video>
+        <div key={index} className="pageVideos videocontainer">
+          <video
+            loop
+            preload="metadata"
+            poster={item.poster}
+            className="pageVideos__video"
+          >
+            <source src={item.video} type="video/mp4" />
+          </video>
+          <button className="playpause"></button>
+        </div>
       ))}
     </section>
   );
