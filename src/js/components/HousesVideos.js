@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef, createRef } from 'react';
 
 import lakeHouse from '/videos/lake-house.mp4';
 import villa from '/videos/villa.mp4';
@@ -11,6 +11,32 @@ const HousesVideos = () => {
     { video: villa, poster: villaPoster },
   ];
 
+  const [isPlaying, setIsPlaying] = useState({});
+
+  const videoRefs = useRef([]);
+  videoRefs.current = videos.map(
+    (video, i) => videoRefs.current[i] ?? createRef()
+  );
+  const buttonRefs = useRef([]);
+  buttonRefs.current = videos.map(
+    (video, i) => buttonRefs.current[i] ?? createRef()
+  );
+
+  const toggle = (video, button, index) => {
+    console.log(isPlaying);
+    if (isPlaying[index] === true) {
+      setIsPlaying({ ...isPlaying, [index]: false });
+      video.current.pause();
+      button.current.classList.remove('la-pause');
+      button.current.classList.add('la-play');
+    } else {
+      setIsPlaying({ ...isPlaying, [index]: true });
+      video.current.play();
+      button.current.classList.remove('la-play');
+      button.current.classList.add('la-pause');
+    }
+  };
+
   return (
     <section className="pageVideos container">
       {videos.map((item, index) => (
@@ -19,15 +45,18 @@ const HousesVideos = () => {
             loop
             preload="metadata"
             poster={item.poster}
+            ref={videoRefs.current[index]}
             className="pageVideos__video"
           >
             <source src={item.video} type="video/mp4" />
           </video>
-          <button className="pageVideos__play">
-            <i class="las la-play"></i>
-          </button>
-          <button className="pageVideos__pause">
-            <i class="las la-pause"></i>
+          <button
+            className="pageVideos__control"
+            onClick={() =>
+              toggle(videoRefs.current[index], buttonRefs.current[index])
+            }
+          >
+            <i ref={buttonRefs.current[index]} className="las la-play"></i>
           </button>
         </div>
       ))}

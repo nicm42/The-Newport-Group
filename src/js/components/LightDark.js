@@ -28,7 +28,7 @@ const LightDark = () => {
       setIsDark(true);
     }
     mode = localStorage.getItem('mode');
-    console.log('mode now = ' + mode);
+    //console.log('mode now = ' + mode);
   };
 
   return (
