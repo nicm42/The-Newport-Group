@@ -1,8 +1,6 @@
 @use '../general' as g;
 
 .info {
-  background-color: var(--alternate-colour);
-
   &__list {
     padding-left: 0.5em;
     transform: translateY(-50%);

@@ -2,10 +2,11 @@
 
 html {
   font-size: 100%;
+  background-color: var(--secondary-colour);
 }
 
 body {
-  background-color: var(--secondary-colour);
+  background-color: var(--alternate-colour);
   font-family: 'Montserrat', sans-serif;
   color: var(--primary-colour);
   overflow-x: hidden;

@@ -1,8 +1,6 @@
 @use '../general' as g;
 
 .pageIntro {
-  background-color: var(--alternate-colour);
-
   &__imagetext {
     @include g.breakpoint-up(large) {
       display: grid;

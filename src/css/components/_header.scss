@@ -31,7 +31,6 @@
       text-align: center;
       text-transform: uppercase;
       line-height: 1;
-      background-color: transparent;
 
       @include g.breakpoint-up(medium) {
         font-size: 2rem;

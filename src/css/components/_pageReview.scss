@@ -1,8 +1,6 @@
 @use '../general' as g;
 
 .pageReview {
-  background-color: var(--alternate-colour);
-
   &__intro {
     margin-bottom: 1em;
   }
