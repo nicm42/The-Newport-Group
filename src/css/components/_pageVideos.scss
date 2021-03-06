@@ -14,10 +14,20 @@
 
   &__container {
     position: relative;
+    display: inline-block;
+    max-width: 90%;
+
+    &:hover .pageVideos__control,
+    &:focus .pageVideos__control {
+      opacity: 1;
+    }
   }
 
   &__video {
-    max-width: 90%;
+    //These two get rid of space below video
+    display: block;
+    font-size: 0;
+    width: 100%;
     cursor: pointer;
 
     &:first-of-type {
@@ -26,11 +36,13 @@
   }
 
   &__control {
+    --button-width: 2em;
+    --button-height: 2em;
     position: absolute;
-    width: 2em;
-    height: 2em;
-    top: calc(50% - 2em);
-    left: calc(50% - 2em);
+    width: var(--button-width);
+    height: var(--button-height);
+    top: calc(50% - calc(var(--button-width) / 2));
+    left: calc(50% - calc(var(--button-height) / 2));
     display: grid;
     place-content: center;
     border-radius: 50%;
@@ -41,7 +53,7 @@
     opacity: 0.75;
 
     &:hover,
-    &focus {
+    &:focus {
       opacity: 1;
     }
   }
