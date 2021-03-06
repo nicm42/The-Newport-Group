@@ -27,19 +27,20 @@ const HousesVideos = () => {
   );
 
   const toggle = (video, button, playPause, index) => {
-    console.log(isPlaying);
-    if (isPlaying[index] === true) {
-      setIsPlaying({ ...isPlaying, [index]: false });
-      video.current.pause();
-      playPause.current.classList.remove('la-pause');
-      playPause.current.classList.add('la-play');
-      button.current.style.opacity = 1;
-    } else {
-      setIsPlaying({ ...isPlaying, [index]: true });
-      video.current.play();
-      playPause.current.classList.remove('la-play');
-      playPause.current.classList.add('la-pause');
-      button.current.style.opacity = 0;
+    if (event.code === 'Space' || !event.code) {
+      if (isPlaying[index] === true) {
+        setIsPlaying({ ...isPlaying, [index]: false });
+        video.current.pause();
+        playPause.current.classList.remove('la-pause');
+        playPause.current.classList.add('la-play');
+        button.current.style.opacity = 1;
+      } else {
+        setIsPlaying({ ...isPlaying, [index]: true });
+        video.current.play();
+        playPause.current.classList.remove('la-play');
+        playPause.current.classList.add('la-pause');
+        button.current.style.opacity = 0;
+      }
     }
   };
 
@@ -54,6 +55,13 @@ const HousesVideos = () => {
             ref={videoRefs.current[index]}
             className="pageVideos__video"
             onClick={() =>
+              toggle(
+                videoRefs.current[index],
+                buttonRefs.current[index],
+                playPauseRefs.current[index]
+              )
+            }
+            onKeyPress={() =>
               toggle(
                 videoRefs.current[index],
                 buttonRefs.current[index],
