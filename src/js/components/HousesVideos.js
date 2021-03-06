@@ -47,6 +47,9 @@ const HousesVideos = () => {
             poster={item.poster}
             ref={videoRefs.current[index]}
             className="pageVideos__video"
+            onClick={() =>
+              toggle(videoRefs.current[index], buttonRefs.current[index])
+            }
           >
             <source src={item.video} type="video/mp4" />
           </video>
