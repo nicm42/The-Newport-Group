@@ -14,8 +14,9 @@ const HousesVideos = () => {
   return (
     <section className="pageVideos container">
       {videos.map((item, index) => (
-        <div key={index} className="pageVideos videocontainer">
+        <div key={index} className="pageVideos__container">
           <video
+            controls
             loop
             preload="metadata"
             poster={item.poster}
@@ -23,7 +24,12 @@ const HousesVideos = () => {
           >
             <source src={item.video} type="video/mp4" />
           </video>
-          <button className="playpause"></button>
+          <button className="pageVideos__play">
+            <i class="las la-play"></i>
+          </button>
+          <button className="pageVideos__pause">
+            <i class="las la-pause"></i>
+          </button>
         </div>
       ))}
     </section>
