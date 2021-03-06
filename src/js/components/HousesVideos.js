@@ -16,7 +16,6 @@ const HousesVideos = () => {
       {videos.map((item, index) => (
         <div key={index} className="pageVideos__container">
           <video
-            controls
             loop
             preload="metadata"
             poster={item.poster}

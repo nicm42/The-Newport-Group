@@ -12,11 +12,44 @@
     grid-template-rows: auto;
   }
 
-  video {
+  &__container {
+    position: relative;
+  }
+
+  &__video {
     max-width: 90%;
 
     &:first-of-type {
       margin-bottom: 2em;
     }
+  }
+
+  &__play,
+  &__pause {
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    top: calc(50% - 2em);
+    left: calc(50% - 2em);
+    display: grid;
+    place-content: center;
+    border-radius: 50%;
+    border: 1px solid var(--secondary-colour);
+    background-color: var(--alternate-colour);
+    color: var(--secondary-colour);
+    cursor: pointer;
+    opacity: 0.75;
+
+    &:hover,
+    &focus {
+      opacity: 1;
+    }
+  }
+
+  &__play {
+  }
+
+  &__pause {
+    visibility: hidden;
   }
 }
