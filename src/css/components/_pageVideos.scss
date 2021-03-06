@@ -19,7 +19,7 @@
 
     &:hover .pageVideos__control,
     &:focus .pageVideos__control {
-      opacity: 1;
+      opacity: 1 !important;
     }
   }
 
@@ -51,10 +51,5 @@
     color: var(--secondary-colour);
     cursor: pointer;
     opacity: 0.75;
-
-    &:hover,
-    &:focus {
-      opacity: 1;
-    }
   }
 }
