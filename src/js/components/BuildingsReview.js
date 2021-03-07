@@ -1,26 +1,26 @@
 import React, { useRef, createRef } from 'react';
 import onScreen from '../utilities/onScreen';
 
-import fireplace from '/imgs/fireplace.jpg';
-import kitchen from '/imgs/kitchen.jpg';
-import lounge from '/imgs/lounge.jpg';
+import housepool from '/imgs/house-pool.jpg';
+import pool from '/imgs/pool.jpg';
+import poolhouse from '/imgs/poolhouse.jpg';
 
 const BuildingsReview = () => {
   const reviews = [
     {
-      image: fireplace,
+      image: housepool,
       alt: 'A beautiful single story house with a big pool',
       text:
         '“I love our new house. After viewing a house that was close to what we wanted, The Newport Group built us a house that was exactly what we needed.”',
     },
     {
-      image: kitchen,
+      image: pool,
       alt: 'The poolside, with an integrated hot tub',
       text:
         '“I’ve always wanted to have a house built exactly to my specifications and The Newport Group have done that. Nothing I wanted was too big or too small for them. When I saw the house it matched my dreams exactly.”',
     },
     {
-      image: lounge,
+      image: poolhouse,
       alt:
         'A pool with pool house, set on the side of a hill with glorious views',
       text:
