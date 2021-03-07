@@ -1,14 +1,14 @@
 import React, { useState, useRef, createRef } from 'react';
 
-import lakeHouse from '/videos/lake-house.mp4';
-import villa from '/videos/villa.mp4';
-import lakeHousePoster from '/imgs/lake-house.jpg';
-import villaPoster from '/imgs/villa.jpg';
+import emptyRoom from '/videos/empty-room.mp4';
+import lakeHouseTop from '/videos/lake-house-top.mp4';
+import emptyRoomPoster from '/imgs/empty-room.jpg';
+import lakeHouseTopPoster from '/imgs/lake-house-top.jpg';
 
 const BuildingsVideos = () => {
   const videos = [
-    { video: lakeHouse, poster: lakeHousePoster },
-    { video: villa, poster: villaPoster },
+    { video: emptyRoom, poster: emptyRoomPoster },
+    { video: lakeHouseTop, poster: lakeHouseTopPoster },
   ];
 
   const [isPlaying, setIsPlaying] = useState({});

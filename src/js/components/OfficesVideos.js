@@ -1,14 +1,14 @@
 import React, { useState, useRef, createRef } from 'react';
 
-import lakeHouse from '/videos/lake-house.mp4';
-import villa from '/videos/villa.mp4';
-import lakeHousePoster from '/imgs/lake-house.jpg';
-import villaPoster from '/imgs/villa.jpg';
+import openWorking from '/videos/open-working.mp4';
+import lightsOut from '/videos/lights-out.mp4';
+import openWorkingPoster from '/imgs/open-working.jpg';
+import lightsOutPoster from '/imgs/lights-out.jpg';
 
 const OfficesVideos = () => {
   const videos = [
-    { video: lakeHouse, poster: lakeHousePoster },
-    { video: villa, poster: villaPoster },
+    { video: openWorking, poster: openWorkingPoster },
+    { video: lightsOut, poster: lightsOutPoster },
   ];
 
   const [isPlaying, setIsPlaying] = useState({});
