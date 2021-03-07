@@ -53,11 +53,12 @@ const BuildingsVideos = () => {
         <div key={index} className="pageVideos__container">
           <video
             loop
+            muted
             preload="metadata"
             poster={item.poster}
             ref={videoRefs.current[index]}
             className="pageVideos__video"
-            arial-label={item.label}
+            aria-label={item.label}
             onClick={() =>
               toggle(
                 videoRefs.current[index],
