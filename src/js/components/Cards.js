@@ -19,7 +19,7 @@ const Cards = () => {
   );
 
   return (
-    <section className="cards container">
+    <section className="cards container diagonal">
       {cards.map((card, index) => (
         <div
           key={index}

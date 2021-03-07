@@ -45,7 +45,7 @@ const BuildingsVideos = () => {
   };
 
   return (
-    <section className="pageVideos container">
+    <section className="pageVideos container diagonal">
       {videos.map((item, index) => (
         <div key={index} className="pageVideos__container">
           <video

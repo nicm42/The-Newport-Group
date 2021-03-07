@@ -1,0 +1,8 @@
+.diagonal {
+  margin-bottom: -5vw;
+  padding-bottom: calc(5vw + 1em);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0% 100%);
+  background-color: var(
+    --alternate-colour
+  ); //Alhough this is specified in container, also need it here to get the clip-path to show up
+}
