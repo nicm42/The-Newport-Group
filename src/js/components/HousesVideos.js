@@ -8,8 +8,12 @@ import villaPoster from '/imgs/villa.jpg';
 
 const HousesVideos = () => {
   const videos = [
-    { video: lakeHouse, poster: lakeHousePoster },
-    { video: villa, poster: villaPoster },
+    {
+      video: lakeHouse,
+      poster: lakeHousePoster,
+      label: 'Arial view from a lake going towards a house',
+    },
+    { video: villa, poster: villaPoster, label: 'Coming up close on a house' },
   ];
 
   const [isPlaying, setIsPlaying] = useState({});
@@ -50,6 +54,7 @@ const HousesVideos = () => {
             poster={item.poster}
             ref={videoRefs.current[index]}
             className="pageVideos__video"
+            arial-label={item.label}
             onClick={() =>
               toggle(
                 videoRefs.current[index],
@@ -69,6 +74,7 @@ const HousesVideos = () => {
           </video>
           <button
             className="pageVideos__control"
+            aria-label="Play/Pause"
             ref={buttonRefs.current[index]}
             onClick={() =>
               toggle(

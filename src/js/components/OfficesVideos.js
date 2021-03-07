@@ -8,8 +8,16 @@ import lightsOutPoster from '/imgs/lights-out.jpg';
 
 const OfficesVideos = () => {
   const videos = [
-    { video: openWorking, poster: openWorkingPoster },
-    { video: lightsOut, poster: lightsOutPoster },
+    {
+      video: openWorking,
+      poster: openWorkingPoster,
+      label: 'Out of focus people in the background of an office',
+    },
+    {
+      video: lightsOut,
+      poster: lightsOutPoster,
+      label: 'Lights out at the office',
+    },
   ];
 
   const [isPlaying, setIsPlaying] = useState({});
@@ -49,6 +57,7 @@ const OfficesVideos = () => {
             poster={item.poster}
             ref={videoRefs.current[index]}
             className="pageVideos__video"
+            arial-label={item.label}
             onClick={() =>
               toggle(
                 videoRefs.current[index],
@@ -68,6 +77,7 @@ const OfficesVideos = () => {
           </video>
           <button
             className="pageVideos__control"
+            aria-label="Play/Pause"
             ref={buttonRefs.current[index]}
             onClick={() =>
               toggle(

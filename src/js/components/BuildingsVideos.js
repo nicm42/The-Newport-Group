@@ -8,8 +8,16 @@ import lakeHouseTopPoster from '/imgs/lake-house-top.jpg';
 
 const BuildingsVideos = () => {
   const videos = [
-    { video: emptyRoom, poster: emptyRoomPoster },
-    { video: lakeHouseTop, poster: lakeHouseTopPoster },
+    {
+      video: emptyRoom,
+      poster: emptyRoomPoster,
+      label: 'Moving out from the corner of an empty room',
+    },
+    {
+      video: lakeHouseTop,
+      poster: lakeHouseTopPoster,
+      label: 'Moving up from the roof of a house by a lake',
+    },
   ];
 
   const [isPlaying, setIsPlaying] = useState({});
@@ -49,6 +57,7 @@ const BuildingsVideos = () => {
             poster={item.poster}
             ref={videoRefs.current[index]}
             className="pageVideos__video"
+            arial-label={item.label}
             onClick={() =>
               toggle(
                 videoRefs.current[index],
@@ -68,6 +77,7 @@ const BuildingsVideos = () => {
           </video>
           <button
             className="pageVideos__control"
+            aria-label="Play/Pause"
             ref={buttonRefs.current[index]}
             onClick={() =>
               toggle(
