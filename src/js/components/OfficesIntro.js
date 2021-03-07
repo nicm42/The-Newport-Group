@@ -1,13 +1,13 @@
 import React from 'react';
 
-import housekeys from '/imgs/housekeys.jpg';
+import working from '/imgs/working.jpg';
 
 const OfficesIntro = () => {
   return (
     <section className="pageIntro container">
-      <h2 className="pageIntro__title">Buy or sell a house</h2>
+      <h2 className="pageIntro__title">Office space</h2>
       <div className="pageIntro__imagetext">
-        <img src={housekeys} alt="" className="pageIntro__image" />
+        <img src={working} alt="" className="pageIntro__image" />
         <div className="pageIntro__intro">
           <h3>Looking for an office?</h3>
           <p>

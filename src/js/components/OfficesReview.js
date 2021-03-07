@@ -1,27 +1,26 @@
 import React, { useRef, createRef } from 'react';
 import onScreen from '../utilities/onScreen';
 
-import fireplace from '/imgs/fireplace.jpg';
-import kitchen from '/imgs/kitchen.jpg';
-import lounge from '/imgs/lounge.jpg';
+import coworking from '/imgs/coworking.jpg';
+import office from '/imgs/office.jpg';
+import officegrey from '/imgs/office-grey.jpg';
 
 const OfficesReview = () => {
   const reviews = [
     {
-      image: fireplace,
-      alt:
-        'An open-plan area with food, sofas and a table and chairs to eat or meet at',
+      image: coworking,
+      alt: 'An open-plan area sofas and a table and chairs to eat or meet at',
       text:
         '“I recently went freelance and needed somewhere to work that wasn’t also home. The Newport Group found me the perfect place that’s light and airy, with other freelancers who I can meet for a drink in the office’s kitchen It’s just like the friendliness of the office, but where I’m my own boss.”',
     },
     {
-      image: kitchen,
+      image: office,
       alt: 'A meeting room with panoramic views',
       text:
         '“The Newport Group found us the perfect office for our small company, with beautiful views. Only trouble is the view can be a distraction in company meetings!”',
     },
     {
-      image: lounge,
+      image: officegrey,
       alt: 'An airy office with plenty of space',
       text:
         '“Our new office is just the right size for us to grow. Thank you, Newport Group.”',
