@@ -1,4 +1,5 @@
 import React, { useState, useRef, createRef } from 'react';
+import { playVideo, pauseVideo } from '../utilities/videoToggle';
 
 import lakeHouse from '/videos/lake-house.mp4';
 import villa from '/videos/villa.mp4';
@@ -31,15 +32,10 @@ const HousesVideos = () => {
       if (isPlaying[index] === true) {
         setIsPlaying({ ...isPlaying, [index]: false });
         video.current.pause();
-        playPause.current.classList.remove('la-pause');
-        playPause.current.classList.add('la-play');
-        button.current.style.opacity = 1;
+        pauseVideo(video, button, playPause);
       } else {
         setIsPlaying({ ...isPlaying, [index]: true });
-        video.current.play();
-        playPause.current.classList.remove('la-play');
-        playPause.current.classList.add('la-pause');
-        button.current.style.opacity = 0;
+        playVideo(video, button, playPause);
       }
     }
   };

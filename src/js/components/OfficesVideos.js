@@ -1,4 +1,5 @@
 import React, { useState, useRef, createRef } from 'react';
+import { playVideo, pauseVideo } from '../utilities/videoToggle';
 
 import openWorking from '/videos/open-working.mp4';
 import lightsOut from '/videos/lights-out.mp4';
@@ -30,16 +31,10 @@ const OfficesVideos = () => {
     if (event.code === 'Space' || !event.code) {
       if (isPlaying[index] === true) {
         setIsPlaying({ ...isPlaying, [index]: false });
-        video.current.pause();
-        playPause.current.classList.remove('la-pause');
-        playPause.current.classList.add('la-play');
-        button.current.style.opacity = 1;
+        pauseVideo(video, button, playPause);
       } else {
         setIsPlaying({ ...isPlaying, [index]: true });
-        video.current.play();
-        playPause.current.classList.remove('la-play');
-        playPause.current.classList.add('la-pause');
-        button.current.style.opacity = 0;
+        playVideo(video, button, playPause);
       }
     }
   };
