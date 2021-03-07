@@ -124,13 +124,13 @@ nav {
     display: block;
     padding: 1em;
     font-size: 1.25rem;
+    font-weight: 700;
     color: var(--alternate-colour);
 
     &:hover,
     &:focus,
     &:active {
       text-decoration: underline;
-      text-decoration-color: var(--alternate-colour);
     }
 
     @include g.breakpoint-up(large) {
@@ -141,5 +141,6 @@ nav {
 
   .active {
     background-color: var(--parallax-colour);
+    color: var(--active-nav-colour);
   }
 }
