@@ -57,5 +57,11 @@
     color: var(--secondary-colour);
     cursor: pointer;
     opacity: 0.75;
+
+    &:focus,
+    &:hover {
+      background-color: var(--secondary-colour);
+      color: var(--alternate-colour);
+    }
   }
 }
