@@ -1,11 +1,17 @@
 @use '../general' as g;
 
 .pageVideos {
+  margin-bottom: -5vw;
   margin-top: 3em;
+  padding-bottom: calc(5vw + 1em);
   display: grid;
   grid-template-rows: repeat(2, auto);
   justify-items: center;
   gap: 1em;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0% 100%);
+  background-color: var(
+    --alternate-colour
+  ); //Alhough this is specified in container, also need it here to get the clip-path to show up
 
   @include g.breakpoint-up(medium) {
     grid-template-columns: repeat(2, auto);
@@ -20,6 +26,12 @@
     &:hover .pageVideos__control,
     &:focus .pageVideos__control {
       opacity: 1 !important;
+    }
+
+    @include g.breakpoint-up(medium) {
+      &:last-of-type {
+        transform: translateY(-2em);
+      }
     }
   }
 

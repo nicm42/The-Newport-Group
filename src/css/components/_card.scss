@@ -9,6 +9,9 @@
   align-items: center;
   gap: 2em;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0% 100%);
+  background-color: var(
+    --alternate-colour
+  ); //Alhough this is specified in container, also need it here to get the clip-path to show up
 
   @include g.breakpoint-up(large) {
     flex-direction: row;
