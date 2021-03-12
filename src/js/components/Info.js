@@ -18,7 +18,7 @@ const Info = () => {
     <section className="info container">
       <ul
         ref={listRef}
-        className={listIsOnScreen ? 'info__list slide' : 'info__list'}
+        className={`info__list ${listIsOnScreen ? 'slide' : ''}`}
       >
         {list.map((item, index) => (
           <li key={index}>
@@ -28,7 +28,7 @@ const Info = () => {
       </ul>
       <div
         ref={textRef}
-        className={textIsOnScreen ? 'info__text slide' : 'info__text'}
+        className={`info__text ${textIsOnScreen ? 'slide' : ''}`}
       >
         <p>
           The Newport Group is the foremost Real Estate Agency in the O.C.

@@ -48,19 +48,15 @@ const OfficesReview = () => {
             alt={review.alt}
             loading="lazy"
             ref={imageRefs.current[index]}
-            className={
-              onScreen(imageRefs.current[index])
-                ? 'pageReview__image slide'
-                : 'pageReview__image'
-            }
+            className={`pageReview__image ${
+              onScreen(imageRefs.current[index]) ? 'slide' : ''
+            }`}
           />
           <p
             ref={quoteRefs.current[index]}
-            className={
-              onScreen(quoteRefs.current[index])
-                ? 'pageReview__quote slide'
-                : 'pageReview__quote'
-            }
+            className={`pageReview__quote ${
+              onScreen(quoteRefs.current[index]) ? 'slide' : ''
+            }`}
           >
             {review.text}
           </p>

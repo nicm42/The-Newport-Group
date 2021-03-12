@@ -24,11 +24,9 @@ const Cards = () => {
         <div
           key={index}
           ref={cardRefs.current[index]}
-          className={
-            onScreen(cardRefs.current[index])
-              ? 'cards__card slide'
-              : 'cards__card'
-          }
+          className={`cards__card ${
+            onScreen(cardRefs.current[index]) ? 'slide' : ''
+          }`}
         >
           <img
             src={card.image}
