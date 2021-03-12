@@ -1,20 +1,21 @@
 import React from 'react';
 
 import PagesHeader from '../components/PagesHeader';
-import OfficesIntro from '../components/OfficesIntro';
-import OfficesReview from '../components/OfficesReview';
-import OfficesVideos from '../components/OfficesVideos';
+import PagesIntro from '../components/PagesIntro';
+import PagesReview from '../components/PagesReview';
+import PagesVideos from '../components/PagesVideos';
 
 const Offices = () => {
   return (
     <>
       <PagesHeader />
       <main>
-        <OfficesIntro />
-        <OfficesReview />
-        <OfficesVideos />
+        <PagesIntro type="Offices" />
+        <PagesReview type="Offices" />
+        <PagesVideos type="Offices" />
       </main>
     </>
   );
 };
+
 export default Offices;

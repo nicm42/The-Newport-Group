@@ -1,5 +1,7 @@
 import React from 'react';
 import { houseIntro } from '../content/housesContent';
+import { buildingIntro } from '../content/buildingsContent';
+import { officeIntro } from '../content/officesContent';
 
 const PagesIntro = (props) => {
   const { type } = props;
@@ -11,9 +13,13 @@ const PagesIntro = (props) => {
         if (section === 'image') return houseIntro.image;
         if (section === 'intro') return houseIntro.intro;
       case 'Buildings':
-        return 'House building';
+        if (section === 'title') return buildingIntro.title;
+        if (section === 'image') return buildingIntro.image;
+        if (section === 'intro') return buildingIntro.intro;
       case 'Offices':
-        return 'Office space';
+        if (section === 'title') return officeIntro.title;
+        if (section === 'image') return officeIntro.image;
+        if (section === 'intro') return officeIntro.intro;
       default:
         return '';
     }

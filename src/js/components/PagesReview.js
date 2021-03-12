@@ -1,5 +1,7 @@
 import React, { useRef, createRef } from 'react';
 import { houseReviews } from '../content/housesContent';
+import { buildingReviews } from '../content/buildingsContent';
+import { officeReviews } from '../content/officesContent';
 import onScreen from '../utilities/onScreen';
 
 const PagesReview = (props) => {
@@ -10,9 +12,9 @@ const PagesReview = (props) => {
       case 'Houses':
         return houseReviews;
       case 'Buildings':
-        return 'House building';
+        return buildingReviews;
       case 'Offices':
-        return 'Office space';
+        return officeReviews;
       default:
         return '';
     }

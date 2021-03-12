@@ -1,6 +1,7 @@
 import React, { useState, useRef, createRef } from 'react';
 import { houseVideos } from '../content/housesContent';
-import { playVideo, pauseVideo } from '../utilities/videoToggle';
+import { buildingVideos } from '../content/buildingsContent';
+import { officeVideos } from '../content/officesContent';
 
 const PagesVideos = (props) => {
   const { type } = props;
@@ -10,9 +11,9 @@ const PagesVideos = (props) => {
       case 'Houses':
         return houseVideos;
       case 'Buildings':
-        return 'House building';
+        return buildingVideos;
       case 'Offices':
-        return 'Office space';
+        return officeVideos;
       default:
         return '';
     }
@@ -40,10 +41,15 @@ const PagesVideos = (props) => {
       if (isPlaying[index] === true) {
         setIsPlaying({ ...isPlaying, [index]: false });
         video.current.pause();
-        pauseVideo(video, button, playPause);
+        playPause.current.classList.remove('la-pause');
+        playPause.current.classList.add('la-play');
+        button.current.style.opacity = 1;
       } else {
         setIsPlaying({ ...isPlaying, [index]: true });
-        playVideo(video, button, playPause);
+        video.current.play();
+        playPause.current.classList.remove('la-play');
+        playPause.current.classList.add('la-pause');
+        button.current.style.opacity = 0;
       }
     }
   };
