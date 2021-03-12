@@ -9,7 +9,7 @@ import villa from '/videos/villa.mp4';
 import lakeHousePoster from '/imgs/lake-house.jpg';
 import villaPoster from '/imgs/villa.jpg';
 
-export const housesContent = {
+export const houseIntro = {
   title: 'Buy or sell a house',
   image: housekeys,
   intro:

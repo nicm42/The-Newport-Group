@@ -1,5 +1,5 @@
 import React from 'react';
-import { housesContent } from '../content/housesContent';
+import { houseIntro } from '../content/housesContent';
 
 const PagesIntro = (props) => {
   const { type } = props;
@@ -7,9 +7,9 @@ const PagesIntro = (props) => {
   const pageContent = (section) => {
     switch (type) {
       case 'Houses':
-        if (section === 'title') return housesContent.title;
-        if (section === 'image') return housesContent.image;
-        if (section === 'intro') return housesContent.intro;
+        if (section === 'title') return houseIntro.title;
+        if (section === 'image') return houseIntro.image;
+        if (section === 'intro') return houseIntro.intro;
       case 'Buildings':
         return 'House building';
       case 'Offices':
