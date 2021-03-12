@@ -1,20 +1,24 @@
 import React, { useState, useRef, createRef } from 'react';
+import { houseVideos } from '../content/housesContent';
 import { playVideo, pauseVideo } from '../utilities/videoToggle';
 
-import lakeHouse from '/videos/lake-house.mp4';
-import villa from '/videos/villa.mp4';
-import lakeHousePoster from '/imgs/lake-house.jpg';
-import villaPoster from '/imgs/villa.jpg';
+const PagesVideos = (props) => {
+  const { type } = props;
 
-const HousesVideos = () => {
-  const videos = [
-    {
-      video: lakeHouse,
-      poster: lakeHousePoster,
-      label: 'Arial view from a lake going towards a house',
-    },
-    { video: villa, poster: villaPoster, label: 'Coming up close on a house' },
-  ];
+  const pageContent = () => {
+    switch (type) {
+      case 'Houses':
+        return houseVideos;
+      case 'Buildings':
+        return 'House building';
+      case 'Offices':
+        return 'Office space';
+      default:
+        return '';
+    }
+  };
+
+  const videos = pageContent();
 
   const [isPlaying, setIsPlaying] = useState({});
 
@@ -93,4 +97,4 @@ const HousesVideos = () => {
   );
 };
 
-export default HousesVideos;
+export default PagesVideos;

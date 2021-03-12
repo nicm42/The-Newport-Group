@@ -1,18 +1,18 @@
 import React from 'react';
 
 import PagesHeader from '../components/PagesHeader';
-import HousesIntro from '../components/HousesIntro';
-import HousesReview from '../components/HousesReview';
-import HousesVideos from '../components/HousesVideos';
+import PagesIntro from '../components/PagesIntro';
+import PagesReview from '../components/PagesReview';
+import PagesVideos from '../components/PagesVideos';
 
 const Houses = () => {
   return (
     <>
       <PagesHeader />
       <main>
-        <HousesIntro />
-        <HousesReview />
-        <HousesVideos />
+        <PagesIntro type="Houses" />
+        <PagesReview type="Houses" />
+        <PagesVideos type="Houses" />
       </main>
     </>
   );
