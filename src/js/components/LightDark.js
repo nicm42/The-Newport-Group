@@ -32,7 +32,7 @@ const LightDark = () => {
   };
 
   return (
-    <div className="header__lightdark" onClick={setTheme}>
+    <button className="header__lightdark" onClick={setTheme}>
       <i
         className={isDark ? 'las la-sun' : 'las la-sun none'}
         title="Light mode"
@@ -41,7 +41,7 @@ const LightDark = () => {
         className={isDark ? 'las la-moon none' : 'las la-moon'}
         title="Dark mode"
       ></i>
-    </div>
+    </button>
   );
 };
 
