@@ -47,14 +47,14 @@ const PagesReview = (props) => {
               onScreen(imageRefs.current[index]) ? 'slide' : ''
             }`}
           />
-          <p
+          <blockquote
             ref={quoteRefs.current[index]}
             className={`pageReview__quote ${
               onScreen(quoteRefs.current[index]) ? 'slide' : ''
             }`}
           >
             {review.text}
-          </p>
+          </blockquote>
         </div>
       ))}
     </section>
