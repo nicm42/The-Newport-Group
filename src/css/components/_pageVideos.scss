@@ -7,9 +7,21 @@
   justify-items: center;
   gap: 1em;
 
+  @supports not (gap: 2em) {
+    &__card:not(:last-of-type) {
+      margin-bottom: 2em;
+    }
+  }
+
   @include g.breakpoint-up(medium) {
     grid-template-columns: repeat(2, auto);
     grid-template-rows: auto;
+
+    @supports not (gap: 2em) {
+      &__card:not(:last-of-type) {
+        margin-right: 2em;
+      }
+    }
   }
 
   &__container {

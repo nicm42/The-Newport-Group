@@ -9,6 +9,12 @@
     }
   }
 
+  @supports not (gap: 2em) {
+    &__card:not(:last-of-type) {
+      margin-right: 2em;
+    }
+  }
+
   &__title {
     text-align: center;
     margin-bottom: 0.5em;
