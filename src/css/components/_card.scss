@@ -64,11 +64,6 @@
     height: 25%;
     display: grid;
     place-content: center;
-  }
-
-  &__button {
-    position: relative;
-    border: none;
     padding: 0.5em 1em;
     border: 2px solid var(--secondary-colour);
     border-radius: var(--border-radius);
@@ -77,6 +72,16 @@
     box-shadow: var(--box-shadow);
     cursor: pointer;
     overflow: hidden;
+
+    &:hover,
+    &:focus {
+      background-color: var(--secondary-colour);
+    }
+
+    &:hover a,
+    &:focus a {
+      color: var(--alternate-colour);
+    }
 
     &::after {
       position: absolute;
@@ -96,12 +101,6 @@
     &:focus::after {
       left: 110%;
       opacity: 0;
-    }
-
-    &:hover,
-    &:focus {
-      background-color: var(--secondary-colour);
-      color: var(--alternate-colour);
     }
   }
 }

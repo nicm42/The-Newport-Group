@@ -35,9 +35,7 @@ const Cards = () => {
             loading="lazy"
           />
           <div className="cards__text">
-            <Link to={card.link}>
-              <button className="cards__button">{card.text}</button>
-            </Link>
+            <Link to={card.link}>{card.text}</Link>
           </div>
         </div>
       ))}
