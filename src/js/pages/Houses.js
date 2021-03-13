@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import PagesHeader from '../components/PagesHeader';
 import PagesIntro from '../components/PagesIntro';
@@ -6,6 +6,10 @@ import PagesReview from '../components/PagesReview';
 import PagesVideos from '../components/PagesVideos';
 
 const Houses = () => {
+  useEffect(() => {
+    document.title = 'The Newport Group - House Building';
+  }, []);
+
   return (
     <>
       <PagesHeader />
