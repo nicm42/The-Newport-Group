@@ -1,6 +1,7 @@
 import React from 'react';
 import caleb from '/imgs/caleb.jpg';
-import map from '/imgs/map.png';
+import map from '/imgs/map.jpg';
+import mapSmall from '/imgs/map-small.jpg';
 
 const Footer = () => {
   return (
@@ -40,7 +41,10 @@ const Footer = () => {
         </div>
 
         <img
-          src={map}
+          src={mapSmall}
+          srcSet={`${mapSmall} 450w,
+                  ${map} 750w`}
+          sizes="(min-width: 40em) 50vw, 100vw"
           alt="Map of Newport Beach"
           className="footer__map"
           loading="lazy"
