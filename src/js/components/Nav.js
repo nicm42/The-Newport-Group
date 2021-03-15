@@ -23,9 +23,9 @@ const Nav = () => {
 
   return (
     <nav ref={targetRef}>
-      <div className="menu-toggle" onClick={toggle}>
+      <button className="menu-toggle" onClick={toggle}>
         <span className={isOpen ? 'menu cross' : 'menu'}></span>
-      </div>
+      </button>
       <ul className={isOpen ? 'menu-links show' : 'menu-links'}>
         {navigation.map((nav, index) => (
           <li key={index}>

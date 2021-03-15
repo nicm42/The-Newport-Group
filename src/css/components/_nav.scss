@@ -22,6 +22,8 @@ nav {
     place-content: center;
     width: $menu-width;
     height: $menu-height;
+    background: transparent;
+    border: none;
     cursor: pointer;
     z-index: 2;
 
