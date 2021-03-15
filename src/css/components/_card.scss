@@ -23,7 +23,7 @@
     width: 15em;
     max-width: calc(100% - 2em);
     height: calc(100% - 2em);
-    transform: translateY(-50%);
+    transform: translateY(0);
     opacity: 0;
     transition: transform var(--transition-time) var(--easing),
       opacity var(--transition-time) var(--easing);

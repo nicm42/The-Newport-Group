@@ -34,7 +34,7 @@
   }
 
   &__contactmap {
-    @include g.breakpoint-up(large) {
+    @include g.breakpoint-up(medium-large) {
       display: flex;
       justify-content: flex-end;
     }
