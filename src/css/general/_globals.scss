@@ -17,10 +17,11 @@ body {
 
 a {
   color: var(--secondary-colour);
-  text-decoration: none;
+  //text-decoration: none;
 
   &:hover,
   &:focus {
-    text-decoration: underline;
+    //text-decoration: underline;
+    text-decoration-thickness: 0.15rem;
   }
 }
