@@ -1,4 +1,6 @@
-import architect from '/imgs/architect.jpg';
+import architectSmall from '/imgs/architect-small.jpg';
+import architectMedium from '/imgs/architect-medium.jpg';
+import architectBig from '/imgs/architect-big.jpg';
 
 import housepool from '/imgs/house-pool.jpg';
 import pool from '/imgs/pool.jpg';
@@ -11,7 +13,9 @@ import lakeHouseTopPoster from '/imgs/lake-house-top.jpg';
 
 export const buildingIntro = {
   title: 'House building',
-  image: architect,
+  imageSmall: architectSmall,
+  imageMedium: architectMedium,
+  imageBig: architectBig,
   intro:
     '<h3>None of our houses right for you? We can build you one.</h3><p>We have our own team of architects and builders, so you can be sure your house will be built to the highest specifications. Meetings between you and the designers will ensure you end up with your perfect house.</p><p>Call us to set up an appointment to discuss options.</p>',
 };

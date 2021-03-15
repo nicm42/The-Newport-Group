@@ -1,4 +1,6 @@
-import working from '/imgs/working.jpg';
+import workingSmall from '/imgs/working-small.jpg';
+import workingMedium from '/imgs/working-medium.jpg';
+import workingBig from '/imgs/working-big.jpg';
 
 import coworking from '/imgs/coworking.jpg';
 import office from '/imgs/office.jpg';
@@ -11,7 +13,9 @@ import lightsOutPoster from '/imgs/lights-out.jpg';
 
 export const officeIntro = {
   title: 'Office space',
-  image: working,
+  imageSmall: workingSmall,
+  imageMedium: workingMedium,
+  imageBig: workingBig,
   intro:
     '<h3>Looking for an office?</h3><p>Newport Beach has plenty of office space. Are you looking for something with a view across the ocean or space with facilities? We’ve got you covered. From buildings to encompass your whole company to co-working space and everything in between.</p><p>Call us to discuss your requirements.</p>',
 };
