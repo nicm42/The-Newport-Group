@@ -3,12 +3,23 @@
 .header {
   height: 100vh;
   background-color: var(--secondary-colour);
-  background-image: url(../imgs/header.jpg);
+  background-image: url(../imgs/header-small.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 
+  @include g.breakpoint-up(medium) {
+    background-image: url(../imgs/header-medium.jpg);
+  }
+
+  @include g.breakpoint-up(medium-large) {
+    background-image: url(../imgs/header-medium-large.jpg);
+  }
+
+  @include g.breakpoint-up(large) {
+    background-image: url(../imgs/header-big.jpg);
+  }
   .skip {
     position: absolute;
     top: 0;
