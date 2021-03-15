@@ -44,7 +44,8 @@
   &__lightdark {
     position: absolute;
     top: 0.5em;
-    right: 1em;
+    //right: 1em;
+    left: calc(100vw - 2.5em);
     color: var(--alternate-colour);
     background-color: transparent;
     border: 0;
