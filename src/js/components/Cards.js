@@ -2,15 +2,39 @@ import React, { useRef, createRef } from 'react';
 import { Link } from 'react-router-dom';
 import onScreen from '../utilities/onScreen';
 
-import mansion from '/imgs/mansion.jpg';
-import construction from '/imgs/construction.jpg';
-import office from '/imgs/office.jpg';
+import mansionBig from '/imgs/mansion-big.jpg';
+import mansionMedium from '/imgs/mansion-medium.jpg';
+import mansionSmall from '/imgs/mansion-small.jpg';
+import constructionBig from '/imgs/construction-big.jpg';
+import constructionMedium from '/imgs/construction-medium.jpg';
+import constructionSmall from '/imgs/construction-small.jpg';
+import officeBig from '/imgs/office-big.jpg';
+import officeMedium from '/imgs/office-medium.jpg';
+import officeSmall from '/imgs/office-small.jpg';
 
 const Cards = () => {
   const cards = [
-    { image: mansion, text: 'Buy or sell a house', link: '/houses' },
-    { image: construction, text: 'Build a house', link: 'buildings' },
-    { image: office, text: 'Rent offices', link: 'offices' },
+    {
+      imageBig: mansionBig,
+      imageMedium: mansionMedium,
+      imageSmall: mansionSmall,
+      text: 'Buy or sell a house',
+      link: '/houses',
+    },
+    {
+      imageBig: constructionBig,
+      imageMedium: constructionMedium,
+      imageSmall: constructionSmall,
+      text: 'Build a house',
+      link: 'buildings',
+    },
+    {
+      imageBig: officeBig,
+      imageMedium: officeMedium,
+      imageSmall: officeSmall,
+      text: 'Rent offices',
+      link: 'offices',
+    },
   ];
 
   const cardRefs = useRef([]);
@@ -29,7 +53,11 @@ const Cards = () => {
           }`}
         >
           <img
-            src={card.image}
+            src={card.imageSmall}
+            srcSet={`${card.imageSmall} 450w,
+                  ${card.imageMedium} 750w,
+                  ${card.imageBig} 1500w,`}
+            sizes="(min-width: 40em) 33vw, 100vw"
             alt=""
             className="cards__image"
             loading="lazy"
