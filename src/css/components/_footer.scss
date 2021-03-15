@@ -44,6 +44,10 @@
     p {
       white-space: nowrap;
     }
+
+    a {
+      color: var(--alternate-colour);
+    }
   }
 
   &__map {

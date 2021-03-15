@@ -30,7 +30,8 @@ const Footer = () => {
           </p>
 
           <p>
-            <i className="las la-envelope"></i> contact@thenewportgroup.com
+            <i className="las la-envelope"></i>{' '}
+            <a href="mailto:#">contact@thenewportgroup.com</a>
           </p>
 
           <p>
