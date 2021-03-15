@@ -25,3 +25,8 @@ a {
     text-decoration-thickness: 0.15rem;
   }
 }
+
+p,
+blockquote {
+  max-width: 50ch;
+}
