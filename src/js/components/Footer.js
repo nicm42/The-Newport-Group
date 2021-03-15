@@ -30,11 +30,11 @@ const Footer = () => {
           </p>
 
           <p>
-            <i className="las la-phone"></i> contact@thenewportgroup.com
+            <i className="las la-envelope"></i> contact@thenewportgroup.com
           </p>
 
           <p>
-            <i className="las la-envelope"></i> 555-123-4567
+            <i className="las la-phone"></i> 555-123-4567
           </p>
         </div>
 
