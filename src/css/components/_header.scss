@@ -9,6 +9,34 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
 
+  .skip {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%) translateY(-100%);
+    transition: translate 1000ms var(--easing);
+    z-index: 10;
+
+    @include g.breakpoint-up(large) {
+      top: unset;
+      left: 0.1em;
+      transform: translateX(0) translateY(-1000%);
+    }
+  }
+
+  .skip:focus {
+    transform: translateX(-50%) translateY(0.1em);
+
+    @include g.breakpoint-up(large) {
+      transform: translateX(0) translateY(0);
+    }
+  }
+
+  a {
+    color: var(--alternate-colour);
+  }
+
   &.short {
     height: auto;
   }

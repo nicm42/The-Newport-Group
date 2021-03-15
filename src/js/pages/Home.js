@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <>
       <Header />
-      <main>
+      <main id="main" tabIndex="-1">
         <Info />
         <Parallax />
         <Cards />
