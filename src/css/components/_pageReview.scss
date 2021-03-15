@@ -11,7 +11,7 @@
     flex-direction: column;
     align-items: center;
 
-    @include g.breakpoint-up(large) {
+    @include g.breakpoint-up(medium-large) {
       flex-direction: row;
       align-items: flex-start;
       //Move each one a little further to the right
@@ -35,7 +35,7 @@
       opacity: 0.5;
     }
 
-    @include g.breakpoint-up(large) {
+    @include g.breakpoint-up(medium-large) {
       max-width: 50%;
     }
   }
@@ -72,7 +72,7 @@
       content: close-quote;
     }
 
-    @include g.breakpoint-up(large) {
+    @include g.breakpoint-up(medium-large) {
       width: 100%;
       transform: translateY(1em) translateX(50%);
 

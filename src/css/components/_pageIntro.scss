@@ -2,7 +2,7 @@
 
 .pageIntro {
   &__imagetext {
-    @include g.breakpoint-up(large) {
+    @include g.breakpoint-up(medium-large) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 2em;
@@ -19,7 +19,7 @@
     text-align: center;
     margin-bottom: 0.5em;
 
-    @include g.breakpoint-up(large) {
+    @include g.breakpoint-up(medium-large) {
       margin-bottom: 1em;
     }
   }
@@ -27,7 +27,7 @@
   &__image {
     margin-bottom: 1em;
 
-    @include g.breakpoint-up(large) {
+    @include g.breakpoint-up(medium-large) {
       margin-bottom: 0;
     }
   }
