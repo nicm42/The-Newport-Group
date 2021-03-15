@@ -2,9 +2,15 @@ import workingSmall from '/imgs/working-small.jpg';
 import workingMedium from '/imgs/working-medium.jpg';
 import workingBig from '/imgs/working-big.jpg';
 
-import coworking from '/imgs/coworking.jpg';
-import office from '/imgs/office.jpg';
-import officegrey from '/imgs/office-grey.jpg';
+import coworkingSmall from '/imgs/coworking-small.jpg';
+import coworkingMedium from '/imgs/coworking-medium.jpg';
+import coworkingBig from '/imgs/coworking-big.jpg';
+import officeSmall from '/imgs/office-small.jpg';
+import officeMedium from '/imgs/office-medium.jpg';
+import officeBig from '/imgs/office-big.jpg';
+import officegreySmall from '/imgs/office-grey-small.jpg';
+import officegreyMedium from '/imgs/office-grey-medium.jpg';
+import officegreyBig from '/imgs/office-grey-big.jpg';
 
 import openWorking from '/videos/open-working.mp4';
 import lightsOut from '/videos/lights-out.mp4';
@@ -22,19 +28,25 @@ export const officeIntro = {
 
 export const officeReviews = [
   {
-    image: coworking,
+    imageSmall: coworkingSmall,
+    imageMedium: coworkingMedium,
+    imageBig: coworkingBig,
     alt: 'An open-plan area sofas and a table and chairs to eat or meet at',
     text:
       '“I recently went freelance and needed somewhere to work that wasn’t also home. The Newport Group found me the perfect place that’s light and airy, with other freelancers who I can meet for a drink in the office’s kitchen It’s just like the friendliness of the office, but where I’m my own boss.”',
   },
   {
-    image: office,
+    imageSmall: officeSmall,
+    imageMedium: officeMedium,
+    imageBig: officeBig,
     alt: 'A meeting room with panoramic views',
     text:
       '“The Newport Group found us the perfect office for our small company, with beautiful views. Only trouble is the view can be a distraction in company meetings!”',
   },
   {
-    image: officegrey,
+    imageSmall: officegreySmall,
+    imageMedium: officegreyMedium,
+    imageBig: officegreyBig,
     alt: 'An airy office with plenty of space',
     text:
       '“Our new office is just the right size for us to grow. Thank you, Newport Group.”',

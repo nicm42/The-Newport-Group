@@ -2,9 +2,15 @@ import housekeysSmall from '/imgs/housekeys-small.jpg';
 import housekeysMedium from '/imgs/housekeys-medium.jpg';
 import housekeysBig from '/imgs/housekeys-big.jpg';
 
-import fireplace from '/imgs/fireplace.jpg';
-import kitchen from '/imgs/kitchen.jpg';
-import lounge from '/imgs/lounge.jpg';
+import fireplaceSmall from '/imgs/fireplace-small.jpg';
+import fireplaceMedium from '/imgs/fireplace-medium.jpg';
+import fireplaceBig from '/imgs/fireplace-big.jpg';
+import kitchenSmall from '/imgs/kitchen-small.jpg';
+import kitchenMedium from '/imgs/kitchen-medium.jpg';
+import kitchenBig from '/imgs/kitchen-big.jpg';
+import loungeSmall from '/imgs/lounge-small.jpg';
+import loungeMedium from '/imgs/lounge-medium.jpg';
+import loungeBig from '/imgs/lounge-big.jpg';
 
 import lakeHouse from '/videos/lake-house.mp4';
 import villa from '/videos/villa.mp4';
@@ -22,19 +28,25 @@ export const houseIntro = {
 
 export const houseReviews = [
   {
-    image: fireplace,
+    imageSmall: fireplaceSmall,
+    imageMedium: fireplaceMedium,
+    imageBig: fireplaceBig,
     alt: 'An open-plan living room and kitchen with a brick-fireplace',
     text:
       'The Newport Group helped me find the perfect house for our family. I’m in love with the living room, where we can relax in the evenings after the children have gone to bed.',
   },
   {
-    image: kitchen,
+    imageSmall: kitchenSmall,
+    imageMedium: kitchenMedium,
+    imageBig: kitchenBig,
     alt: 'View from the kitchen island, looking into the dining area',
     text:
       'We were looking to downgrade now the children are grown up. The Newport Group found us the perfect house, where we can feel at home.',
   },
   {
-    image: lounge,
+    imageSmall: loungeSmall,
+    imageMedium: loungeMedium,
+    imageBig: loungeBig,
     alt: 'A living area with bijou kitchen',
     text:
       'Our house was on sale with another realtor for three months with no sale, even after reducing the asking price. Then we found The Newport Group and our house was sold within a week, and at $50,000 more than we’d hoped to sell it for.',

@@ -39,7 +39,11 @@ const PagesReview = (props) => {
       {reviews.map((review, index) => (
         <div key={index} className="pageReview__imagequote">
           <img
-            src={review.image}
+            src={review.imageSmall}
+            srcSet={`${review.imageSmall} 450w,
+                  ${review.imageMedium} 750w,
+                  ${review.imageBig} 1500w,`}
+            sizes="(min-width: 40em) 50vw, 100vw"
             alt={review.alt}
             loading="lazy"
             ref={imageRefs.current[index]}

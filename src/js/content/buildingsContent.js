@@ -2,9 +2,15 @@ import architectSmall from '/imgs/architect-small.jpg';
 import architectMedium from '/imgs/architect-medium.jpg';
 import architectBig from '/imgs/architect-big.jpg';
 
-import housepool from '/imgs/house-pool.jpg';
-import pool from '/imgs/pool.jpg';
-import poolhouse from '/imgs/poolhouse.jpg';
+import housepoolSmall from '/imgs/house-pool-small.jpg';
+import housepoolMedium from '/imgs/house-pool-medium.jpg';
+import housepoolBig from '/imgs/house-pool-big.jpg';
+import poolSmall from '/imgs/pool-small.jpg';
+import poolMedium from '/imgs/pool-medium.jpg';
+import poolBig from '/imgs/pool-big.jpg';
+import poolhouseSmall from '/imgs/poolhouse-small.jpg';
+import poolhouseMedium from '/imgs/poolhouse-medium.jpg';
+import poolhouseBig from '/imgs/poolhouse-big.jpg';
 
 import emptyRoom from '/videos/empty-room.mp4';
 import lakeHouseTop from '/videos/lake-house-top.mp4';
@@ -22,19 +28,25 @@ export const buildingIntro = {
 
 export const buildingReviews = [
   {
-    image: housepool,
+    imageSmall: housepoolSmall,
+    imageMedium: housepoolMedium,
+    imageBig: housepoolBig,
     alt: 'A beautiful single story house with a big pool',
     text:
       '“I love our new house. After viewing a house that was close to what we wanted, The Newport Group built us a house that was exactly what we needed.”',
   },
   {
-    image: pool,
+    imageSmall: poolSmall,
+    imageMedium: poolMedium,
+    imageBig: poolBig,
     alt: 'The poolside, with an integrated hot tub',
     text:
       '“I’ve always wanted to have a house built exactly to my specifications and The Newport Group have done that. Nothing I wanted was too big or too small for them. When I saw the house it matched my dreams exactly.”',
   },
   {
-    image: poolhouse,
+    imageSmall: poolhouseSmall,
+    imageMedium: poolhouseMedium,
+    imageBig: poolhouseBig,
     alt:
       'A pool with pool house, set on the side of a hill with glorious views',
     text:
