@@ -8,7 +8,12 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+
+  //A fixed background attachment only works on non-touch devices
+  //and keeping it turned on means that it just shows a corner of the image
+  @media (hover: hover) {
+    background-attachment: fixed;
+  }
 
   @include g.breakpoint-up(medium) {
     background-image: url(../imgs/parallax-medium.jpg);
