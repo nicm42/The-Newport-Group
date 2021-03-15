@@ -90,9 +90,11 @@ nav {
     position: absolute;
     top: 5vw;
     left: 5vw;
-    right: 5vw;
+    //right: 5vw;
+    width: 85vw;
     margin: 0 auto;
     padding: 0;
+    padding-top: 1.25em;
     border-radius: var(--border-radius);
     background-color: var(--secondary-colour);
     opacity: 0;
