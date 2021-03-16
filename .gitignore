@@ -15,3 +15,7 @@ Figma/
 package-lock.json
 todo
 src/_old
+
+babel.config.js
+
+jest.config.js
