@@ -18,10 +18,15 @@ I wanted to make a multi-page website, partly because it's been a long time sinc
 TBC
 
 ## Technologies
-TBC
+* HTML
+* SASS
+* React
+* Parcel
+* Jest
+* Enzyme
 
 ## Learnings
-TBC
+React...
 
 ## Features
 TBC
