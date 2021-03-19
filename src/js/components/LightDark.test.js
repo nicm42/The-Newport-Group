@@ -5,9 +5,6 @@ import '@testing-library/jest-dom';
 
 import LightDark from './LightDark';
 
-//const jsdom = require('jsdom');
-//const { JSDOM } = jsdom;
-
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('Light dark icon switches when button pressed', () => {
@@ -23,19 +20,18 @@ describe('Light dark icon switches when button pressed', () => {
     expect(sun.hasClass('none')).toEqual(true);
     expect(moon.hasClass('none')).toEqual(false);
   });
-  it.only('should show sun icon when clicked', () => {
+  it('should show sun icon when clicked', () => {
     button.simulate('click');
+    //Have to re-find these things after a click in order for it to work
     sun = wrapper.find('.la-sun');
     moon = wrapper.find('.la-moon');
     expect(sun.hasClass('none')).toEqual(false);
     expect(moon.hasClass('none')).toEqual(true);
+    button.simulate('click'); //adding this so it's back to light mode for next test
   });
-  it('should update body class when clicked', () => {
-    //const body = document.body;
-    //const dom = new JSDOM(`<!DOCTYPE html><body></body>`);
-    //console.log(dom.window.document.body);
-    //expect(dom.window.document.body.hasClass('dark')).toEqual(false);
-    expect(true).toBeTruthy;
-    //expect(document.body.length).toBe(1);
+  it('should update class on body when clicked', () => {
+    expect(document.body.classList.contains('dark')).toBe(false);
+    button.simulate('click');
+    expect(document.body.classList.contains('dark')).toBe(true);
   });
 });
