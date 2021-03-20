@@ -34,11 +34,11 @@ const LightDark = () => {
   return (
     <button className="header__lightdark" onClick={setTheme}>
       <i
-        className={isDark ? 'las la-sun' : 'las la-sun none'}
+        className={`las la-sun ${isDark ? '' : 'none'}`}
         title="Light mode"
       ></i>
       <i
-        className={isDark ? 'las la-moon none' : 'las la-moon'}
+        className={`las la-moon ${isDark ? 'none' : ''}`}
         title="Dark mode"
       ></i>
     </button>
