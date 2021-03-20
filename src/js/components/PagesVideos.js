@@ -36,8 +36,11 @@ const PagesVideos = (props) => {
     (video, i) => playPauseRefs.current[i] ?? createRef()
   );
 
-  const toggle = (video, button, playPause, index) => {
-    if (event.code === 'Space' || !event.code) {
+  const toggle = (event, video, button, playPause, index) => {
+    if (event.key === ' ' || event.key === 'Enter' || !event.key) {
+      if (event.key === ' ') {
+        event.preventDefault();
+      }
       if (isPlaying[index] === true) {
         setIsPlaying({ ...isPlaying, [index]: false });
         video.current.pause();
@@ -66,15 +69,17 @@ const PagesVideos = (props) => {
             ref={videoRefs.current[index]}
             className="pageVideos__video"
             aria-label={item.label}
-            onClick={() =>
+            onClick={(e) =>
               toggle(
+                e,
                 videoRefs.current[index],
                 buttonRefs.current[index],
                 playPauseRefs.current[index]
               )
             }
-            onKeyPress={() =>
+            onKeyPress={(e) =>
               toggle(
+                e,
                 videoRefs.current[index],
                 buttonRefs.current[index],
                 playPauseRefs.current[index]
@@ -87,8 +92,9 @@ const PagesVideos = (props) => {
             className="pageVideos__control"
             aria-label="Play/Pause"
             ref={buttonRefs.current[index]}
-            onClick={() =>
+            onClick={(e) =>
               toggle(
+                e,
                 videoRefs.current[index],
                 buttonRefs.current[index],
                 playPauseRefs.current[index]
