@@ -10,7 +10,13 @@ Enzyme.configure({ adapter: new Adapter() });
 describe('Video toggle works', () => {
   const wrapper = shallow(<PagesVideos type="Buildings" />);
   const button = wrapper.find('button');
+  let play = wrapper.find('.la-play');
+  let pause = wrapper.find('.la-pause');
   it('should all exist', () => {
     expect(button.length).toBe(2);
+  });
+  it('should start off with play icon', () => {
+    expect(play.length).toBe(2);
+    expect(pause.length).toBe(0);
   });
 });
