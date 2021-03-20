@@ -18,6 +18,12 @@
     "url": "https://github.com/nicm42/The-Newport-Group/issues"
   },
   "homepage": "https://github.com/nicm42/The-Newport-Group#readme",
+   "staticFiles": {
+    "staticPath": [
+      "static/favicon.png"
+    ],
+    "watcherGlob": "**"
+  },
   "devDependencies": {
     "@babel/core": "^7.13.10",
     "@babel/preset-env": "^7.13.10",
