@@ -12,6 +12,9 @@ describe('Video toggle works', () => {
   const button = wrapper.find('button');
   let play = wrapper.find('.la-play');
   let pause = wrapper.find('.la-pause');
+  it('renders correctly', () => {
+    shallow(<PagesVideos type="Buildings" />);
+  });
   it('should all exist', () => {
     expect(button.length).toBe(2);
   });

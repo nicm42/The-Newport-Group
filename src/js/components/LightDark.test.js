@@ -12,6 +12,9 @@ describe('Light dark icon switches when button pressed', () => {
   const button = wrapper.find('button');
   let sun = wrapper.find('.la-sun');
   let moon = wrapper.find('.la-moon');
+  it('renders correctly', () => {
+    shallow(<LightDark />);
+  });
   it('should all exist', () => {
     expect(sun.length).toBe(1);
     expect(wrapper.find('.none').length).toBe(1);
@@ -28,6 +31,10 @@ describe('Light dark icon switches when button pressed', () => {
     expect(sun.hasClass('none')).toEqual(false);
     expect(moon.hasClass('none')).toEqual(true);
     button.simulate('click'); //adding this so it's back to light mode for next test
+    sun = wrapper.find('.la-sun');
+    moon = wrapper.find('.la-moon');
+    expect(sun.hasClass('none')).toEqual(true);
+    expect(moon.hasClass('none')).toEqual(false);
   });
   it('should update class on body when clicked', () => {
     expect(document.body.classList.contains('dark')).toBe(false);
