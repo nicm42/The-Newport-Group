@@ -22,9 +22,6 @@ const Cards = () => {
           <img
             src={card.imageSmall}
             srcSet={card.srcset}
-            /*srcSet={`${card.imageSmall} 450w,
-                     ${card.imageMedium} 750w,
-                     ${card.imageBig} 1500w`}*/
             sizes="(min-width: 40em) 33vw, 100vw"
             alt=""
             className="cards__image"
