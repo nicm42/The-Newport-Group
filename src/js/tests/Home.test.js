@@ -1,17 +1,13 @@
 import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-//import Home from './Home';
+import Home from '../pages/Home';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-test('Just a test', () => {
-  expect(true).toBeTruthy();
-});
-
-/* describe('Home', () => {
+describe('Home', () => {
+  const title = 'Home page title';
   it('Title should be for home page', () => {
-    expect(global.window.document.title).toBe('The Newport Group - Home');
+    expect(document.title).toBe(title);
   });
 });
- */
