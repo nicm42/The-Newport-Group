@@ -8,7 +8,7 @@ import officeBig from '/imgs/office-big.jpg';
 import officeMedium from '/imgs/office-medium.jpg';
 import officeSmall from '/imgs/office-small.jpg';
 
-export const cards = [
+const cards = [
   {
     imageBig: mansionBig,
     imageMedium: mansionMedium,
@@ -34,3 +34,5 @@ export const cards = [
     link: 'offices',
   },
 ];
+
+export default cards;

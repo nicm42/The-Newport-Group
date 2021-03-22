@@ -1,7 +1,7 @@
 import React, { useRef, createRef } from 'react';
 import { Link } from 'react-router-dom';
 import onScreen from '../utilities/onScreen';
-import { cards } from '../content/cardsContent';
+import cards from '../content/cardsContent';
 
 const Cards = () => {
   const cardRefs = useRef([]);
