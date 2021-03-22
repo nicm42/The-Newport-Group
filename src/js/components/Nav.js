@@ -27,7 +27,7 @@ const Nav = () => {
     };
     window.addEventListener('keydown', closeMenu);
     return () => {
-      indow.removeEventListener('keydown', closeMenu);
+      window.removeEventListener('keydown', closeMenu);
     };
   }, []);
 
@@ -45,7 +45,7 @@ const Nav = () => {
   ];
 
   return (
-    <nav ref={targetRef}>
+    <nav ref={targetRef} data-testid="nav">
       <button className="menu-toggle" onClick={toggle}>
         <span className={`menu ${isOpen ? 'cross' : ''}`}></span>
       </button>

@@ -1,7 +1,9 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import '@testing-library/jest-dom';
+import { render, screen, fireEvent } from '@testing-library/react';
 import Nav from '../components/Nav';
 
 Enzyme.configure({ adapter: new Adapter() });
@@ -56,4 +58,17 @@ describe('Menu works', () => {
     list = wrapper.find('ul');
     expect(list.hasClass('show')).toEqual(true);
   });
+});
+describe('Menu works with React Testing Library', () => {
+  render(
+    <Router>
+      <Nav />
+    </Router>
+  );
+  it.only('basic test', () => {
+    expect(screen.getByTestId('nav')).toBeInTheDocument();
+  });
+  /* it.only('finds nav element', () => {
+    expect(container('nav')).toBeInTheDocument();
+  }); */
 });
