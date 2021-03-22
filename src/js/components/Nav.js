@@ -46,10 +46,16 @@ const Nav = () => {
 
   return (
     <nav ref={targetRef} data-testid="nav">
-      <button className="menu-toggle" onClick={toggle}>
-        <span className={`menu ${isOpen ? 'cross' : ''}`}></span>
+      <button className="menu-toggle" onClick={toggle} data-testid="menuButton">
+        <span
+          className={`menu ${isOpen ? 'cross' : ''}`}
+          data-testid="menuToggle"
+        ></span>
       </button>
-      <ul className={`menu-links ${isOpen ? 'show' : ''}`}>
+      <ul
+        className={`menu-links ${isOpen ? 'show' : ''}`}
+        data-testid="menuList"
+      >
         {navigation.map((nav, index) => (
           <li key={index}>
             <NavLink
@@ -59,6 +65,7 @@ const Nav = () => {
               onClick={toggle}
               onBlur={hide}
               onFocus={show}
+              data-testid="menuLink"
             >
               {nav.text}
             </NavLink>

@@ -65,10 +65,35 @@ describe('Menu works with React Testing Library', () => {
       <Nav />
     </Router>
   );
-  it.only('basic test', () => {
+  it('finds the nav element', () => {
     expect(screen.getByTestId('nav')).toBeInTheDocument();
   });
-  /* it.only('finds nav element', () => {
-    expect(container('nav')).toBeInTheDocument();
-  }); */
+  it('Clicking hamburger should toggle cross class on button', () => {
+    expect(screen.getByTestId('menuToggle')).not.toHaveClass('cross');
+    fireEvent.click(screen.getByTestId('menuButton'));
+    expect(screen.getByTestId('menuToggle')).toHaveClass('cross');
+    fireEvent.click(screen.getByTestId('menuButton'));
+    expect(screen.getByTestId('menuToggle')).not.toHaveClass('cross');
+  });
+  it('Clicking hamburger should toggle show class on list', () => {
+    expect(screen.getByTestId('menuList')).not.toHaveClass('show');
+    fireEvent.click(screen.getByTestId('menuButton'));
+    expect(screen.getByTestId('menuList')).toHaveClass('show');
+    fireEvent.click(screen.getByTestId('menuButton'));
+    expect(screen.getByTestId('menuList')).not.toHaveClass('show');
+  });
+  it('Clicking on a link should hide the menu', () => {
+    fireEvent.click(screen.getByTestId('menuButton'));
+    expect(screen.getByTestId('menuList')).toHaveClass('show');
+    fireEvent.click(screen.queryAllByTestId('menuLink')[0]);
+    expect(screen.getByTestId('menuList')).not.toHaveClass('show');
+  });
+  it.only('Menu should hide on blur and show when focused', () => {
+    //fireEvent.click(screen.getByTestId('menuButton'));
+    //expect(screen.getByTestId('menuList')).toHaveClass('show');
+    //fireEvent.blur(screen.getByTestId('menuList'));
+    //expect(screen.getByTestId('menuList')).not.toHaveClass('show');
+    screen.getByTestId('menuList').focus();
+    expect(screen.getByTestId('menuList')).toHaveClass('show');
+  });
 });
