@@ -4,11 +4,12 @@ import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import Nav from '../components/Nav';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('Menu works', () => {
+/* describe('Menu works', () => {
   const wrapper = shallow(<Nav />);
   const button = wrapper.find('button');
   let menu = wrapper.find('span');
@@ -58,42 +59,71 @@ describe('Menu works', () => {
     list = wrapper.find('ul');
     expect(list.hasClass('show')).toEqual(true);
   });
-});
+}); */
 describe('Menu works with React Testing Library', () => {
-  render(
-    <Router>
-      <Nav />
-    </Router>
-  );
+  beforeEach(() => {
+    render(
+      <Router>
+        <Nav />
+      </Router>
+    );
+  });
+
   it('finds the nav element', () => {
     expect(screen.getByTestId('nav')).toBeInTheDocument();
   });
-  it('Clicking hamburger should toggle cross class on button', () => {
-    expect(screen.getByTestId('menuToggle')).not.toHaveClass('cross');
-    fireEvent.click(screen.getByTestId('menuButton'));
-    expect(screen.getByTestId('menuToggle')).toHaveClass('cross');
-    fireEvent.click(screen.getByTestId('menuButton'));
-    expect(screen.getByTestId('menuToggle')).not.toHaveClass('cross');
+  it('Clicking hamburger should toggle cross class on button and show class on list', () => {
+    const menuButton = screen.getByRole('button', { name: /menu/i });
+    const menuToggle = screen.getByTestId('menuToggle');
+    const menuList = screen.getByTestId('menuList');
+    expect(menuToggle).not.toHaveClass('cross');
+    expect(menuList).not.toHaveClass('show');
+    userEvent.click(menuButton);
+    expect(menuToggle).toHaveClass('cross');
+    expect(menuList).toHaveClass('show');
+    userEvent.click(menuButton);
+    expect(menuToggle).not.toHaveClass('cross');
+    expect(menuList).not.toHaveClass('show');
   });
-  it('Clicking hamburger should toggle show class on list', () => {
-    expect(screen.getByTestId('menuList')).not.toHaveClass('show');
-    fireEvent.click(screen.getByTestId('menuButton'));
-    expect(screen.getByTestId('menuList')).toHaveClass('show');
-    fireEvent.click(screen.getByTestId('menuButton'));
-    expect(screen.getByTestId('menuList')).not.toHaveClass('show');
-  });
+  /* it('Clicking hamburger should toggle show class on list', () => {
+    const menuButton = screen.getByTestId('menuButton');
+    const menuList = screen.getByTestId('menuList');
+    expect(menuList).not.toHaveClass('show');
+    userEvent.click(menuButton);
+    expect(menuList).toHaveClass('show');
+    userEvent.click(menuButton);
+    expect(menuList).not.toHaveClass('show');
+  }); */
   it('Clicking on a link should hide the menu', () => {
+    const menuButton = screen.getByTestId('menuButton');
+    const menuList = screen.getByTestId('menuList');
+    userEvent.click(menuButton);
+    expect(menuList).toHaveClass('show');
+    userEvent.click(screen.queryAllByTestId('menuLink')[0]);
+    expect(menuList).not.toHaveClass('show');
+  });
+  //TODO this is now the only test not working
+  it('Menu should show when focused and hide on blur', () => {
+    const menuList = screen.getByTestId('menuList');
+    menuList.focus();
+    expect(menuList).toHaveClass('menu-links show');
+    fireEvent.blur(menuList);
+    expect(menuList).not.toHaveClass('show');
+  });
+  /*it('Menu should hide on blur', () => {
     fireEvent.click(screen.getByTestId('menuButton'));
     expect(screen.getByTestId('menuList')).toHaveClass('show');
-    fireEvent.click(screen.queryAllByTestId('menuLink')[0]);
+    fireEvent.blur(screen.getByTestId('menuList'));
     expect(screen.getByTestId('menuList')).not.toHaveClass('show');
-  });
-  it.only('Menu should hide on blur and show when focused', () => {
-    //fireEvent.click(screen.getByTestId('menuButton'));
-    //expect(screen.getByTestId('menuList')).toHaveClass('show');
-    //fireEvent.blur(screen.getByTestId('menuList'));
-    //expect(screen.getByTestId('menuList')).not.toHaveClass('show');
-    screen.getByTestId('menuList').focus();
-    expect(screen.getByTestId('menuList')).toHaveClass('show');
+  }); */
+  it('Should close when pressing escape and only escape', () => {
+    const menuButton = screen.getByTestId('menuButton');
+    const menuList = screen.getByTestId('menuList');
+    userEvent.click(menuButton);
+    expect(menuList).toHaveClass('show');
+    userEvent.keyboard('f');
+    expect(menuList).toHaveClass('show');
+    userEvent.keyboard('{Escape}');
+    expect(menuList).not.toHaveClass('show');
   });
 });

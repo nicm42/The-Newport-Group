@@ -6,9 +6,7 @@ const Nav = () => {
   //Set the nav to open or closed on mobile
   //(won't do anything on desktop as menu-toggle is hidden)
   const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggle = () => setIsOpen(!isOpen);
 
   //We want to hide when nothing on the menu has focus
   //But every time we tab to a new link, the previous one loses focus and will hide the menu
@@ -46,7 +44,12 @@ const Nav = () => {
 
   return (
     <nav ref={targetRef} data-testid="nav">
-      <button className="menu-toggle" onClick={toggle} data-testid="menuButton">
+      <button
+        className="menu-toggle"
+        onClick={toggle}
+        data-testid="menuButton"
+        title="menu"
+      >
         <span
           className={`menu ${isOpen ? 'cross' : ''}`}
           data-testid="menuToggle"
@@ -62,7 +65,7 @@ const Nav = () => {
               exact
               to={nav.link}
               activeClassName="active"
-              onClick={toggle}
+              onClick={hide}
               onBlur={hide}
               onFocus={show}
               data-testid="menuLink"
