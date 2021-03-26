@@ -29,6 +29,7 @@ const Info = () => {
       <div
         ref={textRef}
         className={`info__text ${textIsOnScreen ? 'slide' : ''}`}
+        data-testid="paragraphs"
       >
         <p>
           The Newport Group is the foremost Real Estate Agency in the O.C.
