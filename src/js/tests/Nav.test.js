@@ -15,12 +15,12 @@ describe('Nav menu works', () => {
   });
 
   it('finds the nav element', () => {
-    expect(screen.getByTestId('nav')).toBeInTheDocument();
+    expect(screen.getByRole('navigation')).toBeInTheDocument();
   });
   it('Clicking hamburger should toggle cross class on button and show class on list', () => {
     const menuButton = screen.getByRole('button', { name: /menu/i });
     const menuToggle = screen.getByTestId('menuToggle');
-    const menuList = screen.getByTestId('menuList');
+    const menuList = screen.getByRole('list');
     expect(menuToggle).not.toHaveClass('cross');
     expect(menuList).not.toHaveClass('show');
     userEvent.click(menuButton);
@@ -31,23 +31,23 @@ describe('Nav menu works', () => {
     expect(menuList).not.toHaveClass('show');
   });
   it('Clicking on a link should hide the menu', () => {
-    const menuButton = screen.getByTestId('menuButton');
-    const menuList = screen.getByTestId('menuList');
+    const menuButton = screen.getByRole('button', { name: /menu/i });
+    const menuList = screen.getByRole('list');
     userEvent.click(menuButton);
     expect(menuList).toHaveClass('show');
-    userEvent.click(screen.queryAllByTestId('menuLink')[0]);
+    fireEvent.click(screen.queryAllByRole('link')[0]);
     expect(menuList).not.toHaveClass('show');
   });
   it('Menu should show when focused and hide on blur', () => {
-    const menuList = screen.getByTestId('menuList');
-    fireEvent.focus(screen.queryAllByTestId('menuLink')[0]);
+    const menuList = screen.getByRole('list');
+    fireEvent.focus(screen.queryAllByRole('link')[0]);
     expect(menuList).toHaveClass('show');
-    fireEvent.blur(screen.queryAllByTestId('menuLink')[0]);
+    fireEvent.blur(screen.queryAllByRole('link')[0]);
     expect(menuList).not.toHaveClass('show');
   });
   it('Should close when pressing escape and only escape', () => {
-    const menuButton = screen.getByTestId('menuButton');
-    const menuList = screen.getByTestId('menuList');
+    const menuButton = screen.getByRole('button', { name: /menu/i });
+    const menuList = screen.getByRole('list');
     userEvent.click(menuButton);
     expect(menuList).toHaveClass('show');
     userEvent.keyboard('f');
