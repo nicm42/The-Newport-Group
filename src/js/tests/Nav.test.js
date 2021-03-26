@@ -58,4 +58,37 @@ describe('Nav menu works', () => {
     userEvent.keyboard('{Escape}');
     expect(menuList).not.toHaveClass('show');
   });
+  it('Checks the nav links have the right text', () => {
+    expect(screen.getByText('Home')).toBeInTheDocument();
+    expect(screen.getByText('Buy or sell a house')).toBeInTheDocument();
+    expect(screen.getByText('Build a house')).toBeInTheDocument();
+    expect(screen.getByText('Rent an office')).toBeInTheDocument();
+  });
+  it('Checks the nav links go to the right place', () => {
+    expect(screen.queryAllByRole('link')[0]).toHaveAttribute('href', '/');
+    expect(screen.queryAllByRole('link')[1]).toHaveAttribute('href', '/houses');
+    expect(screen.queryAllByRole('link')[2]).toHaveAttribute(
+      'href',
+      '/buildings'
+    );
+    expect(screen.queryAllByRole('link')[3]).toHaveAttribute(
+      'href',
+      '/offices'
+    );
+  });
+  it('should tab through elements in order', () => {
+    expect(document.body).toHaveFocus();
+    userEvent.tab();
+    expect(screen.getByRole('button', { name: /menu/i })).toHaveFocus();
+    userEvent.tab();
+    expect(screen.queryAllByRole('link')[0]).toHaveFocus();
+    userEvent.tab();
+    expect(screen.queryAllByRole('link')[1]).toHaveFocus();
+    userEvent.tab();
+    expect(screen.queryAllByRole('link')[2]).toHaveFocus();
+    userEvent.tab();
+    expect(screen.queryAllByRole('link')[3]).toHaveFocus();
+    userEvent.tab();
+    expect(screen.getByTestId('lightdark')).toHaveFocus();
+  });
 });
