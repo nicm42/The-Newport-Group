@@ -17,6 +17,9 @@ describe('Nav menu works', () => {
   it('finds the nav element', () => {
     expect(screen.getByRole('navigation')).toBeInTheDocument();
   });
+  it('finds the lightdark component', () => {
+    expect(screen.getByTestId('lightdark')).toBeInTheDocument();
+  });
   it('Clicking hamburger should toggle cross class on button and show class on list', () => {
     const menuButton = screen.getByRole('button', { name: /menu/i });
     const menuToggle = screen.getByTestId('menuToggle');

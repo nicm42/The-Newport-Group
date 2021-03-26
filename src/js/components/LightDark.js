@@ -32,7 +32,11 @@ const LightDark = () => {
   };
 
   return (
-    <button className="header__lightdark" onClick={setTheme}>
+    <button
+      className="header__lightdark"
+      onClick={setTheme}
+      data-testid="lightdark"
+    >
       <i
         className={`las la-sun ${isDark ? '' : 'none'}`}
         title="Light mode"
