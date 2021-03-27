@@ -5,7 +5,8 @@ import mapSmall from '/imgs/map-small.jpg';
 const footerContent = {
   ownerText: 'Owner: Caleb Nichol',
   ownerImage: caleb,
-  address: 'The Newport Group\nNewport Beach\nThe O.C.\nC.A.\n92660',
+  address:
+    'The Newport Group<br/>Newport Beach<br/>The O.C.<br/>C.A.<br/>92660',
   email: 'contact@thenewportgroup.com',
   phone: '555-123-4567',
   imageSmall: mapSmall,

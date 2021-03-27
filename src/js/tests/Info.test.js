@@ -68,4 +68,26 @@ describe('Info section', () => {
     userEvent.tab();
     expect(document.body).toHaveFocus();
   });
+  it('loads a list with a class of info__list', () => {
+    expect(screen.getByRole('list')).toHaveClass('info__list');
+  });
+  it('expects a div with a class of info__text', () => {
+    expect(screen.getByTestId('paragraphs')).toHaveClass('info__text');
+  });
+  it('it loads the paragraph text', () => {
+    expect(
+      screen.getByText(
+        'The Newport Group is the foremost Real Estate Agency in the O.C.',
+        { exact: false }
+      )
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText('Looking for an', { exact: false })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText('No homes suitable for your needs? We are always', {
+        exact: false,
+      })
+    ).toBeInTheDocument();
+  });
 });

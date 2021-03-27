@@ -16,7 +16,7 @@ const Footer = () => {
 
       <div className="footer__contactmap">
         <div className="footer__contact">
-          <p>{footerContent.address}</p>
+          <p dangerouslySetInnerHTML={{ __html: footerContent.address }}></p>
 
           <p>
             <i className="las la-envelope"></i>{' '}

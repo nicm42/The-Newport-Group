@@ -18,6 +18,7 @@ const Cards = () => {
           className={`cards__card ${
             onScreen(cardRefs.current[index]) ? 'slide' : ''
           }`}
+          data-testid="thisCard"
         >
           <img
             src={card.imageSmall}

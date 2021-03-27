@@ -81,4 +81,7 @@ describe('Card section', () => {
     userEvent.tab();
     expect(document.body).toHaveFocus();
   });
+  it('check the cards have a class of cards__card', () => {
+    expect(screen.getAllByTestId('thisCard')[0]).toHaveClass('cards__card');
+  });
 });
