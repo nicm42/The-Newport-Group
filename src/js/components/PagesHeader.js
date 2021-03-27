@@ -4,7 +4,7 @@ import Title from './Title';
 
 const PagesHeader = () => {
   return (
-    <header className="header short">
+    <header className="header short" data-testid="header">
       <Nav />
       <Title />
     </header>
