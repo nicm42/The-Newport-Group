@@ -50,6 +50,7 @@ const PagesIntro = (props) => {
         <div
           className="pageIntro__intro"
           dangerouslySetInnerHTML={{ __html: pageContent('intro') }}
+          data-testid="intro"
         ></div>
       </div>
     </section>
