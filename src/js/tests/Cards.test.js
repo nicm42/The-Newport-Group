@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import 'intersection-observer';
 import Cards from '../components/Cards';
 
@@ -68,5 +69,16 @@ describe('Card section', () => {
     expect(screen.getAllByRole('img')[0]).toHaveAttribute('alt', '');
     expect(screen.getAllByRole('img')[1]).toHaveAttribute('alt', '');
     expect(screen.getAllByRole('img')[2]).toHaveAttribute('alt', '');
+  });
+  it('should tab through elements in order', () => {
+    expect(document.body).toHaveFocus();
+    userEvent.tab();
+    expect(screen.queryAllByRole('link')[0]).toHaveFocus();
+    userEvent.tab();
+    expect(screen.queryAllByRole('link')[1]).toHaveFocus();
+    userEvent.tab();
+    expect(screen.queryAllByRole('link')[2]).toHaveFocus();
+    userEvent.tab();
+    expect(document.body).toHaveFocus();
   });
 });
