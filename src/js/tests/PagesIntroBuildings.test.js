@@ -3,7 +3,6 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import 'intersection-observer';
 import PagesIntro from '../components/PagesIntro';
-import { buildingIntro } from '../content/buildingsContent';
 
 const content = {
   title: 'House building',
@@ -17,7 +16,7 @@ jest.mock('../content/buildingsContent', () => ({
   buildingIntro: content,
 }));
 
-describe('Review section', () => {
+describe('Intro section', () => {
   beforeEach(() => {
     render(<PagesIntro type="Buildings" />);
   });

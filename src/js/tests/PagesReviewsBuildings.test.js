@@ -3,7 +3,6 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import 'intersection-observer';
 import PagesReview from '../components/PagesReview';
-import { buildingReviews } from '../content/buildingsContent';
 
 const content = [
   {
