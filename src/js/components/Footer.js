@@ -1,16 +1,14 @@
 import React from 'react';
-import caleb from '/imgs/caleb.jpg';
-import map from '/imgs/map.jpg';
-import mapSmall from '/imgs/map-small.jpg';
+import footerContent from '../content/footerContent';
 
 const Footer = () => {
   return (
     <footer className="footer container">
       <div className="footer__owner">
-        <p>Owner: Caleb Nichol</p>
+        <p>{footerContent.ownerText}</p>
         <img
-          src={caleb}
-          alt="Owner: Caleb Nichol"
+          src={footerContent.ownerImage}
+          alt={footerContent.ownerText}
           className="footer__photo"
           loading="lazy"
         />
@@ -18,34 +16,23 @@ const Footer = () => {
 
       <div className="footer__contactmap">
         <div className="footer__contact">
-          <p>
-            The Newport Group
-            <br />
-            Newport Beach
-            <br />
-            The O.C.
-            <br />
-            C.A.
-            <br />
-            92660
-          </p>
+          <p>{footerContent.address}</p>
 
           <p>
             <i className="las la-envelope"></i>{' '}
-            <a href="mailto:#">contact@thenewportgroup.com</a>
+            <a href="mailto:#">{footerContent.email}</a>
           </p>
 
           <p>
-            <i className="las la-phone"></i> 555-123-4567
+            <i className="las la-phone"></i> {footerContent.phone}
           </p>
         </div>
 
         <img
-          src={mapSmall}
-          srcSet={`${mapSmall} 450w,
-                  ${map} 750w`}
+          src={footerContent.imageSmall}
+          srcSet={footerContent.srcset}
           sizes="(min-width: 40em) 50vw, 100vw"
-          alt="Map of Newport Beach"
+          alt={footerContent.alt}
           className="footer__map"
           loading="lazy"
         />
