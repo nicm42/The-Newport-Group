@@ -1,50 +1,72 @@
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { BrowserRouter as Router } from 'react-router-dom';
 import '@testing-library/jest-dom';
+import { render, screen, fireEvent } from '@testing-library/react';
 import 'intersection-observer';
 import Cards from '../components/Cards';
 
-Enzyme.configure({ adapter: new Adapter() });
-
 jest.mock('../content/cardsContent', () => [
   {
-    imageSmall: 'test.jpg',
-    srcset: 'test.jpg 500w',
+    imageSmall: 'test1.jpg',
+    srcset: 'test1.jpg 500w',
     text: 'Buy or sell a house',
     link: '/houses',
   },
   {
-    imageSmall: 'test.jpg',
-    srcset: 'test.jpg 500w',
+    imageSmall: 'test2.jpg',
+    srcset: 'test2.jpg 500w',
     text: 'Build a house',
-    link: 'buildings',
+    link: '/buildings',
   },
   {
-    imageSmall: 'test.jpg',
-    srcset: 'test.jpg 500w',
+    imageSmall: 'test3.jpg',
+    srcset: 'test3.jpg 500w',
     text: 'Rent offices',
-    link: 'offices',
+    link: '/offices',
   },
 ]);
 
 describe('Card section', () => {
-  const wrapper = shallow(<Cards />);
-  const cards = wrapper.find('.cards__card');
-  const image = wrapper.find('.cards__image');
-  const link = wrapper.find('.cards__text');
+  beforeEach(() => {
+    render(
+      <Router>
+        <Cards />
+      </Router>
+    );
+  });
 
-  const observe = jest.fn();
+  let observe = jest.fn();
+  let disconnect = jest.fn();
   window.IntersectionObserver = jest.fn(() => ({
     observe,
+    disconnect,
   }));
 
-  it('renders correctly', () => {
-    shallow(<Cards />);
+  it('should load the images', () => {
+    expect(screen.getAllByRole('img')).toHaveLength(3);
   });
-  it('should load everything', () => {
-    expect(cards.length).toBe(3);
-    expect(image.length).toBe(3);
-    expect(link.length).toBe(3);
+  it('Checks the links have the right text', () => {
+    expect(screen.getByText('Buy or sell a house')).toBeInTheDocument();
+    expect(screen.getByText('Build a house')).toBeInTheDocument();
+    expect(screen.getByText('Rent offices')).toBeInTheDocument();
+  });
+  it('checks the links go the right place', () => {
+    expect(screen.queryAllByRole('link')[0]).toHaveAttribute('href', '/houses');
+    expect(screen.queryAllByRole('link')[1]).toHaveAttribute(
+      'href',
+      '/buildings'
+    );
+    expect(screen.queryAllByRole('link')[2]).toHaveAttribute(
+      'href',
+      '/offices'
+    );
+  });
+  it('Checks the images have the right src and alt text', () => {
+    expect(screen.getAllByRole('img')[0]).toHaveAttribute('src', 'test1.jpg');
+    expect(screen.getAllByRole('img')[1]).toHaveAttribute('src', 'test2.jpg');
+    expect(screen.getAllByRole('img')[2]).toHaveAttribute('src', 'test3.jpg');
+    expect(screen.getAllByRole('img')[0]).toHaveAttribute('alt', '');
+    expect(screen.getAllByRole('img')[1]).toHaveAttribute('alt', '');
+    expect(screen.getAllByRole('img')[2]).toHaveAttribute('alt', '');
   });
 });

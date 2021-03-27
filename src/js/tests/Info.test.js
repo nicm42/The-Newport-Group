@@ -26,7 +26,7 @@ describe('Info section', () => {
     expect(screen.getAllByRole('listitem')).toHaveLength(3);
     expect(screen.getByTestId('paragraphs')).toBeInTheDocument();
   });
-  it('Checks the nav links have the right text', () => {
+  it('Checks the links have the right text', () => {
     expect(screen.getByText('Real Estate')).toBeInTheDocument();
     expect(screen.getByText('Buildings')).toBeInTheDocument();
     expect(screen.getByText('Homes and Offices')).toBeInTheDocument();
