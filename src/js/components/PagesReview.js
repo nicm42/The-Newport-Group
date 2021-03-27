@@ -56,6 +56,7 @@ const PagesReview = (props) => {
             className={`pageReview__quote ${
               onScreen(quoteRefs.current[index]) ? 'slide' : ''
             }`}
+            data-testid="quote"
           >
             {review.text}
           </blockquote>
