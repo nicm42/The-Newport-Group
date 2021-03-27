@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import 'intersection-observer';
 import Info from '../components/Info';
 
@@ -49,5 +50,22 @@ describe('Info section', () => {
       'href',
       '/buildings'
     );
+  });
+  it('should tab through elements in order', () => {
+    expect(document.body).toHaveFocus();
+    userEvent.tab();
+    expect(screen.queryAllByRole('link')[0]).toHaveFocus();
+    userEvent.tab();
+    expect(screen.queryAllByRole('link')[1]).toHaveFocus();
+    userEvent.tab();
+    expect(screen.queryAllByRole('link')[2]).toHaveFocus();
+    userEvent.tab();
+    expect(screen.queryAllByRole('link')[3]).toHaveFocus();
+    userEvent.tab();
+    expect(screen.queryAllByRole('link')[4]).toHaveFocus();
+    userEvent.tab();
+    expect(screen.queryAllByRole('link')[5]).toHaveFocus();
+    userEvent.tab();
+    expect(document.body).toHaveFocus();
   });
 });
