@@ -14,10 +14,9 @@ describe('Headers', () => {
   });
 
   it('should load a header tag and a link (plus 4 nav links)', () => {
-    expect(screen.getByRole('heading')).toBeInTheDocument();
+    expect(screen.getByTestId('header')).toBeInTheDocument();
   });
   it('the header should have a class of header and not of short', () => {
-    //I don't know why it can't find this by role here, but can above
     expect(screen.getByTestId('header')).toHaveClass('header');
     expect(screen.getByTestId('header')).not.toHaveClass('short');
   });

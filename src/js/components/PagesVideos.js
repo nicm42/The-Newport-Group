@@ -44,73 +44,70 @@ const PagesVideos = (props) => {
     }
   };
 
-  if (videos) {
-    const videoRefs = useRef([]);
-    videoRefs.current = videos.map(
-      (video, i) => videoRefs.current[i] ?? createRef()
-    );
-    const buttonRefs = useRef([]);
-    buttonRefs.current = videos.map(
-      (video, i) => buttonRefs.current[i] ?? createRef()
-    );
-    const playPauseRefs = useRef([]);
-    playPauseRefs.current = videos.map(
-      (video, i) => playPauseRefs.current[i] ?? createRef()
-    );
+  const videoRefs = useRef([]);
+  videoRefs.current = videos.map(
+    (video, i) => videoRefs.current[i] ?? createRef()
+  );
+  const buttonRefs = useRef([]);
+  buttonRefs.current = videos.map(
+    (video, i) => buttonRefs.current[i] ?? createRef()
+  );
+  const playPauseRefs = useRef([]);
+  playPauseRefs.current = videos.map(
+    (video, i) => playPauseRefs.current[i] ?? createRef()
+  );
 
-    return (
-      <section className="pageVideos container diagonal">
-        {videos.map((item, index) => (
-          <div key={index} className="pageVideos__container">
-            <video
-              loop
-              muted
-              preload="metadata"
-              poster={item.poster}
-              ref={videoRefs.current[index]}
-              className="pageVideos__video"
-              aria-label={item.label}
-              onClick={(e) =>
-                toggle(
-                  e,
-                  videoRefs.current[index],
-                  buttonRefs.current[index],
-                  playPauseRefs.current[index]
-                )
-              }
-              onKeyPress={(e) =>
-                toggle(
-                  e,
-                  videoRefs.current[index],
-                  buttonRefs.current[index],
-                  playPauseRefs.current[index]
-                )
-              }
-            >
-              <source src={item.video} type="video/mp4" />
-            </video>
-            <button
-              className="pageVideos__control"
-              aria-label="Play/Pause"
-              ref={buttonRefs.current[index]}
-              onClick={(e) =>
-                toggle(
-                  e,
-                  videoRefs.current[index],
-                  buttonRefs.current[index],
-                  playPauseRefs.current[index]
-                )
-              }
-            >
-              <i ref={playPauseRefs.current[index]} className="las la-play"></i>
-            </button>
-          </div>
-        ))}
-      </section>
-    );
-  } else {
-    return;
-  }
+  return (
+    <section className="pageVideos container diagonal">
+      {videos.map((item, index) => (
+        <div key={index} className="pageVideos__container">
+          <video
+            loop
+            muted
+            preload="metadata"
+            poster={item.poster}
+            ref={videoRefs.current[index]}
+            className="pageVideos__video"
+            aria-label={item.label}
+            data-testid="video"
+            onClick={(e) =>
+              toggle(
+                e,
+                videoRefs.current[index],
+                buttonRefs.current[index],
+                playPauseRefs.current[index]
+              )
+            }
+            onKeyPress={(e) =>
+              toggle(
+                e,
+                videoRefs.current[index],
+                buttonRefs.current[index],
+                playPauseRefs.current[index]
+              )
+            }
+          >
+            <source src={item.video} type="video/mp4" />
+          </video>
+          <button
+            className="pageVideos__control"
+            aria-label="Play/Pause"
+            ref={buttonRefs.current[index]}
+            onClick={(e) =>
+              toggle(
+                e,
+                videoRefs.current[index],
+                buttonRefs.current[index],
+                playPauseRefs.current[index]
+              )
+            }
+          >
+            <i ref={playPauseRefs.current[index]} className="las la-play"></i>
+          </button>
+        </div>
+      ))}
+    </section>
+  );
 };
 
 export default PagesVideos;
