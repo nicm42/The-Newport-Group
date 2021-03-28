@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import 'intersection-observer';
-import Buildings from '../pages/Buildings';
+import Houses from '../pages/Houses';
 
 const introContent = {
   title: 'House building',
@@ -47,10 +47,10 @@ const videoContent = [
   },
 ];
 
-jest.mock('../content/buildingsContent', () => ({
-  buildingIntro: introContent,
-  buildingReviews: reviewContent,
-  buildingVideos: videoContent,
+jest.mock('../content/housesContent', () => ({
+  houseIntro: introContent,
+  houseReviews: reviewContent,
+  houseVideos: videoContent,
 }));
 
 //Stop error occuring from muted videos: https://github.com/testing-library/react-testing-library/issues/470
@@ -58,11 +58,11 @@ Object.defineProperty(HTMLMediaElement.prototype, 'muted', {
   set: () => {},
 });
 
-describe('Buildings page', () => {
+describe('Houses page', () => {
   beforeEach(() => {
     render(
       <Router>
-        <Buildings />
+        <Houses />
       </Router>
     );
   });
@@ -88,6 +88,6 @@ describe('Buildings page', () => {
   });
   it('Title should be for buildings page', () => {
     //screen.debug();
-    expect(document.title).toBe('The Newport Group - House Building');
+    expect(document.title).toBe('The Newport Group - Buy or Sell a House');
   });
 });

@@ -7,7 +7,7 @@ import PagesVideos from '../components/PagesVideos';
 
 const Houses = () => {
   useEffect(() => {
-    document.title = 'The Newport Group - House Building';
+    document.title = 'The Newport Group - Buy or Sell a House';
   }, []);
 
   return (
