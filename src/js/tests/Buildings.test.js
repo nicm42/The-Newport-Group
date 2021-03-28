@@ -4,10 +4,6 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import 'intersection-observer';
 import Buildings from '../pages/Buildings';
-/* import PagesHeader from '../components/PagesHeader';
-import PagesIntro from '../components/PagesIntro';
-import PagesReview from '../components/PagesReview';
-import PagesVideos from '../components/PagesVideos'; */
 
 const introContent = {
   title: 'House building',
@@ -57,25 +53,10 @@ jest.mock('../content/buildingsContent', () => ({
   buildingVideos: videoContent,
 }));
 
-/* jest.mock('../components/PagesIntro', () => ({
-  PagesIntro: (props) => <div data-testid="PagesIntro">{props.type}</div>,
-})); */
-
-/* jest.mock('../components/PagesIntro', () => ({
-  PagesIntro: jest.fn(() => <div data-testid="PagesIntro" type="Buildings" />),
-})); */
-
-/* jest.mock('../components/PagesReview', () => ({
-  PagesReview: jest.fn(() => (
-    <div data-testid="PagesReview" type="Buildings" />
-  )),
-}));
-
-jest.mock('../components/PagesVideos', () => ({
-  PagesVideos: jest.fn(() => (
-    <div data-testid="PagesVideos" type="Buildings" />
-  )),
-})); */
+//Stop error occuring from muted videos: https://github.com/testing-library/react-testing-library/issues/470
+Object.defineProperty(HTMLMediaElement.prototype, 'muted', {
+  set: () => {},
+});
 
 describe('Buildings page', () => {
   beforeEach(() => {
@@ -106,7 +87,7 @@ describe('Buildings page', () => {
     //Videos component
     expect(screen.getAllByTestId('video')).toHaveLength(2);
   });
-  it.only('Title should be for buildings page', () => {
+  it('Title should be for buildings page', () => {
     //screen.debug();
     expect(document.title).toBe('The Newport Group - Buy or Sell a House');
   });
