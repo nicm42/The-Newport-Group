@@ -10,9 +10,9 @@ describe('Titles', () => {
   });
 
   it('should load the content', () => {
-    expect(screen.getByTestId('div')).toBeInTheDocument();
+    expect(screen.getByTestId('title')).toBeInTheDocument();
   });
   it('the div should have a class of header__title', () => {
-    expect(screen.getByTestId('div')).toHaveClass('header__title');
+    expect(screen.getByTestId('title')).toHaveClass('header__title');
   });
 });

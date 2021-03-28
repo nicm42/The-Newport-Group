@@ -15,9 +15,10 @@ describe('Pages headers', () => {
   });
 
   it('should load a header tag', () => {
-    expect(screen.getByTestId('header')).toBeInTheDocument();
+    expect(screen.getByRole('heading')).toBeInTheDocument();
   });
   it('the header should have classes of header and short', () => {
+    //I don't know why it can't find this by role here, but can above
     expect(screen.getByTestId('header')).toHaveClass('header');
     expect(screen.getByTestId('header')).toHaveClass('short');
   });
@@ -25,6 +26,6 @@ describe('Pages headers', () => {
     //Nav
     expect(screen.getByRole('navigation')).toBeInTheDocument();
     //Title
-    expect(screen.getByTestId('div')).toBeInTheDocument();
+    expect(screen.getByTestId('title')).toBeInTheDocument();
   });
 });

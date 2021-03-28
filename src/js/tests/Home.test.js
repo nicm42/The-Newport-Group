@@ -1,16 +1,60 @@
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-//import Home from '../pages/Home';
+import { BrowserRouter as Router } from 'react-router-dom';
+import '@testing-library/jest-dom';
+import { render, screen } from '@testing-library/react';
+import 'intersection-observer';
+import Home from '../pages/Home';
 
-Enzyme.configure({ adapter: new Adapter() });
+jest.mock('../content/cardsContent', () => [
+  {
+    imageSmall: 'test1.jpg',
+    srcset: 'test1.jpg 500w',
+    text: 'Buy or sell a house',
+    link: '/houses',
+  },
+  {
+    imageSmall: 'test2.jpg',
+    srcset: 'test2.jpg 500w',
+    text: 'Build a house',
+    link: '/buildings',
+  },
+  {
+    imageSmall: 'test3.jpg',
+    srcset: 'test3.jpg 500w',
+    text: 'Rent offices',
+    link: '/offices',
+  },
+]);
 
 describe('Home', () => {
-  //const title = 'Home page title';
-  it('has a test', () => {
-    expect(true).toBeTruthy();
+  beforeEach(() => {
+    render(
+      <Router>
+        <Home />
+      </Router>
+    );
   });
-  /* it('Title should be for home page', () => {
-    expect(document.title).toBe(title);
-  }); */
+  let observe = jest.fn();
+  let disconnect = jest.fn();
+  window.IntersectionObserver = jest.fn(() => ({
+    observe,
+    disconnect,
+  }));
+
+  //const title = 'Home page title';
+  it('loads everything', () => {
+    //Header component
+    expect(screen.getByRole('heading')).toBeInTheDocument();
+    //main section
+    expect(screen.getByRole('main')).toBeInTheDocument();
+    //Info component
+    expect(screen.getByTestId('paragraphs')).toBeInTheDocument();
+    //Parallax component
+    expect(screen.getByTestId('div')).toBeInTheDocument();
+    //Cards component (text is also in Nav)
+    expect(screen.getAllByText('Buy or sell a house')).toHaveLength(2);
+  });
+  it('Title should be for home page', () => {
+    expect(document.title).toBe('The Newport Group - Home');
+  });
 });
