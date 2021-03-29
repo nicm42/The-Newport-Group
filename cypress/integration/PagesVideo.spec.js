@@ -28,8 +28,8 @@ context('Navigation', () => {
     cy.get('video').eq(0).click({ force: true });
     cy.get('video').its('0.paused').should('equal', false);
     cy.get('video').its('1.paused').should('equal', true);
-    cy.get('button').eq(0).click({ force: true });
-    //cy.get('video').its('0.paused').should('equal', true);
-    //cy.get('video').its('1.paused').should('equal', true);
+    cy.get('video').eq(0).click({ force: true });
+    cy.get('video').its('0.paused').should('equal', true);
+    cy.get('video').its('1.paused').should('equal', true);
   });
 });
