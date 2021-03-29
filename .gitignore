@@ -22,3 +22,5 @@ jest.config.js
 coverage/
 
 cypress/integration/examples/
+
+cypress/videos/examples/
