@@ -24,6 +24,8 @@ TBC
 * Parcel
 * Jest
 * Enzyme
+* React Testing Library
+* Cypress
 
 ## Learnings
 React...
