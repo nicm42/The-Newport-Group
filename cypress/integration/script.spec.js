@@ -28,7 +28,7 @@ context('Navigation', () => {
     cy.url().should('eq', 'http://localhost:1234/offices');
   });
 
-  it.only('Info links work', () => {
+  it('Info links work', () => {
     //list links
     //For some reason it thinks the menu is covering everything
     cy.get('.info__list > li > a').eq(0).click({ force: true });
@@ -59,5 +59,20 @@ context('Navigation', () => {
     cy.visit('http://localhost:1234/');
     cy.get('.info__text > p > a').eq(2).click({ force: true });
     cy.url().should('eq', 'http://localhost:1234/buildings');
+  });
+
+  it.only('Card links work', () => {
+    cy.get('.cards__text > a').eq(0).click();
+    cy.url().should('eq', 'http://localhost:1234/houses');
+
+    //Need to go back to home page to check next link
+    cy.visit('http://localhost:1234/');
+    cy.get('.cards__text > a').eq(1).click();
+    cy.url().should('eq', 'http://localhost:1234/buildings');
+
+    //Need to go back to home page to check next link
+    cy.visit('http://localhost:1234/');
+    cy.get('.cards__text > a').eq(2).click();
+    cy.url().should('eq', 'http://localhost:1234/offices');
   });
 });
