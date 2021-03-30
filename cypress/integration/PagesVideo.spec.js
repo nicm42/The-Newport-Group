@@ -9,6 +9,38 @@ context('Navigation', () => {
     cy.get('video').its('0.paused').should('equal', true);
   });
 
+  it.only('Checks the video sources', () => {
+    //Can't test for exact match on these because Parcel adds random characters to the ends
+    //It's already on the houses page before each test
+    cy.get('source')
+      .eq(0)
+      .should('have.attr', 'src')
+      .and('contain', 'lake-house');
+    cy.get('source').eq(1).should('have.attr', 'src').and('contain', 'villa');
+
+    //Now test buildings page's videos
+    cy.visit('http://localhost:1234/buildings');
+    cy.get('source')
+      .eq(0)
+      .should('have.attr', 'src')
+      .and('contain', 'empty-room');
+    cy.get('source')
+      .eq(1)
+      .should('have.attr', 'src')
+      .and('contain', 'lake-house-top');
+
+    //Now test offices page's videos
+    cy.visit('http://localhost:1234/offices');
+    cy.get('source')
+      .eq(0)
+      .should('have.attr', 'src')
+      .and('contain', 'open-working');
+    cy.get('source')
+      .eq(1)
+      .should('have.attr', 'src')
+      .and('contain', 'lights-out');
+  });
+
   it('Checks the video plays and pauses on button click', () => {
     //Menu is the first button on the page and Light/Dark the second
     //so to trigger the first video we want to use the third button
