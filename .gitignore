@@ -7,7 +7,6 @@ dist/
 images/
 cypress/fixtures
 cypress/plugins
-cypress/support
 Figma/
 .eslintrc.json
 .postcssrc
