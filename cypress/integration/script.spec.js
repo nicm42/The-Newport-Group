@@ -61,7 +61,7 @@ context('Navigation', () => {
     cy.url().should('eq', 'http://localhost:1234/buildings');
   });
 
-  it.only('Card links work', () => {
+  it('Card links work', () => {
     cy.get('.cards__text > a').eq(0).click();
     cy.url().should('eq', 'http://localhost:1234/houses');
 
@@ -74,5 +74,9 @@ context('Navigation', () => {
     cy.visit('http://localhost:1234/');
     cy.get('.cards__text > a').eq(2).click();
     cy.url().should('eq', 'http://localhost:1234/offices');
+  });
+
+  it('Footer email is a mailto link to nowehere', () => {
+    cy.get('.footer__contact a').should('have.attr', 'href', 'mailto:#');
   });
 });
