@@ -65,7 +65,7 @@ context('Navigation', () => {
     cy.get('video').its('1.paused').should('equal', true);
   });
 
-  it.only('Checks the video plays and pauses on spacebar and enter', () => {
+  it('Checks the video plays and pauses on spacebar and enter', () => {
     //Have to focus on the video first
     //But can only use focus on focusable elements
     //So we'll first click on it, which will give it focus and start it playing
