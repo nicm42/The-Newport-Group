@@ -65,31 +65,27 @@ context('Navigation', () => {
     cy.get('video').its('1.paused').should('equal', true);
   });
 
-  it('Checks the video plays and pauses on spacebar and enter', () => {
+  it.only('Checks the video plays and pauses on spacebar and enter', () => {
     //Have to focus on the video first
-    //But can only use focus on focusable elements
-    //So we'll first click on it, which will give it focus and start it playing
+    cy.get('video').eq(0).focus();
     cy.get('video').its('0.paused').should('equal', true);
     cy.get('video').its('0.paused').should('equal', true);
-    cy.get('video').eq(0).click({ force: true });
-    cy.get('video').its('0.paused').should('equal', false);
 
-    //Spacebar should now pause it
-    cy.get('video').eq(0).trigger('keypress', { keyCode: '32', force: true });
-    cy.get('video').its('0.paused').should('equal', true);
-    //and play it again
+    //Spacebar should now play it
     cy.get('video').eq(0).trigger('keypress', { keyCode: '32', force: true });
     cy.get('video').its('0.paused').should('equal', false);
+    //and pause it again
+    cy.get('video').eq(0).trigger('keypress', { keyCode: '32', force: true });
+    cy.get('video').its('0.paused').should('equal', true);
 
     //Now try the same for enter
-    /*cy.get('video').eq(0).trigger('keypress', { keyCode: '13', force: true });
-    cy.get('video').its('0.paused').should('equal', true);
-    //and play it again
     cy.get('video').eq(0).trigger('keypress', { keyCode: '13', force: true });
-    cy.get('video').its('0.paused').should('equal', false); */
+    cy.get('video').its('0.paused').should('equal', false);
+    cy.get('video').eq(0).trigger('keypress', { keyCode: '13', force: true });
+    cy.get('video').its('0.paused').should('equal', true);
 
     //It shouldn't do anything at all for any other random key
     cy.get('video').eq(0).trigger('keypress', { keyCode: '60', force: true });
-    cy.get('video').its('0.paused').should('equal', false);
+    cy.get('video').its('0.paused').should('equal', true);
   });
 });

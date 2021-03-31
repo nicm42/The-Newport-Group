@@ -69,6 +69,8 @@ const PagesVideos = (props) => {
             ref={videoRefs.current[index]}
             className="pageVideos__video"
             aria-label={item.label}
+            role="button"
+            tabindex="0"
             data-testid="video"
             onClick={(e) =>
               toggle(
