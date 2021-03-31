@@ -1,4 +1,5 @@
 import React, { useState, useRef, createRef } from 'react';
+import PropTypes from 'prop-types';
 import { houseVideos } from '../content/housesContent';
 import { buildingVideos } from '../content/buildingsContent';
 import { officeVideos } from '../content/officesContent';
@@ -70,7 +71,7 @@ const PagesVideos = (props) => {
             className="pageVideos__video"
             aria-label={item.label}
             role="button"
-            tabindex="0"
+            tabIndex="0"
             data-testid="video"
             onClick={(e) =>
               toggle(
@@ -110,6 +111,12 @@ const PagesVideos = (props) => {
       ))}
     </section>
   );
+};
+
+PagesVideos.propTypes = {
+  type: PropTypes.string.isRequired,
+  isPlaying: PropTypes.object,
+  setIsPlaying: PropTypes.func,
 };
 
 export default PagesVideos;

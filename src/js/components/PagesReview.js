@@ -1,4 +1,5 @@
 import React, { useRef, createRef } from 'react';
+import PropTypes from 'prop-types';
 import { houseReviews } from '../content/housesContent';
 import { buildingReviews } from '../content/buildingsContent';
 import { officeReviews } from '../content/officesContent';
@@ -63,6 +64,10 @@ const PagesReview = (props) => {
       ))}
     </section>
   );
+};
+
+PagesReview.propTypes = {
+  type: PropTypes.string.isRequired,
 };
 
 export default PagesReview;

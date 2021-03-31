@@ -1,4 +1,5 @@
 import React, { useState, useRef, useLayoutEffect, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import LightDark from './LightDark';
 
@@ -69,6 +70,11 @@ const Nav = () => {
       <LightDark />
     </nav>
   );
+};
+
+Nav.propTypes = {
+  isOpen: PropTypes.bool,
+  setIsOpen: PropTypes.func,
 };
 
 export default Nav;

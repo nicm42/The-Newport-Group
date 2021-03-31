@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { houseIntro } from '../content/housesContent';
 import { buildingIntro } from '../content/buildingsContent';
 import { officeIntro } from '../content/officesContent';
@@ -55,6 +56,10 @@ const PagesIntro = (props) => {
       </div>
     </section>
   );
+};
+
+PagesIntro.propTypes = {
+  type: PropTypes.string.isRequired,
 };
 
 export default PagesIntro;

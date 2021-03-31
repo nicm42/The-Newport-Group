@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const LightDark = () => {
   const [isDark, setIsDark] = useState(checkMode);
@@ -47,6 +48,11 @@ const LightDark = () => {
       ></i>
     </button>
   );
+};
+
+LightDark.propTypes = {
+  isDark: PropTypes.bool,
+  setIsDark: PropTypes.func,
 };
 
 export default LightDark;
