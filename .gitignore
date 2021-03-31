@@ -23,3 +23,5 @@ coverage/
 cypress/integration/examples/
 
 cypress/videos/examples/
+
+cypress/videos/
