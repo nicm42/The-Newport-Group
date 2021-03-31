@@ -25,7 +25,7 @@ const PagesVideos = (props) => {
 
   const toggle = (event, video, button, playPause, index) => {
     if (event.key === ' ' || event.key === 'Enter' || !event.key) {
-      if (event.key === ' ') {
+      if (event.key === ' ' || event.key === 'Enter') {
         event.preventDefault();
       }
       if (isPlaying[index] === true) {
@@ -80,7 +80,7 @@ const PagesVideos = (props) => {
                 playPauseRefs.current[index]
               )
             }
-            onKeyPress={(e) =>
+            onKeyDown={(e) =>
               toggle(
                 e,
                 videoRefs.current[index],
