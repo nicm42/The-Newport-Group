@@ -7,15 +7,17 @@
 * [Technologies](#technologies)
 * [Learnings](#learnings)
 * [Setup](#setup)
+* [Features](#features)
 * [Status](#status)
 * [Inspiration](#inspiration)
 * [Contact](#contact)
 
 ## General info
 I wanted to make a multi-page website, partly because it's been a long time since I designed and created a site. I also learnt about doing some flashy things in CSS and since this is a luxury brand, it seemed like a good site to try them out on.
+Since it was a multi-page site I intended to use the HTML template tag, but React seemed easier. Having just done a tutorial a little JSX would be the perfect introduction. And then I found it all needed to be in React...
 
 ## Screenshots
-TBC
+![Screenshot](screenshot.png)
 
 ## Technologies
 * HTML
@@ -29,18 +31,23 @@ TBC
 
 ## Learnings
 React...
+React Hooks
 
 ## Features
-TBC
+Light/dark mode
 
 ## Setup
-TBC
+To view this project visit the [demo](https://the-newport-group.netlify.app/) or download the files, open a terminal in that folder and install locally using npm:
+```
+npm install
+parcel .src/index.html --open
+```
 
 ## Status
-Project is: _in progress_
+Project is: _finished_
 
 ## Inspiration
-The OC
+The OC and a lot of Kevin Powell tutorials
 
 ## Contact
 Created by [nicm42](https://twitter.com/nicm4242/) - feel free to contact me!
