@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import ScrollToTop from './utilities/ScrollToTop';
 
 import Home from './pages/Home';
 import Houses from './pages/Houses';
@@ -11,6 +12,7 @@ import Footer from './components/Footer';
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/houses" component={Houses} />
