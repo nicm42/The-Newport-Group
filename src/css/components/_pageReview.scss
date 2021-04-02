@@ -1,0 +1,85 @@
+@use '../general' as g;
+
+.pageReview {
+  &__intro {
+    margin-bottom: 1em;
+  }
+
+  &__imagequote {
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include g.breakpoint-up(medium-large) {
+      flex-direction: row;
+      align-items: flex-start;
+      //Move each one a little further to the right
+      @for $i from 1 through 3 {
+        &:nth-of-type(#{$i}) {
+          transform: translateX(($i - 1) * 2em);
+        }
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: transform var(--transition-time) var(--easing),
+      opacity var(--transition-time) var(--easing);
+
+    &.slide {
+      transform: translateX(0);
+      opacity: 0.5;
+    }
+
+    @include g.breakpoint-up(medium-large) {
+      max-width: 50%;
+    }
+  }
+
+  &__quote {
+    position: relative;
+    width: 90%;
+    font-family: 'Redressed', serif;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    background-color: var(--overlay-colour);
+    transform: translateY(-25%) translateX(50%);
+    opacity: 0;
+    transition: transform var(--transition-time) var(--easing),
+      opacity var(--transition-time) var(--easing);
+
+    &.slide {
+      transform: translateY(-25%) translateX(0);
+      opacity: 1;
+    }
+
+    &::before,
+    &::after {
+      font-size: 2rem;
+      color: var(--secondary-colour);
+    }
+
+    &::before {
+      content: open-quote;
+    }
+
+    &::after {
+      position: absolute;
+      content: close-quote;
+    }
+
+    @include g.breakpoint-up(medium-large) {
+      width: 100%;
+      transform: translateY(1em) translateX(50%);
+
+      &.slide {
+        transform: translateX(1em) translateX(-25%);
+        opacity: 1;
+      }
+    }
+  }
+}

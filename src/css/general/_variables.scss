@@ -1,0 +1,53 @@
+//Colours
+$text-colour: #333333;
+$background-colour: white;
+$secondary-colour: #196abb;
+$alternate-secondary-colour: #90daf1;
+$parallax-colour: #ff9862;
+$light-overlay: rgba(255, 255, 255, 0.5);
+$dark-overlay: rgba(51, 51, 51, 0.5);
+
+$box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.25);
+$dark-box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.75);
+
+//Transitions
+$transition-time: 500ms;
+$transition-short: $transition-time / 2;
+$easing: ease-in-out;
+
+//Sizing
+$border-radius: 0.25em;
+
+:root {
+  --primary-colour: #{$text-colour};
+  --alternate-colour: #{$background-colour};
+  --secondary-colour: #{$secondary-colour};
+  --parallax-colour: #{$parallax-colour};
+  --overlay-colour: #{$light-overlay};
+  --active-nav-colour: #{$text-colour};
+  --box-shadow: #{$box-shadow};
+
+  --transition-time: #{$transition-time};
+  --transition-short: #{$transition-short};
+  --easing: #{$easing};
+
+  --border-radius: #{$border-radius};
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-colour: #{$background-colour};
+    --alternate-colour: #{$text-colour};
+    --secondary-colour: #{$alternate-secondary-colour};
+    --overlay-colour: #{$dark-overlay};
+    --box-shadow: #{$dark-box-shadow};
+  }
+}
+
+.dark {
+  --primary-colour: #{$background-colour};
+  --alternate-colour: #{$text-colour};
+  --secondary-colour: #{$alternate-secondary-colour};
+  --overlay-colour: #{$dark-overlay};
+  --box-shadow: #{$dark-box-shadow};
+}

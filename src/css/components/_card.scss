@@ -1,0 +1,106 @@
+@use '../general' as g;
+
+.cards {
+  padding-top: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+
+  @include g.breakpoint-up(large) {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 0;
+  }
+
+  @supports not (gap: 2em) {
+    &__card:not(:last-of-type) {
+      margin-bottom: 2em;
+    }
+  }
+
+  &__card {
+    width: 15em;
+    max-width: calc(100% - 2em);
+    height: calc(100% - 2em);
+    transform: translateY(0);
+    opacity: 0;
+    transition: transform var(--transition-time) var(--easing),
+      opacity var(--transition-time) var(--easing);
+
+    &.slide {
+      opacity: 1;
+    }
+
+    //If they're below each other, but have space offset them a bit
+    @include g.breakpoint-up(medium) {
+      @for $i from 1 through 3 {
+        &:nth-of-type(#{$i}).slide {
+          transform: translateY(0) translateX(($i - 1) * 2em);
+        }
+      }
+    }
+
+    //If they're next to each other, then also make them diagonal
+    @include g.breakpoint-up(large) {
+      @for $i from 1 through 3 {
+        &:nth-last-of-type(#{$i}).slide {
+          transform: translateY(($i - 1) * 1em) translateX(0);
+        }
+      }
+    }
+  }
+
+  &__image {
+    width: calc(100% - 0.5em);
+    height: 75%;
+    margin: 0.25em;
+    border-radius: var(--border-radius);
+  }
+
+  &__text {
+    position: relative;
+    top: -0.75em;
+    height: 25%;
+    display: grid;
+    place-content: center;
+    padding: 0.5em 1em;
+    border: 2px solid var(--secondary-colour);
+    border-radius: var(--border-radius);
+    background-color: var(--alternate-colour);
+    color: var(--primary-colour);
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    overflow: hidden;
+
+    &:hover,
+    &:focus {
+      background-color: var(--secondary-colour);
+    }
+
+    &:hover a,
+    &:focus a {
+      color: var(--alternate-colour);
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      background-color: white;
+      height: 125%;
+      width: 1em;
+      left: -20%;
+      top: -10%;
+      opacity: 0.25;
+      transform: rotate(35deg);
+      transition: left var(--transition-time) var(--easing),
+        opacity 100ms var(--easing) var(--transition-time);
+    }
+
+    &:hover::after,
+    &:focus::after {
+      left: 110%;
+      opacity: 0;
+    }
+  }
+}

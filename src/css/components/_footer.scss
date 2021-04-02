@@ -1,0 +1,61 @@
+@use '../general' as g;
+
+.footer {
+  overflow-x: hidden;
+  padding-top: calc(5vw + 1em);
+  background-color: var(--secondary-colour);
+  color: var(--alternate-colour);
+
+  @include g.breakpoint-up(large) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__owner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2em;
+
+    @include g.breakpoint-up(medium) {
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+  }
+
+  &__photo {
+    width: 80%;
+    max-width: 10em;
+
+    @include g.breakpoint-up(medium) {
+      padding-right: 1em;
+    }
+  }
+
+  &__contactmap {
+    @include g.breakpoint-up(medium-large) {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  &__contact {
+    p {
+      white-space: nowrap;
+    }
+
+    a {
+      color: var(--alternate-colour);
+    }
+  }
+
+  &__map {
+    width: 80%;
+    max-width: 20em;
+
+    @include g.breakpoint-up(large) {
+      padding-left: 1em;
+    }
+  }
+}

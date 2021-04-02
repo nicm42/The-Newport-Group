@@ -1,0 +1,119 @@
+@use '../general' as g;
+
+.info {
+  &__list {
+    padding-left: 0.5em;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: transform var(--transition-time) var(--easing),
+      opacity var(--transition-time) var(--easing);
+
+    @include g.breakpoint-up(medium) {
+      display: flex;
+      justify-content: space-between;
+      padding-left: 0;
+      list-style-type: none;
+    }
+
+    &.slide {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  li {
+    margin-bottom: 0.5em;
+    margin-left: 0.5em;
+    font-size: 1.25rem;
+
+    @include g.breakpoint-up(medium) {
+      position: relative;
+      display: grid;
+      place-content: center;
+      padding: 0.25em 0.5em;
+      border-top: 1px solid var(--parallax-colour);
+      border-bottom: 1px solid var(--parallax-colour);
+      text-align: center;
+      cursor: pointer;
+
+      &::before,
+      &::after {
+        position: absolute;
+        content: '';
+        width: 1px;
+        height: 0;
+        background-color: var(--parallax-colour);
+        transition: height var(--transition-time) var(--easing);
+      }
+
+      &::before {
+        top: 0;
+        left: 0;
+      }
+
+      &::after {
+        bottom: 0;
+        right: 0;
+      }
+
+      &:hover::before,
+      &:focus::before,
+      &:hover::after,
+      &:focus::after {
+        height: 100%;
+      }
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+    }
+
+    &::marker {
+      color: var(--parallax-colour);
+    }
+
+    /* a {
+      color: var(--primary-colour);
+    } */
+  }
+
+  &__text {
+    position: relative;
+    transform: translateX(50%);
+    opacity: 0;
+    transition: transform var(--transition-short) var(--easing),
+      opacity var(--transition-short) var(--easing);
+
+    &.slide {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    &::after {
+      @include g.breakpoint-up(large) {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: calc(95% - 50ch);
+        background: var(--alternate-colour);
+        background-image: url(../imgs/building.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transform: scaleX(-1);
+        opacity: 0.5;
+      }
+    }
+  }
+
+  p {
+    margin-top: 1em;
+
+    &:first-of-type {
+      margin-top: 2em;
+    }
+  }
+}

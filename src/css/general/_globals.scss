@@ -1,0 +1,32 @@
+@use '../general' as g;
+
+html {
+  font-size: 100%;
+  background-color: var(--secondary-colour);
+}
+
+body {
+  background-color: var(--alternate-colour);
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary-colour);
+  overflow-x: hidden;
+
+  @include g.breakpoint-up(large) {
+  }
+}
+
+a {
+  color: var(--secondary-colour);
+  //text-decoration: none;
+
+  &:hover,
+  &:focus {
+    //text-decoration: underline;
+    text-decoration-thickness: 0.15rem;
+  }
+}
+
+p,
+blockquote {
+  max-width: 50ch;
+}
