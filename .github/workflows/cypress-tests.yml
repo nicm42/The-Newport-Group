@@ -10,8 +10,11 @@ jobs:
         uses: cypress-io/github-action@v2.9.7
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
+      - name: Setup npm package
+        run: npm init -y && npm install
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          build: npm run build
           start: npm start
+          # quote the url to be safe against YML parsing surprises
+          wait-on: 'http://localhost:1234'
