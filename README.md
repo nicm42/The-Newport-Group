@@ -37,7 +37,7 @@ React Hooks
 Light/dark mode
 
 ## Setup
-To view this project visit the [demo](https://the-newport-group.netlify.app/) or download the files, open a terminal in that folder and install locally using npm:
+To view this project visit the [demo](https://the-newport-group.nicm42.co.uk/) or download the files, open a terminal in that folder and install locally using npm:
 ```
 npm install
 parcel .src/index.html --open
