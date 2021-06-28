@@ -30,8 +30,9 @@ Since it was a multi-page site I intended to use the HTML template tag, but Reac
 * Cypress
 
 ## Learnings
-React...
-React Hooks
+* React...
+* React Router
+* React Hooks
 
 ## Features
 Light/dark mode
